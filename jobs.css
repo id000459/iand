@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#topnav {
+  background-color: #707070;
+
+}
+
+.logo {
+  background-color:
+}
+
+.nav-link {
+  color: #FFFFFF !important;
+  font-family:'Roboto', sans-serif !important;
+}
+
+
+.job-listing {
+
+  background-color: #dce1e8;
+  color: black;
+  position:relative;
+  -webkit-border-radius: 1.5625em;
+  padding: 1em 1em 1em 1em;
+  margin: 3% auto;
+  font-size: 1.5em;
+  position:relative;
+  
+
+
+
+}

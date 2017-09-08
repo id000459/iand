@@ -1,0 +1,132 @@
+{ "jobs": [
+  {
+		"jobTitle": "Web Developer",
+		"jobLocation": "Atlanta, GA",
+		"jobDuties": [
+			"Expertise building modern realtime UI applications with JavaScript, HTML5, and CSS3",
+			"Experience with modern JavaScript/UI frameworks including Angular, React, or Vue.js",
+			"Experience building single page and mobile friendly web apps using RESTful APIs",
+			"Strong web design skills (UX, mockups, graphics)",
+			"Knowledge of current trends and best practices in frontend architecture including performance, accessibility, and usability ",
+			"Knowledge of responsive design principles",
+			"Knowledge of crossbrowser, crossplatform, and design constraints on the web",
+			"Identify and come up with solutions for performance problems",
+			"Excellent debugging skills",
+			"React, Relay, and GraphQL "
+		],
+		"jobRequirements": [
+			"Bachelor's Degree or Equivalent experience"
+		],
+		"jobType": "Full-Time"
+	},
+	{
+		"jobTitle": "Senior UI Designer",
+		"jobLocation": "Atlanta, GA",
+		"jobDuties": [
+			"Hubstaff is a fast-growing startup in the time tracking and project management space that fully embraces remote work.",
+			"We are looking for a design professional with an eye for beautiful, modern, and functional interfaces.",
+			"Several years of experience with Photoshop, Illustrator",
+			"Experience using wireframes for mockups",
+			"design marketing materials and creating graphics",
+			"Icon, images, and glyph design experience",
+			"Skilled designer with an eye for detail",
+			"Working closely with marketing team and management",
+			"100% remote options available",
+			"Establish and promote design guidelines, develop well formed and clean concepts"
+		],
+		"jobRequirements": [
+			"Bachelor's Degree or Equivalent experience",
+			"Internet Connection Required",
+			"Experience in the field appreciated"
+		],
+		"jobType": "Full-Time"
+	},
+	{
+		"jobTitle": "User Interface Designer",
+		"jobLocation": "Macon, GA",
+		"jobDuties": [
+			"We are looking for an ambitious and driven User Interface Designer who is passionate about creating engaging, consistent and memorable experiences.",
+			"Hotjar is a rapidly growing startup that is giving thousands of website owners the tools needed to discover how their visitors are really using their website.",
+			"In this role you will be iteratively improving the Hotjar user experience and helping us shape the product and company whilst growing with us.",
+			"Skilled designer with an eye for detail",
+			"Working closely with marketing team and management",
+			"100% remote opportunities available",
+			"Wireframe experience required."
+		],
+		"jobRequirements": [
+			"Background check required",
+			"Minimum of 3 years work experience",
+			"English fluency and excellent written skills"
+		],
+		"jobType": "Part-Time"
+	},
+	{
+		"jobTitle": "Senior UX Designer",
+		"jobLocation": "Atlanta, GA",
+		"jobDuties": [
+			"Do you want to change the way people innovate?",
+			"Are you a problem solver who loves to visualize complex data in order to find the right solution?",
+			"As a Senior UX Designer at Aha!, you will have an excellent opportunity to join a breakthrough and profitable company that is growing fast.",
+			"Quick, nimble design work",
+			"Understands product management in addition to user behaviors and motivations",
+			"Require skilled designer with aptitude for quality",
+			"Working closely with marketing team and management",
+			"100% remote options available",
+			"Is seeking a career-defining opportunity"
+		],
+		"jobRequirements": [
+			"Has at least three years of experience on a product or user experience team for a SaaS application",
+			"On site availability",
+			"Nimble experience"
+		],
+		"jobType": "Full-Time"
+	},
+	{
+		"jobTitle": "Designer (Web & Mobile App)",
+		"jobLocation": "Atlanta, GA",
+		"jobDuties": [
+			"Silverorange is a fourteen-person design and development agency based in Canada. ",
+			"Our focus is on interesting and meaningful projects.",
+			"The core of our team has been together for eighteen years.",
+			"During that time we’ve focused as much on quality of life, openness, empathy, and a wonderful work environment as we have on our commitment to building great user-focused systems.",
+			"in search of a designer with a strong sense of visual style and a deep understanding of native mobile interface design.",
+			"Create visual designs for web and mobile apps that are beautiful, usable, and scalable across a variety of mobile and desktop clients.",
+			"Work with clients to understand and help define requirements.",
+			"Adapt existing visual identity and design systems to new screens and features.",
+			"Define animation and transition effects for interface interactions.",
+			"Create interactive prototypes to demonstrate web and mobile app features, interactions, and structure."
+		],
+		"jobRequirements": [
+			"Flexible work hours.",
+			"Experience implementing interfaces with front-end web technologies ",
+			"Ability to create original branding and visual identity systems."
+		],
+		"jobType": "Full-Time"
+	},
+	{
+		"jobTitle": "UI Developer - Remote",
+		"jobLocation": "Jacksonville, FL",
+		"jobDuties": [
+			"Piggy is looking for a UI Developer to join our fast growing team. ",
+			"Developer’s primary responsibilities include implementing designs",
+			"Functionality of our website & browser extensions, and Improving website performance to optimize user experience.",
+			"Develop & Implement new user-facing features for Website and Browser Extensions",
+			"Ensure the technical feasibility of UI/UX designs.",
+			"Work closely with both Design and Marketing to create new features.",
+			"Leverage CSS animations and HTML5 canvas to improve site efficiency.",
+			"Contribute to team development and initiatives.",
+			"Collaborate with other team members and stakeholders."
+		],
+		"jobRequirements": [
+			"Previous history working as a senior UI developer.",
+			"Ability to follow a design spec",
+			"Extremely confident in CSS3 & HTML5",
+			"Foundational  Javascript Knowledge Required",
+			"Intermediate SASS development experience",
+			"Familiarity with Caching & CDNs"
+		],
+		"jobType": "Part-Time"
+	}
+
+]
+}
