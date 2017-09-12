@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>IT4203 - Ian davis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="jobs.css">
+
+</head>
+
+<body>
+    <div id="top-display" class="container-fluid">
+        <div class="logo">
+            <h1 class="col-12">Ian Davis Advanced Web Dev Page</h1>
+            <span class="glyphicon glyphicon-heart"></span>
+
+        </div>
+        <!-- NAV BAR  NEEDS A COLOR AND TO BE FULL WIDTH-->
+		<nav id="topnav" class="navbar navbar-toggleable-md navbar-light bg-faded" style="overflow: auto;">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active nav-font" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link nav-font" href="Milestone1.html">Milestone 1</a>
+					<a class="nav-item nav-link nav-font" href="Milestone2.html">Milestone 2</a>
+					<a class="nav-item nav-link nav-font" href="Milestone3.html">Milestone 3</a>
+					<a class="nav-item nav-link nav-font" href="Milestone4.html">Milestone 4</a>
+                    <!--<a class="nav-item nav-link nav-font" href="#">New Listings</a>
+                    <a class="nav-item nav-link nav-font" href="careerzone.html">Career Advice</a>-->
+                </div>
+            </div>
+        </nav>
+
+	</div>
+	
+	
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="js/handlebars-v4.0.10.js" type="text/javascript"></script>
+        <script src="js/script.js" type="text/javascript"></script>
+        <script id="listing-template" type="text/template">
+
+          {{#jobs}}
+          <div class="job-listing">
+            <h2 class="Job-title">{{jobTitle}}</h2>
+            <span class="Job-Location">{{jobLocation}} </span>  <span class="Job-Type">{{jobType}}</span>
+            <h4>Job Duties</h4>
+            <ul>
+            {{#each jobDuties}}
+              <li>{{this}}</li>
+            {{/each}}
+            </ul>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">View More</button>
+            <button type="button" class="btn btn-success">Save This Job</button>
+          </div>
+
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{jobTitle}}</h5>
+                        <span class="Job-Location">{{jobLocation}} </span>  <span class="Job-Type">{{jobType}}</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                    </div>
+                    <div class="modal-body">
+                      <ul>
+                      {{#each jobDuties}}
+                        <li>{{this}}</li>
+                      {{/each}}
+                      </ul>
+                      <hr>
+                      <ul>
+                      {{#each jobRequirements}}
+                        <li>{{this}}</li>
+                      {{/each}}
+                      </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Send message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+          {{/jobs}}
+        </script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
