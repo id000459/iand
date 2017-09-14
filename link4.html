@@ -44,10 +44,11 @@
         <script id="listing-template" type="text/template">
 
           {{#items}}
-			{{#imageLinks}}		  
-				<img src={{smallThumbnail}} alt="HTML5 Icon">
-			{{/imageLinks}}
+			
 			{{#volumeInfo}}
+				{{#imageLinks}}		  
+					<img src={{smallThumbnail}} alt="HTML5 Icon">
+				{{/imageLinks}}
 			  <div class="job-listing">
 				<h2 class="Job-title">{{title}}</h2>
 				
