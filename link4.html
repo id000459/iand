@@ -45,16 +45,16 @@
 
           {{#items}}
           <div class="job-listing">
-            <h2 class="Job-title">{{id}}</h2>
-            <span class="Job-Location">{{selfLink}} </span>  <span class="Job-Type">{{etag}}</span>
-            <h4>Job Duties</h4>
+            <h2 class="Job-title">{{title}}</h2>
+            <span class="Job-Location">{{subtitle}} </span>  
+            <!-- <h4>Job Duties</h4> -->
             <ul>
             {{#each authors}}
               <li>{{this}}</li>
             {{/each}}
             </ul>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">View More</button>
-            <button type="button" class="btn btn-success">Save This Job</button>
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">View More</button>
+            <button type="button" class="btn btn-success">Save This Job</button> -->
           </div>
 
           <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
