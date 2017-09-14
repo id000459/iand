@@ -44,8 +44,9 @@
         <script id="listing-template" type="text/template">
 
           {{#items}}
-		  <h2 class="Job-title">{{smallThumbnail}}</h2>
-			<img src={{smallThumbnail}} alt="HTML5 Icon">
+			{{#imageLinks}}		  
+				<img src={{smallThumbnail}} alt="HTML5 Icon">
+			{{/imageLinks}}
 			{{#volumeInfo}}
 			  <div class="job-listing">
 				<h2 class="Job-title">{{title}}</h2>
