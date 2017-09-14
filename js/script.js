@@ -15,7 +15,7 @@ $(document).ready(function(){
        });
     }
       //4b.function firing
-      compilation('../id000459/itlist.json', '#listing-template', '#listing-container'); // since url = 'data.json' , we can use both notations.
+      compilation('../id000459/link1.json', '#listing-template', '#listing-container'); // since url = 'data.json' , we can use both notations.
 
 
 /* 
