@@ -22,16 +22,18 @@
 }
 
 .Job-title {
-  color: #FFFFFF !important;
   font-family:'Roboto', sans-serif !important;
-  
 }
 
 
 .searchTitle {
-  color: #FFFFFF !important;
   font-family:'Roboto', sans-serif !important;
-  font-size:3;
+  font-size:medium;
+}
+
+.searchBody {
+  font-family:'Roboto', sans-serif !important;
+  font-size:small;
 }
 
 
