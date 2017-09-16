@@ -40,54 +40,24 @@
 	
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="js/handlebars-v4.0.10.js" type="text/javascript"></script>
-        <script src="js/script.js" type="text/javascript"></script>
+        <script src="js/script_1.js" type="text/javascript"></script>
         <script id="listing-template" type="text/template">
 
-          {{#items}}
-          <div class="job-listing">
-            <h2 class="Job-title">{{id}}</h2>
-            <span class="Job-Location">{{selfLink}} </span>  <span class="Job-Type">{{etag}}</span>
-            <h4>Job Duties</h4>
-            <ul>
-            {{#each authors}}
-              <li>{{this}}</li>
-            {{/each}}
-            </ul>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">View More</button>
-            <button type="button" class="btn btn-success">Save This Job</button>
-          </div>
+          {{#Books}}
 
-          <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">{{jobTitle}}</h5>
-                        <span class="Job-Location">{{jobLocation}} </span>  <span class="Job-Type">{{jobType}}</span>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                    </div>
-                    <div class="modal-body">
-                      <ul>
-                      {{#each jobDuties}}
-                        <li>{{this}}</li>
-                      {{/each}}
-                      </ul>
-                      <hr>
-                      <ul>
-                      {{#each jobRequirements}}
-                        <li>{{this}}</li>
-                      {{/each}}
-                      </ul>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-          {{/items}}
+			  <div class="job-listing">
+										
+				<img class="smlImage" src={{smallThumbnail}} alt="HTML5 Icon">
+			
+				<h2 class="Job-title">{{title}}</h2>
+				
+				<span class="Job-Location">{{subtitle}} </span>  
+
+				<span class="Job-Location">{{Description}} </span>  
+
+			  </div>
+		
+          {{/Books}}
         </script>
 
 
