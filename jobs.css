@@ -23,6 +23,7 @@
 
 .Job-title {
   font-family:'Roboto', sans-serif !important;
+  font-size:large;
 }
 
 
@@ -33,7 +34,7 @@
 
 .searchBody {
   font-family:'Roboto', sans-serif !important;
-  font-size:small;
+  font-size:medium;
 }
 
 header, footer {
