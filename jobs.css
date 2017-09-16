@@ -21,6 +21,19 @@
    height: 8%;
 }
 
+.Job-title {
+  color: #FFFFFF !important;
+  font-family:'Roboto', sans-serif !important;
+  
+}
+
+
+.searchTitle {
+  color: #FFFFFF !important;
+  font-family:'Roboto', sans-serif !important;
+  font-size:3;
+}
+
 
 .job-listing {
 
@@ -32,8 +45,5 @@
   margin: 3% auto;
   font-size: 1.5em;
   position:relative;
-  
-
-
 
 }
