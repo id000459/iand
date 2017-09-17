@@ -12,6 +12,26 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
+		<script>
+		var $log = $( "#log" ),
+		  str = "hello, <b>my name is</b> jQuery.",
+		  html = $.parseHTML( str ),
+		  nodeNames = [];
+		 
+		// Append the parsed HTML
+		$log.append( html );
+		 
+		// Gather the parsed HTML's node names
+		$.each( html, function( i, el ) {
+		  nodeNames[ i ] = "<li>" + el.nodeName + "</li>";
+		});
+		 
+		// Insert the node names
+		$log.append( "<h3>Node Names:</h3>" );
+		$( "<ol></ol>" )
+		  .append( nodeNames.join( "" ) )
+		  .appendTo( $log );
+	</script>
 </head>
 
 <body>
@@ -41,26 +61,7 @@
 
 	</div>
 	
-	<script>
-		var $log = $( "#log" ),
-		  str = "hello, <b>my name is</b> jQuery.",
-		  html = $.parseHTML( str ),
-		  nodeNames = [];
-		 
-		// Append the parsed HTML
-		$log.append( html );
-		 
-		// Gather the parsed HTML's node names
-		$.each( html, function( i, el ) {
-		  nodeNames[ i ] = "<li>" + el.nodeName + "</li>";
-		});
-		 
-		// Insert the node names
-		$log.append( "<h3>Node Names:</h3>" );
-		$( "<ol></ol>" )
-		  .append( nodeNames.join( "" ) )
-		  .appendTo( $log );
-	</script>
+	
 	<div id="listing-container" class="container">
 	
         
