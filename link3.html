@@ -46,7 +46,7 @@
 	       	
 	<script type = "text/javascript" language = "javascript">
 		
-		   $.getJSON('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC' {
+		   $.getJSON('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC', function(jd) {
 
 			   $('#book').html('<p class="title">' + jd.volumeInfo.title + '</p>');
 			   $('#book').append('<p class="subtitle">' + jd.volumeInfo.subtitle + '</p>');
