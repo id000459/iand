@@ -120,40 +120,6 @@
   </script>
 	
 	
-	<div id="listing-container" class="container">
-	
-        
-        <script id="listing-template" type="text/template">
-
-          
-			
-			{{#volumeInfo}}
-				
-			  <div class="job-listing">
-				{{#imageLinks}}		 					
-					<img src={{smallThumbnail}} alt="HTML5 Icon">
-				{{/imageLinks}}
-				<h2 class="Job-title">{{title}}</h2>
-				
-				<span class="Job-Location">{{subtitle}} </span>  
-
-				<ul>
-				{{#each authors}}
-				  <li>{{this}}</li>
-				{{/each}}
-				</ul>
-				<div id="log">
-					content:
-				</div>
-			  </div>
-			{{/volumeInfo}}  
-
-          
-        </script>
-
-
-
-		</div>
 </body>
 
 </html>
