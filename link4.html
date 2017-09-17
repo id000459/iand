@@ -55,15 +55,18 @@
 				<h2 class="Job-title">{{title}}</h2>
 				
 				<span class="Job-info">{{subtitle}} </span>  
-			    <span class="Job-info">Publisher: {{publisher}}</span>
-				<span class="Job-info">Published Date: {{publishedDate}}</span>
-				<span class="Job-info">Description: {{description}}</span>
+			    <h2 class="Job-info">Publisher: {{publisher}}</h2>
+				<h2 class="Job-info">Published Date: {{publishedDate}}</h2>
+				<h2 class="Job-info">Description: {{description}}</h2>
 
 				<ul>
 				{{#each authors}}
 				  <li>{{this}}</li>
 				{{/each}}
 				</ul>
+				
+				<h2 class="Job-info">More Information: {{pageCount}}</h2>
+
 			  
 			{{/volumeInfo}} 
 			
