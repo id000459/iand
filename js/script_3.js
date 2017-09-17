@@ -17,7 +17,6 @@ $(document).ready(function(){
 	
 
       //4b.function firing
-      compilation('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC', '#listing-template', '#listing-container'); // since url = 'data.json' , we can use both notations.
 
 
 })
