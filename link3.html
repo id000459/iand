@@ -46,12 +46,12 @@
 	       	
 	<script type = "text/javascript" language = "javascript">
 		
-		   $.getJSON('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC', function(jd) {
+		   $.getJSON('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC' {
 
 			   $('#book').html('<p class="title">' + jd.volumeInfo.title + '</p>');
 			   $('#book').append('<p class="subtitle">' + jd.volumeInfo.subtitle + '</p>');
 			   $('#book').append("<img class='image' src=" + jd.volumeInfo.imageLinks.thumbnail + '>');
-			   $('#book').append('<p class="paragraphs">' + jd.volumeInfo.description + '</p>');
+			   $('#book').append('<p class="paragraphs">' + volumeInfo.description + '</p>');
 			   
 			   
 			   $('#book').append('<p class="paragraphs"> Authors: ' + jd.volumeInfo.authors + '</p>');
