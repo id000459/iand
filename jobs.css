@@ -55,3 +55,16 @@ header, footer {
   position:relative;
 
 }
+
+.job-listing1 {
+
+  background-color: #dce1e8;
+  color: black;
+  position:relative;
+  -webkit-border-radius: 1.5625em;
+  padding: 1em 1em 3em 1em;
+  margin: 3% auto;
+  font-size: 1.5em;
+  position:relative;
+
+}
