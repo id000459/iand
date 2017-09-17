@@ -61,15 +61,21 @@
 				
 				<h2 class="Job-info"><b>Authors: </b></h2>
 
-				<ul class="font-size:medium;">
+				<ul>
 				{{#each authors}}
-				  <li class="font-size:medium;">{{this}}</li>
+				  <li>{{this}}</li>
 				{{/each}}
 				</ul>
 				
 				<h3 class="Job-info"></b>More Information:</b> </h3>
 				<h2 class="Job-info">{{language}}, {{pageCount}} Pages</h2>
+				<h2 class="Job-info">Publish Medium: {{printType}}</h2>
+				<h2 class="Job-info">Category: {{categories}}</h2>
 				<h2 class="Job-info"> <a href={{previewLink}}>Preview </a></h2>
+
+				<br/>
+				<h3 class="Job-info"></b>What Customers Say:</b> </h3>
+				<h2 class="Job-info">Rating: {{averageRating}}, From: {{ratingsCount}} Users</h2>
 
 			  
 			{{/volumeInfo}} 
