@@ -15,6 +15,5 @@ $(document).ready(function(){
        });
     }
       //4b.function firing
-      compilation('../id000459/link3.json', '#listing-template', '#listing-container'); // since url = 'data.json' , we can use both notations.
 
 
