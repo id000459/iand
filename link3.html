@@ -49,7 +49,7 @@
 		   
                $.getJSON('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC', function(book) {
 
-                   $('#book').append('<img  alt="HTML5 Icon" class="smlImage" src=' + book.volumeInfo.imageLinks.thumbnail + '>');
+                   $('#book').append('<img  alt="HTML5 Icon" class="smlImage" src="' + book.volumeInfo.imageLinks.thumbnail + '">');
 
                    $('#book').html('<h2 class="Job-title">' + book.volumeInfo.title + '</h2>');
                    $('#book').append('<h2 class="Job-subtitle">' + book.volumeInfo.subtitle + '</h2>');
