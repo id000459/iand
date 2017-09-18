@@ -46,13 +46,75 @@
       <script type = "text/javascript" language = "javascript">
      $(document).ready(function() {
 		
-		   $.getJSON('../id000459/link3.json', function(book) {
+		   
+               $.getJSON('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC', function(book) {
 
-			   $('#book').html('<h2 class="Job-title">' + book.volumeInfo.title + '</h2>');
-			   $('#book').html('<h2 class="Job-subtitle">' + book.volumeInfo.subtitle + '</h2>');
+                   $('#book').html('<p class="title">' + book.volumeInfo.title + '</p>');
+                   $('#book').append('<p class="subtitle">' + book.volumeInfo.subtitle + '</p>');
+                   $('#book').append("<img class='image' src=" + book.volumeInfo.imageLinks.thumbnail + '>');
+                   $('#book').append('<p class="paragraphs">' + book.volumeInfo.description + '</p>');
+                   $('#book').append('<p class="paragraphs"> Authors: ' + book.volumeInfo.authors + '</p>');
+                   $('#book').append('<p class="paragraphs2"> Other Information </p>');
+                   $('#book').append('<p class="paragraphs"> ID: ' + book.id + '</p>');
+                   $('#book').append('<p class="paragraphs"> Kind: ' + book.kind + '</p>');
+                   $('#book').append('<p class="paragraphs"> Etag: ' + book.etag + '</p>');
+                   $('#book').append('<a class="paragraphs" href="' + book.selfLink+ '">SelfLink</a>');
+                   $('#book').append('<p class="paragraphs"> Publisher: ' + book.volumeInfo.publisher + '</p>');
+                   $('#book').append('<p class="paragraphs"> Published Date: ' + book.volumeInfo.publisedDate+ '</p>');
+                   $('#book').append('<p class="paragraphs"> Industry IdentType: ' + book.volumeInfo.industryIdentifiers[0].type + '</p>');
+                   $('#book').append('<p class="paragraphs"> Industry Ident: ' + book.volumeInfo.industryIdentifiers[0].indentifier + '</p>');
+                   $('#book').append('<p class="paragraphs"> Industry IdentType: ' + book.volumeInfo.industryIdentifiers[1].type + '</p>');
+                   $('#book').append('<p class="paragraphs"> Industry Ident: ' + book.volumeInfo.industryIdentifiers[1].indentifier + '</p>');
+                   $('#book').append('<p class="paragraphs"> ReadingModeText: ' + book.volumeInfo.readingModes.text + '</p>');
+                   $('#book').append('<p class="paragraphs"> ReadingModeImage: ' + book.volumeInfo.readingModes.image + '</p>');
+                   $('#book').append('<p class="paragraphs"> PageCount: ' + book.volumeInfo.pageCount + '</p>');
+                   $('#book').append('<p class="paragraphs"> PrintedPageCount: ' + book.volumeInfo.printedPageCount + '</p>');
+                   $('#book').append('<p class="paragraphs"> DimensionsHeight: ' + book.volumeInfo.dimensions.height + '</p>');
+                   $('#book').append('<p class="paragraphs"> DimensionsWidth: ' + book.volumeInfo.dimensions.width + '</p>');
+                   $('#book').append('<p class="paragraphs"> DimensionsThick: ' + book.volumeInfo.dimensions.thickness + '</p>');
+                   $('#book').append('<p class="paragraphs"> PrintType: ' + book.volumeInfo.printType + '</p>');
+                   $('#book').append('<p class="paragraphs"> DimensionsHeight: ' + book.volumeInfo.categories + '</p>');
+                   $('#book').append('<p class="paragraphs"> AverageRating: ' + book.volumeInfo.averageRating + '</p>');
+                   $('#book').append('<p class="paragraphs"> RatingCount: ' + book.volumeInfo.ratingsCount + '</p>');
+                   $('#book').append('<p class="paragraphs"> MaturityRating: ' + book.volumeInfo.maturityRating + '</p>');
+                   $('#book').append('<p class="paragraphs"> AllowAnonLogging: ' + book.volumeInfo.allowAnonLogging + '</p>');
+                   $('#book').append('<p class="paragraphs"> ContentVersion: ' + book.volumeInfo.contentVersion + '</p>');
+                   $('#book').append('<p class="paragraphs"> DimensionsHeight: ' + book.volumeInfo.dimensions.height + '</p>');
+                   $('#book').append('<a class="paragraphs" href="' + book.volumeInfo.imageLinks.smallThumbnail+ '">SmallThumbNail</a>');
+                   $('#book').append('<a class="paragraphs" href="' + book.volumeInfo.imageLinks.small+ '">SmallImage</a>');
+                   $('#book').append('<a class="paragraphs" href="' + book.volumeInfo.imageLinks.medium+ '">MediumImage</a>');
+                   $('#book').append('<a class="paragraphs" href="' + book.volumeInfo.imageLinks.large+ '">LargeImage</a>');
+                   $('#book').append('<a class="paragraphs" href="' + book.volumeInfo.imageLinks.extraLarge+ '">SmallThumbNail</a>');
+                   $('#book').append('<p class="paragraphs"> Language ' + book.volumeInfo.language + '</p>');
+                   $('#book').append('<a class="paragraphs" href="' + book.volumeInfo.previewLink+ '">PreviewLink</a>');
+                   $('#book').append('<p class="paragraphs"> InfoLink ' + book.volumeInfo.infoLink + '</p>');
+                   $('#book').append('<a class="paragraphs" href="' + book.volumeInfo.infoLink+ '">InfoLink</a>');
+                   $('#book').append('<p class="paragraphs"> CanonicalVolLink ' + book.volumeInfo.canonicalVolumeLink + '</p>');
+                   $('#book').append('<a class="paragraphs" href="' + book.volumeInfo.canonicalVolumeLink+ '">CanonicalVolumeLink</a>');
+                   $('#book').append('<p class="paragraphs"> LayerID ' + book.layerInfo.layers.layerId + '</p>');
+                   $('#book').append('<p class="paragraphs"> VolumeAnnotationVer ' + book.layerInfo.layers.volumeAnnotationsVersion + '</p>');
+                   $('#book').append('<p class="paragraphs"> saleInfoCountry ' + book.saleInfo.country + '</p>');
+                   $('#book').append('<p class="paragraphs"> Saleability ' + book.saleInfo.saleability + '</p>');
+                   $('#book').append('<p class="paragraphs"> IsEbook ' + book.saleInfo.isEbook + '</p>');
+                   $('#book').append('<p class="paragraphs"> ListPriceAmount ' + book.saleInfo.listPrice.amount + '</p>');
+                   $('#book').append('<p class="paragraphs"> ListPriceCC ' + book.saleInfo.listPrice.currencyCode + '</p>');
+                   $('#book').append('<p class="paragraphs"> RetailPriceAmount ' + book.saleInfo.retailPrice.amount + '</p>');
+                   $('#book').append('<p class="paragraphs"> RetailPriceCC ' + book.saleInfo.retailPrice.currencyCode + '</p>');
+                   $('#book').append('<a class="paragraphs" href="' + book.saleInfo.buyLink + '">WebReaderLink</a>');
+                   $('#book').append('<p class="paragraphs"> FinskyOfferType ' + book.saleInfo.offers.finskyOfferType + '</p>');
+                   $('#book').append('<p class="paragraphs"> Giftable ' + book.saleInfo.offers.giftable + '</p>');
+                   $('#book').append('<p class="paragraphs"> AcessInfoCountry ' + book.accessInfo.country + '</p>');
+                   $('#book').append('<p class="paragraphs"> Viewability ' + book.accessInfo.viewability + '</p>');
+                   $('#book').append('<p class="paragraphs"> Embeddable ' + book.accessInfo.embeddable + '</p>');
+                   $('#book').append('<p class="paragraphs"> Public Domain ' + book.accessInfo.publicDomain + '</p>');
+                   $('#book').append('<p class="paragraphs"> Text to Speech ' + book.accessInfo.textToSpeechPermission + '</p>');
+                   $('#book').append('<p class="paragraphs"> EBUP: ' + book.accessInfo.epub.isAvailable + '</p>');
+                   $('#book').append('<p class="paragraphs"> PDF: ' + book.accessInfo.pdf.isAvailable + '</p>');
+                   $('#book').append('<a class="paragraphs" href="' + book.accessInfo.webReaderLink + '">WebReaderLink</a>');
+                   $('#book').append('<p class="paragraphs"> Access View Status ' + book.accessInfo.accessViewStatus + '</p>');
+                   $('#book').append('<p class="paragraphs"> Quote Sharing Allowed: ' + book.accessInfo.quoteSharingAllowed + '</p>');
 
-			   
-		   });
+               });
 			
   });
 	</script>
