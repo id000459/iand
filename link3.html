@@ -53,7 +53,7 @@
 			$('#book').append('<h2 class="Job-subtitle">' + book.volumeInfo.subtitle + '</h2>');
 			$('#book').append('<h2 class="Job-subtitle">' + book.volumeInfo.authors + ', ' + book.volumeInfo.publishedDate + '</h2>');
 			$('#book').append('<h2 class="Job-subtitle">' + book.volumeInfo.description + '</h2>');
-			$('#book').append('<h2 class="Job-subtitle">Preview: ' + book.volumeInfo.previewLink + '</h2>');
+			$('#book').append('<a href={{previewLink}}>Preview: ' + book.volumeInfo.previewLink + '</a>');
 			
 		});
 			
