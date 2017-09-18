@@ -46,9 +46,9 @@
 	
 	<script type = "text/javascript" language = "javascript">
 		
-		   $.getJSON('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC', function(book) {
+		   $.getJSON('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC', function(listing-template) {
 
-			   $('#book').html('<h2 class="title">' + book.volumeInfo.title + '</h2>');
+			   $('#listing-template').html('<h2 class="title">' + listing-template.volumeInfo.title + '</h2>');
 			   
 
 		   });
@@ -56,7 +56,7 @@
   
 	</script>
 	
-	<div id = "book" class="container"></div>
+	<div id="listing-template"  class="container"></div>
 	
 
 </body>
