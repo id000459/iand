@@ -21,22 +21,22 @@
    height: 8%;
 }
 
-.Job-title {
+.milestone1-title {
   font-family:'Roboto', sans-serif !important;
   font-size:xx-large;
 }
 
-.Job-subtitle {
+.milestone1-subtitle {
   font-family:'Roboto', sans-serif !important;
   font-size:large;
 }
 
-.Job-info {
+.milestone1-info {
   font-family:'Roboto', sans-serif !important;
   font-size:medium;
 }
 
-.Job-Einfo {
+.milestone1-Einfo {
   font-family:'Roboto', sans-serif !important;
   font-size:small;
 }
@@ -57,7 +57,7 @@ header, footer {
 }
 
 
-.job-listing {
+.milestone1-listing {
 
   background-color: #dce1e8;
   color: black;
@@ -70,7 +70,7 @@ header, footer {
 
 }
 
-.job-listing1 {
+.milestone1-listing1 {
 
   background-color: #dce1e8;
   color: black;
@@ -83,7 +83,7 @@ header, footer {
 
 }
 
-.job-listing4 {
+.milestone1-listing4 {
 
   background-color: #dce1e8;
   color: black;
