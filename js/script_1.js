@@ -18,17 +18,6 @@ $(document).ready(function(){
       compilation('../id000459/link1.json', '#listing-template', '#listing-container'); // since url = 'data.json' , we can use both notations.
 
 
-/* 
-    var  modalFunction  = function (index) {
-      $.getJSON('../id000459/jobs.json', function(data) {
-        var jsonIndexData = data[index];
-        var template = $('#Job-Modal').html();
-        var modalData = Handlebars.compile(template)(jsonIndexData);
-        $(anchor).append(modalData);
-        alert("I work");
-      });
-    } */
-
 
 
 
