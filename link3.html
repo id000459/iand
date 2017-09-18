@@ -46,17 +46,27 @@
 	
 	<script type = "text/javascript" language = "javascript">
 		
-		   $.getJSON('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC', function(listing-template) {
+		   $.getJSON('https://www.googleapis.com/books/v1/volumes/Wfan6L9RGgYC', function(book) {
 
-			   $('#listing-template').html('<h2 class="title">' + listing-template.volumeInfo.title + '</h2>');
+			   $('#book').html('<h2 class="Job-title">' + book.volumeInfo.title + '</h2>');
+			   $('#book').html('<h2 class="Job-subtitle">' + book.volumeInfo.subtitle + '</h2>');
+			   $('#book').html('<h2 class="Job-subtitle"> Author: ' + book.volumeInfo.subtitle + '</h2>');
+			   $('#book').html('<h2 class="Job-subtitle"> Publisher: ' + book.volumeInfo.publisher + ', ' + book.volumeInfo.publishedDate + '</h2>');
 			   
+			   
+			   $('#book').html('<h2 class="Job-subtitle"> Author: ' + book.volumeInfo.subtitle + '</h2>');
+			   $('#book').html('<h2 class="Job-subtitle"> Author: ' + book.volumeInfo.subtitle + '</h2>');
+			   $('#book').html('<h2 class="Job-subtitle"> Author: ' + book.volumeInfo.subtitle + '</h2>');
+			   $('#book').html('<h2 class="Job-subtitle"> Author: ' + book.volumeInfo.subtitle + '</h2>');
+			   $('#book').html('<h2 class="Job-subtitle"> Author: ' + book.volumeInfo.subtitle + '</h2>');
+
 
 		   });
 			
   
 	</script>
 	
-	<div id="listing-template"  class="container"></div>
+	<div id = "book" class="container"></div>
 	
 
 </body>

@@ -26,6 +26,11 @@
   font-size:xx-large;
 }
 
+.Job-subtitle {
+  font-family:'Roboto', sans-serif !important;
+  font-size:large;
+}
+
 .Job-info {
   font-family:'Roboto', sans-serif !important;
   font-size:medium;
