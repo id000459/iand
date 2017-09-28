@@ -46,10 +46,10 @@
 		   
 			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=startindex=1', function(book) {
 			
-			for (i in book.Books)
+			for (i in book.items)
 			
 			{
-				$('#book').html('<img  alt="HTML5 Icon" class="smlImage" src="' + book.Books[i].volumeInfo.imageLinks.thumbnail + '">');
+				$('#book').html('<img  alt="HTML5 Icon" class="smlImage" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '">');
 			
 			}
 			
