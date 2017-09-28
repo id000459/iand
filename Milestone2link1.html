@@ -43,7 +43,7 @@
       <script type = "text/javascript" language = "javascript">
 	  $(function(){
     $('#searchButton').click(function() {
-			var searchTitle = $("#searchTitle").text;
+			var searchTitle = $("#searchTitle").val();
 		   
 			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle, function(book) {
 			var bookHTML=""; 
