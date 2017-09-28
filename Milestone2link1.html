@@ -47,12 +47,10 @@
 			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=startindex=1', function(book) {
 			var bookHTML=""; 
 			for (i in book.items)
-			
-			{
-				var bookHTML+='<img  alt="HTML5 Icon" class="smlImage" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '">';
-			
-			}
-			
+				{
+					var bookHTML+='<img  alt="HTML5 Icon" class="smlImage" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '">';
+				
+				}
 			$('#Book').html(bookHTML);
 			
 		});
