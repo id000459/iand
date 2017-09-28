@@ -48,7 +48,7 @@
 			var bookHTML=""; 
 			for (i in book.items)
 				{
-					bookHTML+='<img  alt="HTML5 Icon" class="smlImage" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '">';
+					bookHTML+='<div><img  alt="HTML5 Icon" class="smlImage" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"></div>';
 				
 				}
 			$('#Book').html(bookHTML);
