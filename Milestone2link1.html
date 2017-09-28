@@ -41,10 +41,10 @@
 	<script type = "text/javascript" 
          src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script type = "text/javascript" language = "javascript">
-     $(document).ready(function() {
-		
+    $('#searchButton').click(function() {
+			var $searchTitle = $("#searchTitle")
 		   
-			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=maxresults=2', function(book) {
+			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:'+$searchTitle, function(book) {
 			var bookHTML=""; 
 			for (i in book.items)
 				{
@@ -58,6 +58,8 @@
   });
 	</script>
 	
+	<input id="searchButton" type="button" value="Search" />
+	<input id="searchTitle" type="text" value="" />
 	<div id = "book" class="container">
 	</div>
 	
