@@ -45,7 +45,7 @@
 		
 		   
 			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=startindex=1', function(book) {
-			$('#book').html('<img  alt="HTML5 Icon" class="smlImage" src="' + book.volumeInfo.imageLinks.thumbnail + '">');
+			$('#book').html('<img  alt="HTML5 Icon" class="smlImage" src="' + book.items.volumeInfo.imageLinks.thumbnail + '">');
 			$('#book').append('<h2 class="milestone1-title">' + book.volumeInfo.title + '</h2>');
 			$('#book').append('<h2 class="milestone1-subtitle">' + book.volumeInfo.subtitle + '</h2>');
 			$('#book').append('<h2 class="milestone1-subtitle">' + book.volumeInfo.authors + ', ' + book.volumeInfo.publishedDate + '</h2>');
