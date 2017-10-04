@@ -51,7 +51,15 @@
 	<script type = "text/javascript" 
          src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script type = "text/javascript" language = "javascript">
-
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return decodeURI(results[1]) || 0;
+    }
+}
     $(document).ready(function() {
 			var searchISBN = $.urlParam('ISBN');
 		   
