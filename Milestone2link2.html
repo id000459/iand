@@ -53,7 +53,7 @@
       <script type = "text/javascript" language = "javascript">
 
     $(document).ready(function() {
-			var searchISBN = getURLParameter('ISBN');;
+			var searchISBN = $.urlParam('ISBN');
 		   
 			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchISBN, function(book) {
 			var bookHTML='<table style="width:90%;">';
