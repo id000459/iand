@@ -46,12 +46,14 @@
 			var searchTitle = $("#searchTitle").val();
 		   
 			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle, function(book) {
-			var bookHTML=""; 
+			var bookHTML="<table>"; 
 			for (i in book.items)
 				{
-					bookHTML+='<div><img  alt="HTML5 Icon" class="smlImage" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"></div><br/>';
-				
+					bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"></td>';
+					
 				}
+				
+				bookHTML+="</table>"
 			$('#book').html(bookHTML);
 			
 		});
