@@ -56,7 +56,7 @@
 			var searchTitle = $("#searchTitle").val();
 		   
 			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle, function(book) {
-			var bookHTML="<table style="width:90%;">";
+			var bookHTML='<table style="width:90%;">';
 			for (i in book.items)
 				{
 					if (i % 5 == 0) {
