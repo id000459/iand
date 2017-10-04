@@ -54,13 +54,9 @@
 			var bookHTML="<table>";
 			for (i in book.items)
 				{
-					if (i % 5 = 0) {
-						bookHTML+="<tr>"
-					}
-					bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"></td>';
-					if (i % 5 = 0) {
-						bookHTML+="</tr>"
-					}
+					
+					bookHTML+='<tr><td><img  alt="HTML5 Icon" class="smlImage" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"></td></tr>';
+				
 				}
 				
 				bookHTML+="</table>"
