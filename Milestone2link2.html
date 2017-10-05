@@ -64,9 +64,9 @@
 			}
 		}
     $(document).ready(function() {
-			var searchISBN = GetURLParameter('ISBN');
+			var searchID = GetURLParameter('ID');
 		   
-			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchISBN, function(book) {
+			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchID, function(book) {
 			var bookHTML='<table style="width:90%;">';
 
 				bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="Milestone1.html"> ' + book.items[i].volumeInfo.title + '</a> </td>';
