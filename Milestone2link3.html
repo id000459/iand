@@ -116,7 +116,9 @@
 		});
 		$('#PrevButton').click(function() {
 			var searchTitle = $("#searchTitle").val();
+			if (searchIndex > 0) {
 		    searchIndex = searchIndex - 10
+			}
 			$.getJSON('https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes?&maxResults=10&startIndex=' + searchIndex, function(book) {
 				var bookHTML='<table style="width:90%;">';
 				for (i in book.items)
@@ -150,8 +152,9 @@
 
 	<div id = "book" class="container">
 	</div>
-	<input id="nextButton" type="button" value="Next Page" />
 	<input id="PrevButton" type="button" value="Prev Page" />
+	<input id="nextButton" type="button" value="Next Page" />
+
 
 	</div>
 
