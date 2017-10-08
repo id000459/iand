@@ -73,9 +73,13 @@
 				bookHTML+='<h3 class="milestone-info">Author: ' + book.items[0].volumeInfo.authors[0] + '</h2>'
 				bookHTML+='<h3 class="milestone-info">Publisher: ' + book.items[0].volumeInfo.publisher + ', ' + book.items[0].volumeInfo.publisheddate +'</h2>'
 
-
-				bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[0].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="' + book.items[0].volumeInfo.previewLink + '"> Preview </a> </td>';
-
+				try {
+					bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[0].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="' + book.items[0].volumeInfo.previewLink + '"> Preview </a> </td>';
+				}
+				catch(err)
+				{
+					bookHTML+='<td><img  alt=" " class="smlImage2" src="photos/NOIMG.png"> <br/> <a style="width:20%;" href="' + book.items[0].volumeInfo.previewLink + '"> Preview </a> </td>';
+				}
 				
 				bookHTML+="</table>"
 			$('#book').html(bookHTML);
