@@ -55,7 +55,7 @@
     $('#searchButton').click(function() {
 			var searchTitle = $("#searchTitle").val();
 		   
-			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle, function(book) {
+			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle, function(book) + '&maxResults=20' {
 			var bookHTML='<table style="width:90%;">';
 			for (i in book.items)
 				{
