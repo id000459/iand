@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#topnav {
+  background-color: #707070;
+
+}
+
+.logo {
+  background-color:
+}
+
+.nav-link {
+  color: #FFFFFF !important;
+  font-family:'Roboto', sans-serif !important;
+}
+
+.smlImage {
+  float:left;
+  margin: 0px 10px 0px 0px;
+  width: 8%;
+   height: 8%;
+}
+
+.milestone-title {
+  font-family:'Roboto', sans-serif !important;
+  font-size:xx-large;
+}
+
+.milestone-subtitle {
+  font-family:'Roboto', sans-serif !important;
+  font-size:large;
+}
+
+.milestone-info {
+  font-family:'Roboto', sans-serif !important;
+  font-size:medium;
+}
+
+.milestone-Einfo {
+  font-family:'Roboto', sans-serif !important;
+  font-size:small;
+}
+
+.searchTitle {
+  font-family:'Roboto', sans-serif !important;
+  font-size:large;
+}
+
+.searchBody {
+  font-family:'Roboto', sans-serif !important;
+  font-size:medium;
+}
+
+header, footer {
+    padding: 1em;
+    text-align: left;
+}
+
+
+.milestone-listing {
+
+  background-color: #dce1e8;
+  color: black;
+  position:relative;
+  -webkit-border-radius: 1.5625em;
+  padding: 2em 1em 1em 1em;
+  margin: 3% auto;
+  font-size: 1.5em;
+  position:relative;
+
+}
+
+.milestone-listing1 {
+
+  background-color: #dce1e8;
+  color: black;
+  position:relative;
+  -webkit-border-radius: 1.5625em;
+  padding: 1em 1em 3em 1em;
+  margin: 3% auto;
+  font-size: 1.5em;
+  position:relative;
+
+}
+
+.milestone-listing4 {
+
+  background-color: #dce1e8;
+  color: black;
+  position:relative;
+  -webkit-border-radius: 1.5625em;
+  padding: 1em 1em 4em 1em;
+  margin: 3% auto;
+  font-size: 1.5em;
+  position:relative;
+
+}
