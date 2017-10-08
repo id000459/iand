@@ -52,35 +52,36 @@
          src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script type = "text/javascript" language = "javascript">
 	  $(function(){
-    $('#searchButton').click(function() {
+		var searchIndex = 1
+		$('#searchButton').click(function() {
 			var searchTitle = $("#searchTitle").val();
-		   
-			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10', function(book) {
-			var bookHTML='<table style="width:90%;">';
-			for (i in book.items)
-				{
-					if (i % 5 == 0) {
-						bookHTML+="<tr>"
+		    
+			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
+				var bookHTML='<table style="width:90%;">';
+				for (i in book.items)
+					{
+						if (i % 5 == 0) {
+							bookHTML+="<tr>"
+						}
+						bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="Milestone2link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+						if (i % 10 == 0 && i != 0) {
+							bookHTML+="</tr>"
+						}
 					}
-					bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="Milestone2link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-					if (i % 10 == 0 && i != 0) {
-						bookHTML+="</tr>"
-					}
-				}
-				
-				bookHTML+="</table>"
-				bookHTML+='<button onclick="myFunction()">Next Page</button>'
-			$('#book').html(bookHTML);
+					
+					bookHTML+="</table>"
+				$('#book').html(bookHTML);
+			
+			});
 			
 		});
-			
-  });
-  });
+	});
 	</script>
 	
 	<input id="searchButton" type="button" value="Search" />
 	<input id="searchTitle" type="text" value="" />
 	<div id = "book" class="container">
+	<input id="nextButton" type="button" value="Next Page" />
 	</div>
 	
 
