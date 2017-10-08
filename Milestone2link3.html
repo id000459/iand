@@ -116,7 +116,7 @@
 		});
 		$('#PrevButton').click(function() {
 			var searchTitle = $("#searchTitle").val();
-			if (searchIndex > 0) {
+			if (searchIndex > 1) {
 		    searchIndex = searchIndex - 10
 			}
 			$.getJSON('https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes?&maxResults=10&startIndex=' + searchIndex, function(book) {
