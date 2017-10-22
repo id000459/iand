@@ -152,6 +152,12 @@
                         bookDetail.classList.add("detailWindowShow");
                         
 		});
+		$('#closeButton').click(function() {
+		
+                        bookDetail.classList.remove("detailWindowShow");
+                        bookDetail.classList.add("detailWindowHide");
+                        
+		});
 	});
 	</script>
 	
@@ -161,7 +167,8 @@
 	</div>
 	<input id="PrevButton" type="button" value="Prev Page" />
 	<input id="nextButton" type="button" value="Next Page" />
-<div id = "bookDetail" class="detailWindowHide">
+	<div id = "bookDetail" class="detailWindowHide">
+	<input id="closeButton" type="button" value="Close" />
 	fdsfsd
 	</div>
 	</div>

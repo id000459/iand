@@ -14,11 +14,14 @@
     width: 50%;
     height: 20%;
     position: fixed;
-    background-color: red;
     left: 25%;
     top: 10%;
     right: 0px;
 	visibility:visible;
+}
+
+#closeButton {
+	float:right;
 }
 
 .detailWindowHide {
@@ -26,7 +29,6 @@
     width: 50%;
     height: 20%;
     position: fixed;
-    background-color: red;
     left: 25%;
     top: 10%;
     right: 0px;
