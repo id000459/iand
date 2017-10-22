@@ -147,7 +147,7 @@
 			
 		});
 		$('#book').on("click", "a", function() {
-						$("#bookDetail").empty();
+						
                         bookDetail.classList.remove("detailWindowHide");
                         bookDetail.classList.add("detailWindowShow");
                         var searchID = this.id;
@@ -168,14 +168,13 @@
 							}
 							
 							bookHTML+="</table>"
-							$('#bookDetail').append(document.getElementById("closeButton"))
 							$('#bookDetail').append(bookHTML)
 						});
 						
 						
 		});
 		$('#closeButton').click(function() {
-		
+						$("#bookDetail").empty();
                         bookDetail.classList.remove("detailWindowShow");
                         bookDetail.classList.add("detailWindowHide");
                         
