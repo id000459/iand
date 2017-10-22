@@ -9,7 +9,19 @@
   background-color:
 }
 
-.detailWindow {
+.detailWindowShow {
+    z-index: 50;
+    width: 50%;
+    height: 20%;
+    position: fixed;
+    background-color: red;
+    left: 25%;
+    top: 10%;
+    right: 0px;
+	visibility:visible;
+}
+
+.detailWindowHide {
     z-index: 50;
     width: 50%;
     height: 20%;
