@@ -12,11 +12,11 @@
 .detailWindowShow {
     z-index: 50;
     width: 50%;
-    height: 20%;
+    height: auto;
     position: fixed;
     left: 25%;
 	opacity:1;
-	background-color:white;
+	background-color:gray;
     top: 10%;
     right: 0px;
 	visibility:visible;
