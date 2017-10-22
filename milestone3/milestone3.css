@@ -9,6 +9,12 @@
   background-color:
 }
 
+.detailWindow {
+  z-index:50;
+  width:20%;
+  height:20%;
+}
+
 .nav-link {
   color: #FFFFFF !important;
   font-family:'Roboto', sans-serif !important;
