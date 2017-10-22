@@ -65,11 +65,11 @@
 						}
 						
 						try {
-							bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+							bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
 						}
 						catch(err)
 						{
-							bookHTML+='<td><img  alt=" " class="smlImage2" src="photos/NOIMG.png"> <br/> <a style="width:20%;" href="' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+							bookHTML+='<td><img  alt=" " class="smlImage2" src="photos/NOIMG.png"> <br/> <a style="width:20%;" href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
 						}
 						
 						if (i % 10 == 0 && i != 0) {
