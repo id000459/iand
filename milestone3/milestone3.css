@@ -20,7 +20,7 @@
     top: 10%;
     right: 0px;
 	visibility:visible;
-	padding:1em;
+	margin:1em;
 }
 
 #closeButton {
@@ -36,7 +36,7 @@
     top: 10%;
     right: 0px;
 	visibility:hidden;
-	padding:1em;
+	margin:1em;
 
 }
 
