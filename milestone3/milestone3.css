@@ -71,6 +71,33 @@ div.tab button.active {
 
 }
 
+.detailWindowHide2 {
+    z-index: 50;
+    width: 50%;
+    height: 20%;
+    position: fixed;
+    left: 25%;
+    top: 10%;
+    right: 0px;
+	visibility:hidden;
+	padding:1em;
+
+}
+
+.detailWindowShow2 {
+    z-index: 50;
+    width: 50%;
+    height: auto;
+    position: fixed;
+    left: 25%;
+	opacity:1;
+	background-color:gray;
+    top: 10%;
+    right: 0px;
+	visibility:visible;
+	padding:1em;
+}
+
 
 .nav-link {
   color: #FFFFFF !important;

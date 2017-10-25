@@ -181,6 +181,8 @@
 			});
 		});
 		
+		document.getElementById("searchTab").click();
+		
 		function openTab(evt, tabName) {
 			// Declare all variables
 			var i, tabcontent, tablinks;
@@ -205,7 +207,7 @@
 		
 		
 		<div class="tab">
-		  <button class="tablinks" onclick="openTab(event, 'searchTab')">Search</button>
+		  <button class="tablinks" id="searchTab" onclick="openTab(event, 'searchTab')">Search</button>
 		  <button class="tablinks" onclick="openTab(event, 'bookshelfTab')">My Bookshelf</button>
 		</div>
 		
@@ -220,8 +222,10 @@
 			</div>
 		</div>
 		<div id="bookshelfTab" class="tabcontent">
-			<div id = "book" class="container"></div>
-			
+			<div id = "bookshelf" class="container"></div>
+			<div id = "bookDetail" class="detailWindowHide2">
+				<input id="closeButton" type="button" value="Close" />	
+			</div>
 		</div>
 	</div>
 	
