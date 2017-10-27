@@ -86,7 +86,7 @@
 				
 			});
 			
-			$('#button2').click(function() {
+			document.getElementsByClassName("pageButton").addEventListener("click", function(){
 				var searchTitle = $("#searchTitle").val();
 				searchIndex = searchIndex + 10
 				$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
