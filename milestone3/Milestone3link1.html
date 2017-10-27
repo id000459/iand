@@ -85,38 +85,7 @@
 				});
 				
 			});
-			
-			function pageClick(buttonNumber){
-				var searchTitle = $("#searchTitle").val();
-				searchIndex = buttonNumber * 10;
-				$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
-					var bookHTML='<table style="width:90%;">';
-					for (i in book.items)
-						{
-							if (i % 5 == 0) {
-								bookHTML+="<tr>"
-							}
-							
-							try {
-								bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="milestone3link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-							}
-							catch(err)
-							{
-								bookHTML+='<td><img  alt=" " class="smlImage2" src="photos/NOIMG.png"> <br/> <a style="width:20%;" href="milestone3link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-							}
-							
-							if (i % 10 == 0 && i != 0) {
-								bookHTML+="</tr>"
-							}
-						}
-						
-						bookHTML+="</table>"
-					$('#book').html(bookHTML);
-				
-				});
-				
-			});
-			
+
 			$('#book').on("click", "a", function() {
 							
 							$("#bookDetail2").empty();
@@ -174,7 +143,7 @@
 		});
 		
 		
-		function openTab(evt, tabName) {
+		function( openTab(evt, tabName) {
 			// Declare all variables
 			var i, tabcontent, tablinks;
 
@@ -193,7 +162,40 @@
 			// Show the current tab, and add an "active" class to the button that opened the tab
 			 document.getElementById(tabName).style.display = "block";
 			evt.currentTarget.className += " active";
-		} 
+		});
+		
+		
+		function(pageClick(buttonNumber){
+				var searchTitle = $("#searchTitle").val();
+				searchIndex = buttonNumber * 10;
+				$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
+					var bookHTML='<table style="width:90%;">';
+					for (i in book.items)
+						{
+							if (i % 5 == 0) {
+								bookHTML+="<tr>"
+							}
+							
+							try {
+								bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="milestone3link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+							}
+							catch(err)
+							{
+								bookHTML+='<td><img  alt=" " class="smlImage2" src="photos/NOIMG.png"> <br/> <a style="width:20%;" href="milestone3link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+							}
+							
+							if (i % 10 == 0 && i != 0) {
+								bookHTML+="</tr>"
+							}
+						}
+						
+						bookHTML+="</table>"
+					$('#book').html(bookHTML);
+				
+				});
+			
+		});
+		
 		</script>
 		
 		
