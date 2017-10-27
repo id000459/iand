@@ -143,7 +143,7 @@
 		});
 		
 		
-		function( openTab(evt, tabName) {
+		function openTab(evt, tabName) {
 			// Declare all variables
 			var i, tabcontent, tablinks;
 
@@ -162,10 +162,10 @@
 			// Show the current tab, and add an "active" class to the button that opened the tab
 			 document.getElementById(tabName).style.display = "block";
 			evt.currentTarget.className += " active";
-		});
+		};
 		
 		
-		function(pageClick(buttonNumber){
+		function pageClick(buttonNumber){
 				var searchTitle = $("#searchTitle").val();
 				searchIndex = buttonNumber * 10;
 				$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
@@ -194,7 +194,7 @@
 				
 				});
 			
-		});
+		};
 		
 		</script>
 		
