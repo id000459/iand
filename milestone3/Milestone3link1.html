@@ -148,11 +148,11 @@
 			});
 			$('#book').on("click", "a", function() {
 							
-							$("#bookDetail").empty();
+							$("#bookDetail2").empty();
 							bookDetail.classList.remove("detailWindowHide");
 							bookDetail.classList.add("detailWindowShow");
 							
-							$("#bookDetail").append('<input id="closeButton" type="button" value="Close" />	');
+			
 							var searchID = this.id;
 							
 							$.getJSON('https://www.googleapis.com/books/v1/volumes?q=id:' + searchID, function(book) {
@@ -171,13 +171,13 @@
 								}
 								
 								bookHTML+="</table>"
-								$('#bookDetail').append(bookHTML)
+								$('#bookDetail2').append(bookHTML)
 							});
 							
 							
 			});
 			$('#closeButton').click(function() {
-							$("#bookDetail").empty();
+							$("#bookDetail2").empty();
 							bookDetail.classList.remove("detailWindowShow");
 							bookDetail.classList.add("detailWindowHide");
 							
@@ -220,13 +220,15 @@
 			<input id="PrevButton" type="button" value="Prev Page" />
 			<input id="nextButton" type="button" value="Next Page" />
 			<div id = "bookDetail" class="detailWindowHide">
+				<div id = "bookDetail2" >
 					
+				</div>
 			</div>
 		</div>
 		<div id="bookshelfTab" class="tabcontent">
 			<div id = "bookshelf" class="container"></div>
 			<div id = "bookDetail2" class="detailWindowHide2">
-				
+				<input id="closeButton" type="button" value="Close" />	
 			</div>
 		</div>
 	</div>
