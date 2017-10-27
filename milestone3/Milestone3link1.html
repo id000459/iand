@@ -148,8 +148,10 @@
 			});
 			$('#book').on("click", "a", function() {
 							
+							$("#bookDetail").empty();
 							bookDetail.classList.remove("detailWindowHide");
 							bookDetail.classList.add("detailWindowShow");
+							$("#bookDetail").add(document.getElementById("closeButton"));
 							var searchID = this.id;
 							
 							$.getJSON('https://www.googleapis.com/books/v1/volumes?q=id:' + searchID, function(book) {
@@ -216,10 +218,8 @@
 			<div id = "book" class="container"></div>
 			<input id="PrevButton" type="button" value="Prev Page" />
 			<input id="nextButton" type="button" value="Next Page" />
-			<div id = "bookDetailPane" class="detailWindowHide">
+			<div id = "bookDetail" class="detailWindowHide">
 				<input id="closeButton" type="button" value="Close" />	
-				<div id = "bookDetail" class="detailWindowHide">
-				</div>
 			</div>
 		</div>
 		<div id="bookshelfTab" class="tabcontent">
