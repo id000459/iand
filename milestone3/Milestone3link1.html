@@ -150,12 +150,12 @@
 							
 							$("#bookDetail").empty();
 							bookDetail.classList.remove("detailWindowHide");
-							bookDetail.classList.add("detailWindowShow");							
+							bookDetail.classList.add("detailWindowShow");
+							$("#bookDetail").add(document.getElementById("#closeButton"));
 							var searchID = this.id;
 							
 							$.getJSON('https://www.googleapis.com/books/v1/volumes?q=id:' + searchID, function(book) {
-							var bookHTML='<input id="closeButton" type="button" value="Close" />';
-								bookHTML+='<table style="width:90%;">';
+							var bookHTML='<table style="width:90%;">';
 								bookHTML+='<h2 class="milestone-title">' + book.items[0].volumeInfo.title + '</h2>'
 								bookHTML+='<h2 class="milestone-subtitle">' + book.items[0].volumeInfo.subtitle + '</h2>'
 								bookHTML+='<h3 class="milestone-info">Author: ' + book.items[0].volumeInfo.authors[0] + '</h2>'
@@ -225,7 +225,7 @@
 		<div id="bookshelfTab" class="tabcontent">
 			<div id = "bookshelf" class="container"></div>
 			<div id = "bookDetail2" class="detailWindowHide2">
-					
+				<input id="closeButton" type="button" value="Close" />	
 			</div>
 		</div>
 	</div>
