@@ -58,6 +58,14 @@ div.tab button.active {
 	float:right;
 }
 
+.pageNumberHide {
+	visibility:hidden;
+}
+
+.pageNumberShow {
+	visibility:visible;
+}
+
 .detailWindowHide {
     z-index: 50;
     width: 50%;
