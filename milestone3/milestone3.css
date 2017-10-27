@@ -58,6 +58,10 @@ div.tab button.active {
 	float:right;
 }
 
+.pageButton {
+	
+}
+
 .pageNumberHide {
 	visibility:hidden;
 }
