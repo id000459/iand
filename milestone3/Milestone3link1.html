@@ -178,6 +178,13 @@
 									bookHTML+='<h3 class="milestone-info">Price: Not Available</h3>';
 								}
 								
+								if (book.items[0].accessInfo.pdf.isavailable = "true") {
+									bookHTML+='<h3 class="milestone-info">Price:' + book.items[0].saleInfo.listPrice.amount + ' ' + book.items[0].saleInfo.listPrice.currencyCode + '</h3>';
+								}
+								else
+								{
+									bookHTML+='<h3 class="milestone-info">Price: Not Available</h3>';
+								}
 								
 								bookHTML+="</table>"
 								$('#bookDetail2').append(bookHTML)
