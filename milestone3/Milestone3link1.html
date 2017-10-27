@@ -151,7 +151,8 @@
 							$("#bookDetail").empty();
 							bookDetail.classList.remove("detailWindowHide");
 							bookDetail.classList.add("detailWindowShow");
-							$("#bookDetail").add(document.getElementById("#closeButton"));
+							var closeBut = document.getElementById("#closeButton");
+							$("#bookDetail").add(closeBut);
 							var searchID = this.id;
 							
 							$.getJSON('https://www.googleapis.com/books/v1/volumes?q=id:' + searchID, function(book) {
