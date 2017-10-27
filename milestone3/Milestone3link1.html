@@ -163,12 +163,14 @@
 								bookHTML+='<h3 class="milestone-info">Publisher: ' + book.items[0].volumeInfo.publisher + ', ' + book.items[0].volumeInfo.publisheddate +'</h2>'
 
 								try {
-									bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[0].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="' + book.items[0].volumeInfo.previewLink + '"> Preview </a> </td>';
+									bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[0].volumeInfo.imageLinks.thumbnail + '"></td>';
 								}
 								catch(err)
 								{
-									bookHTML+='<td><img  alt=" " class="smlImage2" src="photos/NOIMG.png"> <br/> <a style="width:20%;" href="' + book.items[0].volumeInfo.previewLink + '"> Preview </a> </td>';
+									bookHTML+='<td><img  alt=" " class="smlImage2" src="photos/NOIMG.png"> <br/> </td>';
 								}
+								
+								bookHTML+='<td>Price:' + book.items[0].saleInfo.listPrice.amount + ' ' + book.items[0].saleInfo.listPrice.currencyCode + '</td>';
 								
 								bookHTML+="</table>"
 								$('#bookDetail2').append(bookHTML)
