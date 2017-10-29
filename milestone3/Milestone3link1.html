@@ -100,8 +100,12 @@
 							var bookHTML='<table style="width:90%;">';
 								bookHTML+='<h2 class="milestone-title">' + book.items[0].volumeInfo.title + '</h2>'
 								bookHTML+='<h2 class="milestone-subtitle">' + book.items[0].volumeInfo.subtitle + '</h2>'
-								if (book.items[0].volumeInfo.authors[0] != "undefined") {
+								try {
 									bookHTML+='<h3 class="milestone-info">Author: ' + book.items[0].volumeInfo.authors[0] + '</h3>'
+								}
+								catch(err)
+								{
+								
 								}
 								bookHTML+='<h3 class="milestone-info">Publisher: ' + book.items[0].volumeInfo.publisher + ', ' + book.items[0].volumeInfo.publisheddate +'</h3>'
 
@@ -121,10 +125,10 @@
 									bookHTML+='<h3 class="milestone-info">Price: Not Available</h3>';
 								}
 								
-								if (book.items[0].accessInfo.pdf.isavailable = "true") {
+								try {
 									bookHTML+='<h3 class="milestone-info"><a href="' + book.items[0].accessInfo.pdf.acsTokenLink + '" >PDF Download</a></h3>';
 								}
-								else
+								catch(err)
 								{
 									bookHTML+='<h3 class="milestone-info">PDF Download: Not Available</h3>';
 								}
