@@ -55,6 +55,7 @@
 			var searchIndex = 1 
 			$('#searchButton').click(function() {
 				var searchTitle = $("#searchTitle").val();
+				$("#book").empty();
 				pageNumberContainer.classList.remove("pageNumberHide");
 				pageNumberContainer.classList.add("pageNumberShow");
 							
@@ -168,6 +169,7 @@
 		function pageClick(buttonNumber){
 				var searchTitle = $("#searchTitle").val();
 				searchIndex = buttonNumber * 10;
+				$("#book").empty();
 				$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
 					var bookHTML='<table style="width:90%;">';
 					for (i in book.items)
@@ -225,9 +227,7 @@
 			
 			<div id = "bookDetail" class="detailWindowHide">
 			<input id="closeButton" type="button" value="Close" />	
-				<div id = "bookDetail2" >
-					
-				</div>
+				<div id = "bookDetail2" ></div>
 			</div>
 		</div>
 		<div id="bookshelfTab" class="tabcontent">
