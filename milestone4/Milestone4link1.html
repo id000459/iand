@@ -22,11 +22,9 @@
 		});
 		function handleResponse(json){
 			var resultHTML = "";
-			for (i in json.items)
-			{
-				var cover = json.items[i].country;
-				resultHTML += country;
-			}
+
+				resultHTML += json.city;
+
 			$("#input").html(resultHTML);
 		}
 		
