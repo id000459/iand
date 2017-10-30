@@ -16,8 +16,9 @@
 		  $(function(){
 
 			$(document).ready(function() {
-				var service_point="http://ziptasticapi.com/93118";
-				$.getScript(service_point+"&callback=handleResponse");
+				var service_point="https://www.googleapis.com/books/v1/volumes";
+				var parameter="?q="+$("#txtTerm").val();
+				$.getScript(service_point+parameter+"&callback=handleResponse");
 			});
 
 		});
