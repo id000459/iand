@@ -153,7 +153,7 @@
 			});
 		});
 		
-		function(bookShelfDisplay) {
+		function bookShelfDisplay {
 			$("#bookshelf").empty();
 
 			$.getJSON('https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes', function(book) {
@@ -203,7 +203,7 @@
 			evt.currentTarget.className += " active";
 			
 			if (tabName = "bookshelfTab") {
-			
+				bookShelfDisplay();
 			}
 		};
 		
