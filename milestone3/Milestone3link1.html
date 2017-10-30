@@ -207,9 +207,16 @@
 			
 			
 			$('#closeButton').click(function() {
-							$("#bookDetail").empty();
+							$("#bookPane").empty();
 							bookDetail.classList.remove("detailWindowShow");
 							bookDetail.classList.add("detailWindowHide");
+							
+			});
+			
+			$('#closeButton2').click(function() {
+							$("#bookPane2").empty();
+							bookDetail2.classList.remove("detailWindowShow");
+							bookDetail2.classList.add("detailWindowHide");
 							
 			});
 		});
