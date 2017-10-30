@@ -82,6 +82,7 @@ div.tab button.active {
 #bookDetail2 {
 	-webkit-transition: width 4s, height 4s; /* Safari */
     transition: width 2s, height 4s;
+	-webkit-transition-timing-function: linear;
 }
 
 #pageNumberContainer{
