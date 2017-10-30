@@ -153,58 +153,90 @@
 			});
 		});
 		
+		function(bookShelfDisplay) {
+			$("#bookshelf").empty();
+
+			$.getJSON('https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes', function(book) {
+				var bookHTML='<table style="width:90%;">';
+				for (i in book.items)
+					{
+						if (i % 5 == 0) {
+							bookHTML+="<tr>"
+						}
+						
+						try {
+							bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+						}
+						catch(err)
+						{
+							bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+						}
+						
+						if (i % 10 == 0 && i != 0) {
+							bookHTML+="</tr>"
+						}
+					}
+					
+					bookHTML+="</table>"
+				$('#bookshelf').append(bookHTML);
+			
+			});
+			
+		});
+		
 		
 		function openTab(evt, tabName) {
-			// Declare all variables
 			var i, tabcontent, tablinks;
-
-			// Get all elements with class="tabcontent" and hide them
 			tabcontent = document.getElementsByClassName("tabcontent");
+			
 			for (i = 0; i < tabcontent.length; i++) {
 				tabcontent[i].style.display = "none";
 			}
 
-			// Get all elements with class="tablinks" and remove the class "active"
-			 tablinks = document.getElementsByClassName("tablinks");
+			tablinks = document.getElementsByClassName("tablinks");
+			
 			for (i = 0; i < tablinks.length; i++) {
 				tablinks[i].className = tablinks[i].className.replace(" active", "");
 			}
 
-			// Show the current tab, and add an "active" class to the button that opened the tab
-			 document.getElementById(tabName).style.display = "block";
+     		document.getElementById(tabName).style.display = "block";
 			evt.currentTarget.className += " active";
+			
+			if (tabName = "bookshelfTab") {
+			
+			}
 		};
 		
 		
 		function pageClick(buttonNumber){
-				var searchTitle = $("#searchTitle").val();
-				searchIndex = buttonNumber * 10;
-				$("#book").empty();
-				$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
-					var bookHTML='<table style="width:90%;">';
-					for (i in book.items)
-						{
-							if (i % 5 == 0) {
-								bookHTML+="<tr>"
-							}
-							
-							try {
-								bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="milestone3link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-							}
-							catch(err)
-							{
-								bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> <a style="width:20%;" href="milestone3link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-							}
-							
-							if (i % 10 == 0 && i != 0) {
-								bookHTML+="</tr>"
-							}
+			var searchTitle = $("#searchTitle").val();
+			searchIndex = buttonNumber * 10;
+			$("#book").empty();
+			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
+				var bookHTML='<table style="width:90%;">';
+				for (i in book.items)
+					{
+						if (i % 5 == 0) {
+							bookHTML+="<tr>"
 						}
 						
-						bookHTML+="</table>"					
-					$('#book').append(bookHTML);
-				
-				});
+						try {
+							bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="milestone3link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+						}
+						catch(err)
+						{
+							bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> <a style="width:20%;" href="milestone3link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+						}
+						
+						if (i % 10 == 0 && i != 0) {
+							bookHTML+="</tr>"
+						}
+					}
+					
+					bookHTML+="</table>"					
+				$('#book').append(bookHTML);
+			
+			});
 			
 		};
 		
@@ -232,11 +264,9 @@
 				<input id="button10" onClick="pageClick(this.value)" class="pageButton" type="button" value="10" /> 
 			</div>
 			<div id = "book" class="container"></div>
-			
-			
-			
+
 			<div id = "bookDetail" class="detailWindowHide">
-			<input id="closeButton" type="button" value="Close" />	
+				<input id="closeButton" type="button" value="Close" />	
 				<div id = "bookDetail2" ></div>
 			</div>
 		</div>
