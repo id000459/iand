@@ -64,12 +64,19 @@ div.tab button.active {
 }
 
 .closeButton:hover {
-	border: 2px solid white;
+	border: 1px solid white;
 }
 
 
 .pageButton {
-	
+	background:none;
+	background-color:none;
+	color:white;
+	border:none;
+}
+
+.pageButton:hover {
+	border: 1px solid blue;
 }
 
 #pageNumberContainer{
