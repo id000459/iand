@@ -67,6 +67,10 @@ div.tab button.active {
 	
 }
 
+#pageNumberContainer{
+	float:right;
+	margin-left:1em;
+}
 .pageNumberHide {
 	visibility:hidden;
 }
