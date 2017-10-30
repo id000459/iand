@@ -23,7 +23,7 @@
 		function handleResponse(json){
 			var resultHTML = "";
 
-				resultHTML += json.city;
+				resultHTML += json.city + "," + json.state;
 
 			$("#input").html(resultHTML);
 		}
