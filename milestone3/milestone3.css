@@ -15,11 +15,6 @@
     to {opacity: 1;}
 }
 
-div {
-    -webkit-transition-delay: 1s; /* Safari */
-    transition-delay: 1s;
-}
-
 div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
@@ -70,8 +65,6 @@ div.tab button.active {
     right: 0px;
 	visibility:visible;
 	padding:1em;
-	-webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s; 
 }
 
 .closeButton {
@@ -96,11 +89,6 @@ div.tab button.active {
 
 .pageButton:hover {
 	border: 1px solid grey;
-}
-
-#bookDetail2 {
-	-webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s; 
 }
 
 #pageNumberContainer{
