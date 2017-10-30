@@ -5,6 +5,11 @@
 
 }
 
+div {
+    -webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
+}
+
 div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
