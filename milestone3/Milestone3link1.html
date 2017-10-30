@@ -51,7 +51,7 @@
 		<script type = "text/javascript" 
 			 src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		  <script type = "text/javascript" language = "javascript">
-		  $(function(){
+
 			var searchIndex = 1 
 			$('#searchButton').click(function() {
 				var searchTitle = $("#searchTitle").val();
@@ -87,7 +87,7 @@
 				
 			});
 
-			$('#book').on("click", "a", function() {
+		$('#book').on("click", "a", function() {
 							
 							$("#bookDetail2").empty();
 							bookDetail.classList.remove("detailWindowHide");
@@ -145,13 +145,14 @@
 							
 							
 			});
-			$('#closeButton').click(function() {
+		
+		$('#closeButton').click(function() {
 							$("#bookDetail2").empty();
 							bookDetail.classList.remove("detailWindowShow");
 							bookDetail.classList.add("detailWindowHide");
 							
 			});
-		});
+		
 		
 		function bookShelfDisplay() {
 			$("#bookshelf").empty();
@@ -221,12 +222,12 @@
 						}
 						
 						try {
-							bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" href="milestone3link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-						}
-						catch(err)
-						{
-							bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> <a style="width:20%;" href="milestone3link2.html?ID=' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-						}
+								bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+							}
+							catch(err)
+							{
+								bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+							}
 						
 						if (i % 10 == 0 && i != 0) {
 							bookHTML+="</tr>"
