@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#topnav {
+  background-color: #707070;
+
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+div.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	height:auto;
+	-webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; 
+} 
+
+.logo {
+  background-color:
+}
+
+.detailWindowShow {
+    z-index: 50;
+    width: 50%;
+    height: auto;
+    position: fixed;
+    left: 25%;
+	opacity:1;
+	background-color:gray;
+    top: 10%;
+    right: 0px;
+	visibility:visible;
+	padding:1em;
+}
+
+.closeButton {
+	float:right;
+	background:none;
+	background-color:none;
+	color:white;
+	border:none;
+}
+
+.closeButton:hover {
+	border: 1px solid white;
+}
+
+
+.pageButton {
+	background:none;
+	background-color:none;
+	color:black;
+	border:none;
+}
+
+.pageButton:hover {
+	border: 1px solid grey;
+}
+
+#pageNumberContainer{
+	float:right;
+	margin-left:1em;
+}
+.pageNumberHide {
+	visibility:hidden;
+}
+
+.pageNumberShow {
+	visibility:visible;
+}
+
+.detailWindowHide {
+    z-index: 50;
+    width: 50%;
+    height: 20%;
+    position: fixed;
+    left: 25%;
+    top: 10%;
+    right: 0px;
+	visibility:hidden;
+	padding:1em;
+
+}
+
+.detailWindowHide2 {
+    z-index: 50;
+    width: 50%;
+    height: 20%;
+    position: fixed;
+    left: 25%;
+    top: 10%;
+    right: 0px;
+	visibility:hidden;
+	padding:1em;
+
+}
+
+.detailWindowShow2 {
+    z-index: 50;
+    width: 50%;
+    height: auto;
+    position: fixed;
+    left: 25%;
+	opacity:1;
+	background-color:gray;
+    top: 10%;
+    right: 0px;
+	visibility:visible;
+	padding:1em;
+	
+}
+
+
+.nav-link {
+  color: #FFFFFF !important;
+  font-family:'Roboto', sans-serif !important;
+}
+
+.smlImage {
+  float:left;
+  margin: 0px 10px 0px 0px;
+  width: 8%;
+   height: 8%;
+}
+
+.milestone-title {
+  font-family:'Roboto', sans-serif !important;
+  font-size:xx-large;
+}
+
+.milestone-subtitle {
+  font-family:'Roboto', sans-serif !important;
+  font-size:large;
+}
+
+.milestone-info {
+  font-family:'Roboto', sans-serif !important;
+  font-size:medium;
+}
+
+.milestone-Einfo {
+  font-family:'Roboto', sans-serif !important;
+  font-size:small;
+}
+
+.searchTitle {
+  font-family:'Roboto', sans-serif !important;
+  font-size:large;
+}
+
+.searchBody {
+  font-family:'Roboto', sans-serif !important;
+  font-size:medium;
+}
+
+header, footer {
+    padding: 1em;
+    text-align: left;
+}
+
+
+.milestone-listing {
+
+  background-color: #dce1e8;
+  color: black;
+  position:relative;
+  -webkit-border-radius: 1.5625em;
+  padding: 2em 1em 1em 1em;
+  margin: 3% auto;
+  font-size: 1.5em;
+  position:relative;
+
+}
+
+.milestone-listing1 {
+
+  background-color: #dce1e8;
+  color: black;
+  position:relative;
+  -webkit-border-radius: 1.5625em;
+  padding: 1em 1em 3em 1em;
+  margin: 3% auto;
+  font-size: 1.5em;
+  position:relative;
+
+}
+
+.milestone-listing4 {
+
+  background-color: #dce1e8;
+  color: black;
+  position:relative;
+  -webkit-border-radius: 1.5625em;
+  padding: 1em 1em 4em 1em;
+  margin: 3% auto;
+  font-size: 1.5em;
+  position:relative;
+
+}
