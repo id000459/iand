@@ -129,8 +129,8 @@ div.tab button.active {
     right: 0px;
 	visibility:visible;
 	padding:1em;
-	-webkit-transition: width 2s, height 4s; /* Safari */
-    transition: width 2s, height 4s;
+	-webkit-transition: width 10s, height 10s; /* Safari */
+    transition: width 10s, height 10s;
 }
 
 
