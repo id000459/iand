@@ -20,17 +20,17 @@
 				$.getScript(service_point+"&callback=handleResponse");
 			});
 
-
-			function handleResponse(json){
-				var resultHTML = "";
-				for (i in json.items)
-				{
-					var cover = json.items[i].country;
-					resultHTML += country;
-				}
-				$("#input").html(resultHTML);
-			}
 		});
+		function handleResponse(json){
+			var resultHTML = "";
+			for (i in json.items)
+			{
+				var cover = json.items[i].country;
+				resultHTML += country;
+			}
+			$("#input").html(resultHTML);
+		}
+		
 		
 
 		
