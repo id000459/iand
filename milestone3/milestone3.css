@@ -55,7 +55,7 @@ div.tab button.active {
 	padding:1em;
 }
 
-#closeButton {
+.closeButton {
 	float:right;
 }
 
