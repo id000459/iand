@@ -71,12 +71,12 @@ div.tab button.active {
 .pageButton {
 	background:none;
 	background-color:none;
-	color:white;
+	color:black;
 	border:none;
 }
 
 .pageButton:hover {
-	border: 1px solid blue;
+	border: 1px solid grey;
 }
 
 #pageNumberContainer{
