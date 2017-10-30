@@ -146,64 +146,6 @@
 							
 			});
 			
-			$('#bookshelf').on("click", "a", function() {
-							
-							$("#bookDetail2").empty();
-							bookDetail.classList.remove("detailWindowHide");
-							bookDetail.classList.add("detailWindowShow");
-							
-			
-							var searchID = this.id;
-							
-							$.getJSON('https://www.googleapis.com/books/v1/volumes?q=id:' + searchID, function(book) {
-							var bookHTML='<table style="width:90%;">';
-								bookHTML+='<h2 class="milestone-title">' + book.items[0].volumeInfo.title + '</h2>'
-								try {
-									bookHTML+='<h2 class="milestone-subtitle">' + book.items[0].volumeInfo.subtitle + '</h2>'
-								}
-								catch(err)
-								{
-									bookHTML+='<h2 class="milestone-subtitle">Unkown</h2>'
-								}
-								try {
-									bookHTML+='<h3 class="milestone-info">Author: ' + book.items[0].volumeInfo.authors[0] + '</h3>'
-								}
-								catch(err)
-								{
-									bookHTML+='<h3 class="milestone-info">Author: Unkown</h3>'
-								}
-								bookHTML+='<h3 class="milestone-info">Publisher: ' + book.items[0].volumeInfo.publisher + ', ' + book.items[0].volumeInfo.publisheddate +'</h3>'
-
-								try {
-									bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[0].volumeInfo.imageLinks.thumbnail + '"></td>';
-								}
-								catch(err)
-								{
-									bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> </td>';
-								}
-								
-								try {
-									bookHTML+='<h3 class="milestone-info">Price:' + book.items[0].saleInfo.listPrice.amount + ' ' + book.items[0].saleInfo.listPrice.currencyCode + '</h3>';
-								}
-								catch(err)
-								{
-									bookHTML+='<h3 class="milestone-info">Price: Not Available</h3>';
-								}
-								
-								try {
-									bookHTML+='<h3 class="milestone-info"><a href="' + book.items[0].accessInfo.pdf.acsTokenLink + '" >PDF Download</a></h3>';
-								}
-								catch(err)
-								{
-									bookHTML+='<h3 class="milestone-info">PDF Download: Not Available</h3>';
-								}
-								
-								bookHTML+="</table>"
-								$('#bookDetail2').append(bookHTML)
-							});
-							
-							
-			});
 			
 			$('#closeButton').click(function() {
 							$("#bookDetail2").empty();
