@@ -207,7 +207,7 @@
 			
 			
 			$('#closeButton').click(function() {
-							$("#bookDetail2").empty();
+							$("#bookDetail").empty();
 							bookDetail.classList.remove("detailWindowShow");
 							bookDetail.classList.add("detailWindowHide");
 							
@@ -332,8 +332,9 @@
 			</div>
 		</div>
 		<div id="bookshelfTab" class="tabcontent">
-		
-			<div id = "bookshelf" class="detailWindowHide">
+			
+			<div id = "bookshelf" class="container"></div>
+			<div id = "bookDetail2" class="detailWindowHide">
 				<input id="closeButton2" type="button" value="Close" />	
 				<div id = "bookPane2" ></div>
 			</div>
