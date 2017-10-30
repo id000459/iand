@@ -18,9 +18,7 @@
 			$(document).ready(function() {
 				$.getScript("http://ziptasticapi.com/93118?q=&callback=handleResponse");
 			});
-
-		});
-		function handleResponse(json){
+			function handleResponse(json){
 			var resultHTML = "";
 			for (i in json.items)
 			{
@@ -28,7 +26,9 @@
 				resultHTML += country;
 			}
 			$("#input").html(resultHTML);
-		}
+			}
+		
+		});
 		
 		
 
