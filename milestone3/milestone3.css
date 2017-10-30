@@ -63,6 +63,11 @@ div.tab button.active {
 	border:none;
 }
 
+.closeButton:hover {
+	border:1px white;
+}
+
+
 .pageButton {
 	
 }
