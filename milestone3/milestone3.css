@@ -58,6 +58,8 @@ div.tab button.active {
 .closeButton {
 	float:right;
 	background:none;
+	background-color:none;
+	color:white;
 }
 
 .pageButton {
