@@ -79,6 +79,11 @@ div.tab button.active {
 	border: 1px solid grey;
 }
 
+#bookDetail2 {
+	-webkit-transition: width 4s, height 4s; /* Safari */
+    transition: width 2s, height 4s;
+}
+
 #pageNumberContainer{
 	float:right;
 	margin-left:1em;
@@ -129,8 +134,7 @@ div.tab button.active {
     right: 0px;
 	visibility:visible;
 	padding:1em;
-	-webkit-transition: width 10s, height 10s; /* Safari */
-    transition: width 10s, height 10s;
+	
 }
 
 
