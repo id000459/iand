@@ -156,7 +156,7 @@
 		});
 		
 		function bookShelfDisplay() {
-			$("#bookshelf").empty();
+			$("#book").empty();
 
 			$.getJSON('https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes', function(book) {
 				var bookHTML='<table style="width:90%;">';
@@ -180,7 +180,7 @@
 					}
 					
 					bookHTML+="</table>"
-				$('#bookshelf').append(bookHTML);
+				$('#book').append(bookHTML);
 			
 			});
 			
