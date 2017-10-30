@@ -51,7 +51,7 @@ div.tab button.active {
     border-top: none;
 	height:auto;
 	-webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    animation: fadeEffect 1s; 
 } 
 
 .logo {
@@ -97,9 +97,8 @@ div.tab button.active {
 }
 
 #bookDetail2 {
-	-webkit-transition: width 4s, height 4s; /* Safari */
-    transition: width 2s, height 4s;
-	-webkit-transition-timing-function: linear;
+	-webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; 
 }
 
 #pageNumberContainer{
