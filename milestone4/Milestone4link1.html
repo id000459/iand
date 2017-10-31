@@ -12,32 +12,26 @@
 
 	
 
-		  <script type = "text/javascript" language = "javascript">
-		  $(function(){
+	<script type = "text/javascript" language = "javascript">
+	$(function(){
 
-			$(document).ready(function() {
-				$.getScript("http://ziptasticapi.com/93118?q=&callback=handleResponse");
-			});
-
+		$(document).ready(function() {
+			$.getScript("http://ziptasticapi.com/93118?q=&callback=handleResponse");
 		});
-		function handleResponse(json){
-			var resultHTML = "";
 
-				resultHTML += json.city + "," + json.state;
+	});
+	function handleResponse(json){
+		var resultHTML = "";
 
-			$("#input").html(resultHTML);
-		}
-		
-		
+			resultHTML += json.city + "," + json.state;
 
-		
-		</script>
-		
-		
+		$("#input").html(resultHTML);
+	}
+	</script>
+			
+	<div id="input" class="tabcontent">
 
-		<div id="input" class="tabcontent">
-
-		</div>
+	</div>
 
 	</div>
 	
