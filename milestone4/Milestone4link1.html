@@ -168,21 +168,19 @@
 				 $.getJSON(servicePoint, function (jsonData)
 				 {
 					$("#booklist").html("");					
-					var template = $('#' + templatetype + ').html();
+					var template = $('#booklisttemplate').html();
 					var html = Mustache.render(template, jsonData);
 					$("#booklist").html(html);
 			   
-					
-
-					$(".booklistitemheader").on('click', function () 
+					 $(".booklistitemheader").on('click', function () 
 					 { 
 						div=$(this).next(); // get the book details div
 						getBookDetails($(this).attr("data-bookid"), div);
-					 });						 
+					 });					 				 
 					 
 				 });				 
 				 
-			 }			 
+			 }				 
 
 			 function getBookDetails(bookid, div)
 			 {
@@ -196,7 +194,9 @@
 					$(div).slideToggle();
 				 });
 			 }
-			 function openTab(evt, tabName) {
+			 
+			 function openTab(evt, tabName) 
+			 {
 				var i, tabcontent, tablinks;
 				tabcontent = document.getElementsByClassName("tabcontent");
 				
@@ -213,8 +213,7 @@
 				document.getElementById(tabName).style.display = "block";
 				evt.currentTarget.className += " active";
 				
-				
-			};
+			 };
 		</script>  
 		
 		
