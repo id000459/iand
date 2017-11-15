@@ -9,16 +9,17 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
 	<script id="booklisttemplate" type="text/template">
-		<div id="box">
 		{{#items}}
-		
+		<div class='booklistitem' id="{{id}}">
+			<div class="booklistitemheader" data-bookid="{{id}}">
 			{{#volumeInfo}}
-			<div id='{{id}}' class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}</div>
+			<img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}
 			
 			{{/volumeInfo}}
-				
-		{{/items}}
+			</div>
+			<div class='bookdetails' style='display:none'></div>
 		</div>
+		{{/items}}
 	</script>
 	<script id="bookdetailstemplate" type="text/template">
 		<div class='book'>
@@ -33,14 +34,16 @@
 		</div>
 	</script>
 	<script id="bookgridtemplate" type="text/template">
-		{{#items}}
 		<div id="box">
+		{{#items}}
+		
 			{{#volumeInfo}}
 			<div id='{{id}}' class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}</div>
 			
 			{{/volumeInfo}}
-		</div>		
+				
 		{{/items}}
+		</div>
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -206,6 +209,8 @@
 
 			<input type="text" id="searchTerm" value="Data Visualization" />
 			<input type="button" id="btnSearch" value="Search" />
+			<input type="button" id="btnList" value="List View" style="visibility:hidden;" />
+			<input type="button" id="btnGrid" value="Grid View" style="visibility:hidden;" />
 			<div id = "booklist" style="margin-top:1em;" class="container"></div>
 			<div id = "bookDetail" class="detailWindowHide">
 				<input id="closeButton" class="closeButton" type="button" value="X" />	
