@@ -11,7 +11,12 @@
 	<script id="booklisttemplate" type="text/template">
 		{{#items}}
 		<div class='booklistitem' id="{{ID}}">
-			<div class="booklistitemheader" data-bookid="{{ID}}"><img src='{{Image}}'  width=50 /> {{title}}</div>
+			<div class="booklistitemheader" data-bookid="{{ID}}">
+			{{#volumeInfo}}
+			<img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}
+			
+			{{/volumeInfo}}
+			</div>
 			<div class='bookdetails' style='display:none'></div>
 		</div>
 		{{/items}}
