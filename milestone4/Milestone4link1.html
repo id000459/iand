@@ -210,7 +210,7 @@
 			 {
 				 $("#bookdetails").html("Working ..."+"<img src='http://vignette1.wikia.nocookie.net/wikiality/images/7/70/ProgressBar.gif/revision/latest?cb=20070406024457'>");
 
-				 $.getJSON("https://www.googleapis.com/books/v1/volumes?q=id:" + bookid, function (jsonData)
+				 $.getJSON("https://www.googleapis.com/books/v1/volumes/" + bookid, function (jsonData)
 				 {
 					var template = $('#booklistdetailstemplate').html();
 					var html = Mustache.render(template, jsonData);
@@ -223,7 +223,7 @@
 			 {
 				 $("#bookDetail").html("Working ..."+"<img src='http://vignette1.wikia.nocookie.net/wikiality/images/7/70/ProgressBar.gif/revision/latest?cb=20070406024457'>");
 				 //we can use AJAX here because this service provider allows cross origin request
-				 $.getJSON("https://www.googleapis.com/books/v1/volumes?q=id:" + bookid, function (jsonData)
+				 $.getJSON("https://www.googleapis.com/books/v1/volumes/" + bookid, function (jsonData)
 				 {
 					$("#bookDetail").html("");
 					var template = $('#bookgriddetailstemplate').html();
