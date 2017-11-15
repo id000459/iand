@@ -160,11 +160,7 @@
 					var html = Mustache.render(template, jsonData);
 					$("#booklist").html(html);
 			   
-					 $(".booklistitemheader").on('click', function () 
-					 { 
-						div=$(this).next(); // get the book details div
-						getBookDetails($(this).attr("data-bookid"), div);
-					 });	
+					 
 
 					 $("#btnGrid").click(function ()
 					 { 
@@ -180,7 +176,13 @@
 						var template = $('#booklisttemplate').html();
 						var html = Mustache.render(template, jsonData);
 						$("#booklist").html(html);
-					 });					 
+					 });	
+
+					$(".booklistitemheader").on('click', function () 
+					 { 
+						div=$(this).next(); // get the book details div
+						getBookDetails($(this).attr("data-bookid"), div);
+					 });						 
 					 
 				 });				 
 				 
