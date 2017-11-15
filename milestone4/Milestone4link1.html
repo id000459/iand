@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="milestone4.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<script src="../js/handlebars-v4.0.10.js" type="text/javascript"></script>    
@@ -20,6 +21,37 @@
 			width:100%;
 		
 		}
+		
+		
+		#header
+	{
+		background-color: #97E300;
+		position:fixed; top: 0; left: 0px;
+		width: 100%;
+		padding: 5px;
+	}
+	#maincontent
+	{
+		margin-top:120px;
+	}
+    .booklistitem
+	{
+		border: thin solid gray;
+		background-color: #F2FFE5;
+		margin:1px;
+	}
+	.booklistitemheader
+	{
+		cursor: pointer;
+	}
+	.booklistitemheader:hover
+	{		background-color: #8CFF1A;	}
+	.book
+	{	border: thin solid #66ddee; 
+		padding: 10px;
+		margin:10px;
+		background-color: white;
+	}
 	</style>
 </head>
 
@@ -48,269 +80,49 @@
 
 	
 		<br/>
-		<script type = "text/javascript" 
-			 src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		  <script type = "text/javascript" language = "javascript">
-		  $(function(){
-			var searchIndex = 1 
-			$('#searchButton').click(function() {
-				var searchTitle = $("#searchTitle").val();
-				$("#book").empty();
-				pageNumberContainer.classList.remove("pageNumberHide");
-				pageNumberContainer.classList.add("pageNumberShow");
-							
-				$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
-					var bookHTML='<table style="width:90%;">';
-					for (i in book.items)
-						{
-							if (i % 5 == 0) {
-								bookHTML+="<tr>"
-							}
-							
-							try {
-								bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-							}
-							catch(err)
-							{
-								bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-							}
-							
-							if (i % 10 == 0 && i != 0) {
-								bookHTML+="</tr>"
-							}
-						}
-						
-						bookHTML+="</table>"
-					$('#book').append(bookHTML);
-				
-				});
-				
-			});
-
-			$('#book').on("click", "a", function() {
-							
-				$("#bookPane").empty();
-				bookDetail.classList.remove("detailWindowHide");
-				bookDetail.classList.add("detailWindowShow");
-				
-
-				var searchID = this.id;
-				
-				$.getJSON('https://www.googleapis.com/books/v1/volumes?q=id:' + searchID, function(book) {
-					var bookHTML='<table style="width:90%;">';
-					bookHTML+='<h2 class="milestone-title">' + book.items[0].volumeInfo.title + '</h2>'
-					try {
-						bookHTML+='<h2 class="milestone-subtitle">' + book.items[0].volumeInfo.subtitle + '</h2>'
-					}
-					catch(err)
-					{
-						bookHTML+='<h2 class="milestone-subtitle">Unkown</h2>'
-					}
-					try {
-						bookHTML+='<h3 class="milestone-info">Author: ' + book.items[0].volumeInfo.authors[0] + '</h3>'
-					}
-					catch(err)
-					{
-						bookHTML+='<h3 class="milestone-info">Author: Unkown</h3>'
-					}
-					bookHTML+='<h3 class="milestone-info">Publisher: ' + book.items[0].volumeInfo.publisher + ', ' + book.items[0].volumeInfo.publisheddate +'</h3>'
-
-					try {
-						bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[0].volumeInfo.imageLinks.thumbnail + '"></td>';
-					}
-					catch(err)
-					{
-						bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> </td>';
-					}
-					
-					try {
-						bookHTML+='<h3 class="milestone-info">Price:' + book.items[0].saleInfo.listPrice.amount + ' ' + book.items[0].saleInfo.listPrice.currencyCode + '</h3>';
-					}
-					catch(err)
-					{
-						bookHTML+='<h3 class="milestone-info">Price: Not Available</h3>';
-					}
-					
-					try {
-						bookHTML+='<h3 class="milestone-info"><a href="' + book.items[0].accessInfo.pdf.acsTokenLink + '" >PDF Download</a></h3>';
-					}
-					catch(err)
-					{
-						bookHTML+='<h3 class="milestone-info">PDF Download: Not Available</h3>';
-					}
-					
-					bookHTML+="</table>"
-					$('#bookPane').append(bookHTML)
-				});
-							
-							
-			});
-			
-			$('#bookshelf').on("click", "a", function() {
-							
-				$("#bookPane2").empty();
-				bookDetail2.classList.remove("detailWindowHide");
-				bookDetail2.classList.add("detailWindowShow");
-				
-
-				var searchID = this.id;
-				
-				$.getJSON('https://www.googleapis.com/books/v1/volumes?q=id:' + searchID, function(book) {
-					var bookHTML='<table style="width:90%;">';
-					bookHTML+='<h2 class="milestone-title">' + book.items[0].volumeInfo.title + '</h2>'
-					try {
-						bookHTML+='<h2 class="milestone-subtitle">' + book.items[0].volumeInfo.subtitle + '</h2>'
-					}
-					catch(err)
-					{
-						bookHTML+='<h2 class="milestone-subtitle">Unkown</h2>'
-					}
-					try {
-						bookHTML+='<h3 class="milestone-info">Author: ' + book.items[0].volumeInfo.authors[0] + '</h3>'
-					}
-					catch(err)
-					{
-						bookHTML+='<h3 class="milestone-info">Author: Unkown</h3>'
-					}
-					bookHTML+='<h3 class="milestone-info">Publisher: ' + book.items[0].volumeInfo.publisher + ', ' + book.items[0].volumeInfo.publisheddate +'</h3>'
-
-					try {
-						bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[0].volumeInfo.imageLinks.thumbnail + '"></td>';
-					}
-					catch(err)
-					{
-						bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> </td>';
-					}
-					
-					try {
-						bookHTML+='<h3 class="milestone-info">Price:' + book.items[0].saleInfo.listPrice.amount + ' ' + book.items[0].saleInfo.listPrice.currencyCode + '</h3>';
-					}
-					catch(err)
-					{
-						bookHTML+='<h3 class="milestone-info">Price: Not Available</h3>';
-					}
-					
-					try {
-						bookHTML+='<h3 class="milestone-info"><a href="' + book.items[0].accessInfo.pdf.acsTokenLink + '" >PDF Download</a></h3>';
-					}
-					catch(err)
-					{
-						bookHTML+='<h3 class="milestone-info">PDF Download: Not Available</h3>';
-					}
-					
-					bookHTML+="</table>"
-					$('#bookPane2').append(bookHTML)
-				});
-							
-							
-			});
-			
-			
-			$('#closeButton').click(function() {
-							$("#bookPane").empty();
-							bookDetail.classList.remove("detailWindowShow");
-							bookDetail.classList.add("detailWindowHide");
-							
-			});
-			
-			$('#closeButton2').click(function() {
-							$("#bookPane2").empty();
-							bookDetail2.classList.remove("detailWindowShow");
-							bookDetail2.classList.add("detailWindowHide");
-							
-			});
-		});
-		
-		function bookShelfDisplay() {
-			$("#bookshelf").empty();
-
-			$.getJSON('https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes', function(book) {
-				var bookHTML='<table style="width:90%;">';
-				for (i in book.items)
-					{
-						if (i % 5 == 0) {
-							bookHTML+="<tr>"
-						}
-						
-						try {
-							bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-						}
-						catch(err)
-						{
-							bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-						}
-						
-						if (i % 10 == 0 && i != 0) {
-							bookHTML+="</tr>"
-						}
-					}
-					
-					bookHTML+="</table>"
-				$('#bookshelf').append(bookHTML);
-			
-			});
-			
-		};
-		
-		
-		function openTab(evt, tabName) {
-			var i, tabcontent, tablinks;
-			tabcontent = document.getElementsByClassName("tabcontent");
-			
-			for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].style.display = "none";
-			}
-
-			tablinks = document.getElementsByClassName("tablinks");
-			
-			for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].className = tablinks[i].className.replace(" active", "");
-			}
-
-     		document.getElementById(tabName).style.display = "block";
-			evt.currentTarget.className += " active";
-			
-			if (tabName = "bookshelfTab") {
-				bookShelfDisplay();
-			}
-		};
-		
-		
-		function pageClick(buttonNumber){
-			var searchTitle = $("#searchTitle").val();
-			searchIndex = buttonNumber * 10;
-			$("#book").empty();
-			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
-				var bookHTML='<table style="width:90%;">';
-				for (i in book.items)
-					{
-						if (i % 5 == 0) {
-							bookHTML+="<tr>"
-						}
-						
-						try {
-								bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-							}
-							catch(err)
-							{
-								bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
-							}
-						
-						if (i % 10 == 0 && i != 0) {
-							bookHTML+="</tr>"
-						}
-					}
-					
-					bookHTML+="</table>"					
-				$('#book').append(bookHTML);
-			
-			});
-			
-		};
 	
+		<script type="text/javascript">
+			 $(document).ready(function ()
+			 {
+				 $("#btnSearch").click(function ()
+				 {
+					var url="http://it-ebooks-api.info/v1/search/" + $("#searchTerm").val();
+					searchBooks(url);
+				 });
+			 });
 
-		
-		</script>
+			 function searchBooks(servicePoint)
+			 {
+				 $("#booklist").html("Searching ..."+"<img src='http://vignette1.wikia.nocookie.net/wikiality/images/7/70/ProgressBar.gif/revision/latest?cb=20070406024457'>");
+
+				 $.getJSON(servicePoint, function (jsonData)
+				 {
+					$("#booklist").html("");
+					var template = $('#booklisttemplate').html();
+					var html = Mustache.render(template, jsonData);
+					$("#booklist").html(html);
+			   
+					 $(".booklistitemheader").on('click', function () 
+					 { 
+						div=$(this).next(); // get the book details div
+						getBookDetails($(this).attr("data-bookid"), div);
+					 });
+				 });
+			 }
+
+			 function getBookDetails(bookid, div)
+			 {
+				 $("#bookdetails").html("Working ..."+"<img src='http://vignette1.wikia.nocookie.net/wikiality/images/7/70/ProgressBar.gif/revision/latest?cb=20070406024457'>");
+
+				 $.getJSON("http://it-ebooks-api.info/v1/book/" + bookid, function (jsonData)
+				 {
+					var template = $('#bookdetailstemplate').html();
+					var html = Mustache.render(template, jsonData);
+					$(div).html(html);
+					$(div).slideToggle();
+				 });
+			 }
+		</script>  
 		
 		
 		<div class="tab">
@@ -335,7 +147,7 @@
 				<input id="button10" onClick="pageClick(this.value)" class="pageButton" type="button" value="10" /> 
 			</div>
 			
-			<div id = "book" style="margin-top:1em;" class="container"></div>
+			<div id = "booklist" style="margin-top:1em;" class="container"></div>
 			<div id = "bookDetail" class="detailWindowHide">
 				<input id="closeButton" class="closeButton" type="button" value="X" />	
 				<div id = "bookPane" ></div>
