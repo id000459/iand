@@ -156,6 +156,7 @@
 				 $.getJSON(servicePoint, function (jsonData)
 				 {
 					$("#booklist").html("");
+					$("#booklisttemplate").empty();
 					var template = $('#booklisttemplate').html();
 					var html = Mustache.render(template, jsonData);
 					$("#booklist").html(html);
