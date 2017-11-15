@@ -146,37 +146,33 @@
 					searchBooks(url);
 				 });
 				 
+				 $("#btnList").click(function ()
+				 { 
+					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
+					searchBooks(url, "booklisttemplate");
+				 });
+
+				$("#btnGrid").click(function ()
+				 { 
+					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
+					searchBooks(url, "bookgridtemplate");
+				 });				 
+				 
 				 
 			 });
 
-			 function searchBooks(servicePoint)
+			 function searchBooks(servicePoint, templatetype)
 			 {
 				 $("#booklist").html("Searching ..."+"<img src='http://vignette1.wikia.nocookie.net/wikiality/images/7/70/ProgressBar.gif/revision/latest?cb=20070406024457'>");
 
 				 $.getJSON(servicePoint, function (jsonData)
 				 {
 					$("#booklist").html("");					
-					var template = $('#booklisttemplate').html();
+					var template = $('#' + templatetype + ').html();
 					var html = Mustache.render(template, jsonData);
 					$("#booklist").html(html);
 			   
-					 
-
-					 $("#btnGrid").click(function ()
-					 { 
-						$("#booklist").html("");
-						var template = $('#bookgridtemplate').html();
-						var html = Mustache.render(template, jsonData);
-						$("#booklist").html(html);
-					 });
-
-					 $("#btnList").click(function ()
-					 { 
-						$("#booklist").html("");
-						var template = $('#booklisttemplate').html();
-						var html = Mustache.render(template, jsonData);
-						$("#booklist").html(html);
-					 });	
+					
 
 					$(".booklistitemheader").on('click', function () 
 					 { 
