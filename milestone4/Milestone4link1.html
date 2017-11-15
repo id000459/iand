@@ -10,9 +10,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
 	<script id="booklisttemplate" type="text/template">
 		{{#items}}
-		<div id="{{id}}"">
+		<div id="box">
 			{{#volumeInfo}}
-			<div class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}</div>
+			<div id='{{id}}' class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}</div>
 			
 			{{/volumeInfo}}
 		</div>		
@@ -32,9 +32,9 @@
 	</script>
 	<script id="bookgridtemplate" type="text/template">
 		{{#items}}
-		<div id="{{id}}"">
+		<div id="box">
 			{{#volumeInfo}}
-			<div class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}</div>
+			<div id='{{id}}' class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}</div>
 			
 			{{/volumeInfo}}
 		</div>		
