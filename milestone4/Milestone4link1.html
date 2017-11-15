@@ -9,12 +9,12 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
 	<script id="booklisttemplate" type="text/template">
-		{{#Books}}
+		{{#items}}
 		<div class='booklistitem' id="{{ID}}">
-			<div class="booklistitemheader" data-bookid="{{ID}}"><img src='{{Image}}'  width=50 /> {{volumeInfo.title}}</div>
+			<div class="booklistitemheader" data-bookid="{{ID}}"><img src='{{Image}}'  width=50 /> {{title}}</div>
 			<div class='bookdetails' style='display:none'></div>
 		</div>
-		{{/Books}}
+		{{/items}}
 	</script>
 	<script id="bookdetailstemplate" type="text/template">
 		<div class='book'>
