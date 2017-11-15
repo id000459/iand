@@ -145,6 +145,14 @@
 					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
 					searchBooks(url);
 				 });
+				 
+				 $("#btnGrid").click(function ()
+				 { 
+					$("#booklist").html("");
+					var template = $('#bookgridtemplate').html();
+					var html = Mustache.render(template, jsonData);
+					$("#booklist").html(html);
+				 });
 			 });
 
 			 function searchBooks(servicePoint)
@@ -165,15 +173,7 @@
 					 });					 
 					 
 				 });
-			 }
-			 
-			 $("#btnGrid").on('click', function () 
-			 { 
-				$("#booklist").html("");
-				var template = $('#bookgridtemplate').html();
-				var html = Mustache.render(template, jsonData);
-				$("#booklist").html(html);
-			 });
+			 }			 
 
 			 function getBookDetails(bookid, div)
 			 {
