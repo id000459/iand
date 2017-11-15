@@ -106,7 +106,7 @@
 			 {
 				 $("#btnSearch").click(function ()
 				 {
-					var url="http://it-ebooks-api.info/v1/search/" + $("#searchTerm").val();
+					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
 					searchBooks(url);
 				 });
 			 });
