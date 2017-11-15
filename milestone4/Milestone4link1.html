@@ -164,17 +164,18 @@
 					 { 
 						div=$(this).next(); // get the book details div
 						getBookDetails($(this).attr("data-bookid"), div);
+					 });	
+
+					 $("#btnGrid").click(function ()
+					 { 
+						$("#booklist").html("");
+						var template = $('#bookgridtemplate').html();
+						var html = Mustache.render(template, jsonData);
+						$("#booklist").html(html);
 					 });					 
 					 
-				 });
+				 });				 
 				 
-				 $("#btnGrid").click(function ()
-				 { 
-					$("#booklist").html("");
-					var template = $('#bookgridtemplate').html();
-					var html = Mustache.render(template, jsonData);
-					$("#booklist").html(html);
-				 });
 			 }			 
 
 			 function getBookDetails(bookid, div)
