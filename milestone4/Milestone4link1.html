@@ -172,6 +172,14 @@
 						var template = $('#bookgridtemplate').html();
 						var html = Mustache.render(template, jsonData);
 						$("#booklist").html(html);
+					 });
+
+					 $("#btnList").click(function ()
+					 { 
+						$("#booklist").html("");
+						var template = $('#booklisttemplate').html();
+						var html = Mustache.render(template, jsonData);
+						$("#booklist").html(html);
 					 });					 
 					 
 				 });				 
