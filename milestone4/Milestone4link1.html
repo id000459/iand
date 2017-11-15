@@ -146,13 +146,7 @@
 					searchBooks(url);
 				 });
 				 
-				 $("#btnGrid").click(function ()
-				 { 
-					$("#booklist").html("");
-					var template = $('#bookgridtemplate').html();
-					var html = Mustache.render(template, jsonData);
-					$("#booklist").html(html);
-				 });
+				 
 			 });
 
 			 function searchBooks(servicePoint)
@@ -172,6 +166,14 @@
 						getBookDetails($(this).attr("data-bookid"), div);
 					 });					 
 					 
+				 });
+				 
+				 $("#btnGrid").click(function ()
+				 { 
+					$("#booklist").html("");
+					var template = $('#bookgridtemplate').html();
+					var html = Mustache.render(template, jsonData);
+					$("#booklist").html(html);
 				 });
 			 }			 
 
