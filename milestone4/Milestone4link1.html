@@ -10,15 +10,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
 	<script id="booklisttemplate" type="text/template">
 		{{#items}}
-		<div class='booklistitem' id="{{id}}">
-			<div class="booklistitemheader" data-bookid="{{id}}">
+		<div id="{{id}}"">
 			{{#volumeInfo}}
-			<img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}
-			
+			<script>
+			for (i=0;i<8;i++)
+			{
+				document.write("<div class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}</div>");
+			}
+			</script>
 			{{/volumeInfo}}
-			</div>
-			<div class='bookdetails' style='display:none'></div>
-		</div>
+		</div>		
 		{{/items}}
 	</script>
 	<script id="bookdetailstemplate" type="text/template">
@@ -32,6 +33,20 @@
 			</div>
 			<div style="clear:both"></div>
 		</div>
+	</script>
+	<script id="bookgridtemplate" type="text/template">
+		{{#items}}
+		<div id="{{id}}"">
+			{{#volumeInfo}}
+			<script>
+			for (i=0;i<8;i++)
+			{
+				document.write("<div class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}</div>");
+			}
+			</script>
+			{{/volumeInfo}}
+		</div>		
+		{{/items}}
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -49,34 +64,53 @@
 		
 		
 		#header
-	{
-		background-color: #97E300;
-		position:fixed; top: 0; left: 0px;
-		width: 100%;
-		padding: 5px;
-	}
-	#maincontent
-	{
-		margin-top:120px;
-	}
-    .booklistitem
-	{
-		border: thin solid gray;
-		background-color: #F2FFE5;
-		margin:1px;
-	}
-	.booklistitemheader
-	{
-		cursor: pointer;
-	}
-	.booklistitemheader:hover
-	{		background-color: #8CFF1A;	}
-	.book
-	{	border: thin solid #66ddee; 
-		padding: 10px;
-		margin:10px;
-		background-color: white;
-	}
+		{
+			background-color: #97E300;
+			position:fixed; top: 0; left: 0px;
+			width: 100%;
+			padding: 5px;
+		}
+		#maincontent
+		{
+			margin-top:120px;
+		}
+		.booklistitem
+		{
+			border: thin solid gray;
+			background-color: #F2FFE5;
+			margin:1px;
+		}
+		.booklistitemheader
+		{
+			cursor: pointer;
+		}
+		.booklistitemheader:hover
+		{		background-color: #8CFF1A;	}
+		.book
+		{	border: thin solid #66ddee; 
+			padding: 10px;
+			margin:10px;
+			background-color: white;
+		}
+		#box
+		{
+			display: flex; 
+			flex-wrap: wrap;
+			
+			border: 3px solid red;
+			width: 800px;
+			flex-grow:1;
+		}
+		.boxitem
+		{
+			flex-grow:1;
+			
+			border: thin solid blue;
+			background-color: #ffeecc;
+			width: 23%;
+			margin: 5px;
+			height:100px;
+		}
 	</style>
 </head>
 
