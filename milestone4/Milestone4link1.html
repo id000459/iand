@@ -23,6 +23,7 @@
 	</script>
 	<script id="booklistdetailstemplate" type="text/template">
 		<div class='book'>
+			{{#volumeInfo}}
 			<h2>{{Title}}</h2>
 			<h3>{{SubTitle}}</h3>
 			<img src='{{Image}}' style="float: left"/>
@@ -31,6 +32,7 @@
 				<div>{{Description}}</div>
 			</div>
 			<div style="clear:both"></div>
+			{{/volumeInfo}}
 		</div>
 	</script>
 	<script id="bookgridtemplate" type="text/template">
