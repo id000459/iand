@@ -189,7 +189,19 @@
 				 { 
 					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
 					searchBooks(url, "bookgridtemplate","booklist");
-				 });				 
+				 });	
+
+				$("#btnList2").click(function ()
+				 { 
+					var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
+					searchBooks(url, "booklisttemplate","booklist2");
+				 });
+
+				$("#btnGrid2").click(function ()
+				 { 
+					var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
+					searchBooks(url, "bookgridtemplate","booklist2");
+				 });					 
 				 
 				 
 			 });
@@ -315,7 +327,8 @@
 			
 		</div>
 		<div id="bookshelfTab" class="tabcontent">
-			
+			<input type="button" id="btnList2" value="List View"  />
+			<input type="button" id="btnGrid2" value="Grid View" />
 			<div id = "booklist2" style="margin-top:1em;" class="container"></div>
 			
 			
