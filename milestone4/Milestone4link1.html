@@ -13,7 +13,7 @@
 		<div class='booklistitem' id="{{id}}">
 			<div class="booklistitemheader" data-bookid="{{id}}">
 			{{#volumeInfo}}
-			<img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 height=60 /> <h4 style="width:90%;float:right;">{{title}}</h4>
+			<img style="padding:5px;" src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 height=60 /> <h4 style="width:90%;float:right;">{{title}}</h4>
 			
 			{{/volumeInfo}}
 			</div>
@@ -26,7 +26,7 @@
 			{{#volumeInfo}}
 			<h2>{{title}}</h2>
 			<h4>By {{authors}} - {{publishedDate}} - {{publisher}}</h4>
-			<img src='{{#Image}}{{large}}{{/Image}}' style="float: left"/>
+			<img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}' style="float: left"/>
 			<div style="margin-left: 220px"> <br> 
 			<div>{{{description}}}</div>
 			<br/>
