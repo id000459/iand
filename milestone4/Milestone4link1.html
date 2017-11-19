@@ -25,11 +25,9 @@
 		<div class='book'>
 			{{#volumeInfo}}
 			<h2>{{title}}</h2>
-			<h3>{{authors}}</h3>
 			<img src='{{Image}}' style="float: left"/>
-			<div style="margin-left: 220px">{{ISBN}} <br> By {{Author}} - {{Year}} - {{Publisher}}
-			<h4>Description</h4>
-				<div>{{Description}}</div>
+			<div style="margin-left: 220px"> <br> By {{authors}} - {{publishedDate}} - {{publisher}}
+			<div>{{description}}</div>
 			</div>
 			<div style="clear:both"></div>
 			{{/volumeInfo}}
