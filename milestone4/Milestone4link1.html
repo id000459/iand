@@ -43,7 +43,8 @@
 		{{#items}}
 		
 			{{#volumeInfo}}
-			<div id='{{id}}' data-bookid="{{id}}" class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> {{title}}</div>
+			<div id='{{id}}' data-bookid="{{id}}" class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> </div>
+			<h5 style="float:right;">{{title}}</h5>
 			
 			{{/volumeInfo}}
 				
@@ -133,8 +134,8 @@
 		{
 			flex-grow:1;
 			
-			border: thin solid blue;
-			background-color: #ffeecc;
+			border: thin solid gray;
+			background-color: white ;
 			width: 40%;
 			margin: 5px;
 			height:100px;
@@ -316,7 +317,6 @@
 		
 		
 		<div id="searchTab" class="tabcontent">
-
 			<input type="text" id="searchTerm" value="Data Visualization" />
 			<input type="button" id="btnSearch" value="Search" />
 			<input type="button" id="btnList" value="List View"  />
@@ -334,21 +334,11 @@
 				<input id="button10" onClick="pageClick(this.value)" class="pageButton" type="button" value="10" /> 
 			</div>
 			<div id = "booklist" style="margin-top:1em;" class="container"></div>
-			
 		</div>
 		<div id="bookshelfTab" class="tabcontent">
 			<input type="button" id="btnList2" value="List View"  />
 			<input type="button" id="btnGrid2" value="Grid View" />
 			<div id = "booklist2" style="margin-top:1em;" class="container"></div>
-			
-			
-			
-			<!-- 
-			<div id = "bookshelf" class="container"></div>
-			<div id = "bookDetail2" class="detailWindowHide">
-				<input id="closeButton2" class="closeButton" type="button" value="X" />	
-				<div id = "bookPane2" ></div>
-			</div> -->
 		</div>
 	</div>
 	
