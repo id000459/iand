@@ -63,6 +63,9 @@
 			<img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}' style="margin-right:6px; float: left"/>
 			
 			<div>{{{description}}}</div>
+			<div><a href="{{#accessInfo}}{{#epub}}{{acsTokenLink}}{{/epub}}{{/accessInfo}}">ePub Link</a></div>
+			<div><a href="{{#accessInfo}}{{#pdf}}{{acsTokenLink}}{{/pdf}}{{/accessInfo}}">PDF Link</a></div>
+			
 			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{/saleInfo}}</div>
 			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{/saleInfo}}</div>
 			
