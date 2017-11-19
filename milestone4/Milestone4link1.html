@@ -30,15 +30,14 @@
 			<div style="margin-left: 220px"> <br> 
 			<div>{{{description}}}</div>
 			<br/>
-			{{/volumeInfo}}
 			{{#saleInfo}}
-			{{#retailPrice}}
-			<div>{{amount}}</div>
-			{{/retailPrice}}
+			
+			<div>{{country}}</div>
+			
 			{{/saleInfo}}
 			</div>
 			<div style="clear:both"></div>
-			
+			{{/volumeInfo}}
 		</div>
 	</script>
 	<script id="bookgridtemplate" type="text/template">
@@ -65,9 +64,6 @@
 			
 			<div>{{{description}}}</div>
 			
-			<div>
-			{{#retailPrice}}{{amount}}{{/retailPrice}}
-			</div>
 			</div>
 			<div style="clear:both"></div>
 		{{/volumeInfo}}
