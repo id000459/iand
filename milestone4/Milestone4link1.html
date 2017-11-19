@@ -30,11 +30,11 @@
 			<div style="margin-left: 220px"> <br> 
 			<div>{{{description}}}</div>
 			<br/>
-			{{#saleInfo}}
 			
-			<div>{{amount}}</div>
 			
-			{{/saleInfo}}
+			<div>{{#saleInfo}}{{listPrice}}{{amount}}{{/listPrice}}{{/saleInfo}}</div>
+			
+			
 			</div>
 			<div style="clear:both"></div>
 			{{/volumeInfo}}
