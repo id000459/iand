@@ -171,6 +171,7 @@
 		<br/>
 	
 		<script type="text/javascript">
+			var templatetype;
 			 $(document).ready(function ()
 			 {
 				 $("#btnSearch").click(function ()
@@ -183,24 +184,28 @@
 				 { 
 					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
 					searchBooks(url, "booklisttemplate","booklist");
+					templatetype = "list";
 				 });
 
 				$("#btnGrid").click(function ()
 				 { 
 					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
 					searchBooks(url, "bookgridtemplate","booklist");
+					templatetype = "grid";
 				 });	
 
 				$("#btnList2").click(function ()
 				 { 
 					var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
 					searchBooks(url, "booklisttemplate","booklist2");
+					templatetype = "list";
 				 });
 
 				$("#btnGrid2").click(function ()
 				 { 
 					var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
 					searchBooks(url, "bookgridtemplate","booklist2");
+					templatetype = "grid";
 				 });					 
 				 
 				 
@@ -293,7 +298,12 @@
 				searchIndex = buttonNumber * 10;
 				
 				var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val() + '&maxResults=10&startIndex=' + searchIndex;
-				searchBooks(url, "booklisttemplate","booklist");
+				if (templatetype == "grid") {
+					searchBooks(url, "bookgridtemplate","booklist");
+				} else {
+					searchBooks(url, "booklisttemplate","booklist");
+
+				}
 			}
 		</script>  
 		
