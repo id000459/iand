@@ -30,8 +30,9 @@
 			<div style="margin-left: 220px"> <br> 
 			<div>{{{description}}}</div>
 			<br/>
-			<input type="button" value="Buy Now: {{retailPrice}}" />
-			
+			{{#retailPrice}}
+			<input type="button" value="Buy Now: {{amount}}" />
+			{{/retailPrice}}
 			</div>
 			<div style="clear:both"></div>
 			{{/volumeInfo}}
