@@ -63,6 +63,8 @@
 			<img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}' style="margin-right:6px; float: left"/>
 			
 			<div>{{{description}}}</div>
+			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{/saleInfo}}</div>
+			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{/saleInfo}}</div>
 			
 			</div>
 			<div style="clear:both"></div>
