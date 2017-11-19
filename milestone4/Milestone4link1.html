@@ -196,8 +196,11 @@
 
 			 function searchBooks(servicePoint, templatetype)
 			 {
-				 $("#booklist").html("Searching ..."+"<img src='http://vignette1.wikia.nocookie.net/wikiality/images/7/70/ProgressBar.gif/revision/latest?cb=20070406024457'>");
-
+				$("#booklist").html("Searching ..."+"<img src='http://vignette1.wikia.nocookie.net/wikiality/images/7/70/ProgressBar.gif/revision/latest?cb=20070406024457'>");
+				
+				pageNumberContainer.classList.remove("pageNumberHide");
+				pageNumberContainer.classList.add("pageNumberShow");
+				
 				 $.getJSON(servicePoint, function (jsonData)
 				 {
 					$("#booklist").html("");					
@@ -266,6 +269,36 @@
 				evt.currentTarget.className += " active";
 				
 			 };
+			 
+			function pageClick(buttonNumber){
+			var searchTitle = $("#searchTitle").val();
+			searchIndex = buttonNumber * 10;
+			$("#book").empty();
+			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:' + searchTitle + '&maxResults=10&startIndex=' + searchIndex, function(book) {
+				var bookHTML='<table style="width:90%;">';
+				for (i in book.items)
+					{
+						if (i % 5 == 0) {
+							bookHTML+="<tr>"
+						}
+						
+						try {
+								bookHTML+='<td><img  alt="HTML5 Icon" class="smlImage2" src="' + book.items[i].volumeInfo.imageLinks.thumbnail + '"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+							}
+							catch(err)
+							{
+								bookHTML+='<td><img  alt=" " class="smlImage2" src="../photos/NOIMG.png"> <br/> <a style="width:20%;" id=' + book.items[i].id + ' href=#!"' + book.items[i].id + '">' + book.items[i].volumeInfo.title + '</a> </td>';
+							}
+						
+						if (i % 10 == 0 && i != 0) {
+							bookHTML+="</tr>"
+						}
+					}
+					
+					bookHTML+="</table>"					
+				$('#book').append(bookHTML);
+			
+			});
 		</script>  
 		
 		
@@ -273,6 +306,19 @@
 		  <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'searchTab')">Search</button>
 		  <button class="tablinks" onclick="openTab(event, 'bookshelfTab')">My Bookshelf</button>
 		</div>
+		
+		<div id="pageNumberContainer" class="pageNumberHide">
+				<input id="button1" onClick="pageClick(this.value)" class="pageButton" type="button" value="1" /> 
+				<input id="button2" onClick="pageClick(this.value)" class="pageButton" type="button" value="2" /> 
+				<input id="button3" onClick="pageClick(this.value)" class="pageButton" type="button" value="3" /> 
+				<input id="button4" onClick="pageClick(this.value)" class="pageButton" type="button" value="4" /> 
+				<input id="button5" onClick="pageClick(this.value)" class="pageButton" type="button" value="5" /> 
+				<input id="button6" onClick="pageClick(this.value)" class="pageButton" type="button" value="6" /> 
+				<input id="button7" onClick="pageClick(this.value)" class="pageButton" type="button" value="7" /> 
+				<input id="button8" onClick="pageClick(this.value)" class="pageButton" type="button" value="8" /> 
+				<input id="button9" onClick="pageClick(this.value)" class="pageButton" type="button" value="9" /> 
+				<input id="button10" onClick="pageClick(this.value)" class="pageButton" type="button" value="10" /> 
+			</div>
 		
 		<div id="searchTab" class="tabcontent">
 
