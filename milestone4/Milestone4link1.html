@@ -179,6 +179,12 @@
 					searchBooks(url, "booklisttemplate");
 				 });
 				 
+				 $("#btnBookshelf").click(function ()
+				 {
+					var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
+					searchBooks(url, "booklisttemplate");
+				 });
+				 
 				 $("#btnList").click(function ()
 				 { 
 					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
@@ -285,7 +291,15 @@
 		  <button class="tablinks" onclick="openTab(event, 'bookshelfTab')">My Bookshelf</button>
 		</div>
 		
-		<div id="pageNumberContainer" class="pageNumberHide">
+		
+		
+		<div id="searchTab" class="tabcontent">
+
+			<input type="text" id="searchTerm" value="Data Visualization" />
+			<input type="button" id="btnSearch" value="Search" />
+			<input type="button" id="btnList" value="List View"  />
+			<input type="button" id="btnGrid" value="Grid View" />
+			<div id="pageNumberContainer" class="pageNumberHide">
 				<input id="button1" onClick="pageClick(this.value)" class="pageButton" type="button" value="1" /> 
 				<input id="button2" onClick="pageClick(this.value)" class="pageButton" type="button" value="2" /> 
 				<input id="button3" onClick="pageClick(this.value)" class="pageButton" type="button" value="3" /> 
@@ -297,19 +311,11 @@
 				<input id="button9" onClick="pageClick(this.value)" class="pageButton" type="button" value="9" /> 
 				<input id="button10" onClick="pageClick(this.value)" class="pageButton" type="button" value="10" /> 
 			</div>
-		
-		<div id="searchTab" class="tabcontent">
-
-			<input type="text" id="searchTerm" value="Data Visualization" />
-			<input type="button" id="btnSearch" value="Search" />
-			<input type="button" id="btnList" value="List View"  />
-			<input type="button" id="btnGrid" value="Grid View" />
 			<div id = "booklist" style="margin-top:1em;" class="container"></div>
 			
 		</div>
 		<div id="bookshelfTab" class="tabcontent">
-		<input type="text" id="searchTerm" value="Data Visualization" />
-			<input type="button" id="btnSearch" value="Search" />
+			<input type="button" id="btnBookshelf" value="Search" />
 			<input type="button" id="btnList" value="List View"  />
 			<input type="button" id="btnGrid" value="Grid View" />
 			<div id = "booklist" style="margin-top:1em;" class="container"></div>
