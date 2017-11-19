@@ -179,12 +179,6 @@
 					searchBooks(url, "booklisttemplate");
 				 });
 				 
-				 $("#btnBookshelf").click(function ()
-				 {
-					var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
-					searchBooks(url, "booklisttemplate");
-				 });
-				 
 				 $("#btnList").click(function ()
 				 { 
 					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
@@ -274,6 +268,11 @@
 				document.getElementById(tabName).style.display = "block";
 				evt.currentTarget.className += " active";
 				
+				if (tabName = "bookshelfTab") {
+					var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
+					searchBooks(url, "booklisttemplate");
+				}
+				
 			 };
 			 
 			function pageClick(buttonNumber)
@@ -315,9 +314,7 @@
 			
 		</div>
 		<div id="bookshelfTab" class="tabcontent">
-			<input type="button" id="btnBookshelf" value="Search" />
-			<input type="button" id="btnList" value="List View"  />
-			<input type="button" id="btnGrid" value="Grid View" />
+			
 			<div id = "booklist" style="margin-top:1em;" class="container"></div>
 			
 			
