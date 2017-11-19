@@ -176,37 +176,37 @@
 				 $("#btnSearch").click(function ()
 				 {
 					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
-					searchBooks(url, "booklisttemplate");
+					searchBooks(url, "booklisttemplate","booklist");
 				 });
 				 
 				 $("#btnList").click(function ()
 				 { 
 					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
-					searchBooks(url, "booklisttemplate");
+					searchBooks(url, "booklisttemplate","booklist");
 				 });
 
 				$("#btnGrid").click(function ()
 				 { 
 					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
-					searchBooks(url, "bookgridtemplate");
+					searchBooks(url, "bookgridtemplate","booklist");
 				 });				 
 				 
 				 
 			 });
 
-			 function searchBooks(servicePoint, templatetype)
+			 function searchBooks(servicePoint, templatetype, elementname)
 			 {
-				$("#booklist").html("Searching ..."+"<img src='http://vignette1.wikia.nocookie.net/wikiality/images/7/70/ProgressBar.gif/revision/latest?cb=20070406024457'>");
+				$("#" + elementname).html("Searching ..."+"<img src='http://vignette1.wikia.nocookie.net/wikiality/images/7/70/ProgressBar.gif/revision/latest?cb=20070406024457'>");
 				
 				pageNumberContainer.classList.remove("pageNumberHide");
 				pageNumberContainer.classList.add("pageNumberShow");
 				
 				 $.getJSON(servicePoint, function (jsonData)
 				 {
-					$("#booklist").html("");					
+					$("#" + elementname).html("");					
 					var template = $('#' + templatetype ).html();
 					var html = Mustache.render(template, jsonData);
-					$("#booklist").html(html);
+					$("#" + elementname).html(html);
 			   
 					 $(".booklistitemheader").on('click', function () 
 					 { 
@@ -220,7 +220,8 @@
 						getGridBookDetails($(this).attr("data-bookid"), div);
 					 });
 					 
-				 });				 
+				 });	
+				 
 				 
 			 }				 
 
@@ -280,7 +281,7 @@
 				searchIndex = buttonNumber * 10;
 				
 				var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val() + '&maxResults=10&startIndex=' + searchIndex;
-				searchBooks(url, "booklisttemplate");
+				searchBooks(url, "booklisttemplate","booklist");
 			}
 		</script>  
 		
@@ -315,7 +316,7 @@
 		</div>
 		<div id="bookshelfTab" class="tabcontent">
 			
-			<div id = "booklist" style="margin-top:1em;" class="container"></div>
+			<div id = "booklist2" style="margin-top:1em;" class="container"></div>
 			
 			
 			
