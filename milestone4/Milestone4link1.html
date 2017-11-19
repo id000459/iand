@@ -189,16 +189,7 @@
 				 { 
 					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
 					searchBooks(url, "bookgridtemplate");
-				 });	
-
-
-				function pageClick(buttonNumber)
-				{
-					searchIndex = buttonNumber * 10;
-					
-					var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val() + '&maxResults=10&startIndex=' + searchIndex;
-					searchBooks(url, "booklisttemplate");
-				}				 
+				 });				 
 				 
 				 
 			 });
@@ -279,7 +270,13 @@
 				
 			 };
 			 
-			
+			function pageClick(buttonNumber)
+			{
+				searchIndex = buttonNumber * 10;
+				
+				var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val() + '&maxResults=10&startIndex=' + searchIndex;
+				searchBooks(url, "booklisttemplate");
+			}
 		</script>  
 		
 		
