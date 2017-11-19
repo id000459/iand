@@ -13,7 +13,7 @@
 		<div class='booklistitem' id="{{id}}">
 			<div class="booklistitemheader" data-bookid="{{id}}">
 			{{#volumeInfo}}
-			<img style="padding:5px;" src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 height=60 /> <h4 style="width:90%;float:right;">{{title}}</h4>
+			<img style="padding:5px;" src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}{{^imageLinks}}../photos/NOIMG.png{{/imageLinks}}'  width=50 height=60 /> <h4 style="width:90%;float:right;">{{title}}</h4>
 			<strong>{{authors}}</strong>
 			{{/volumeInfo}}
 			</div>
