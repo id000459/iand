@@ -36,8 +36,8 @@
 			<div><a href="{{#accessInfo}}{{webReaderLink}}{{/accessInfo}}">Web Reader Link</a></div>
 
 			
-			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{/saleInfo}}</div>
-			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{/saleInfo}}</div>
+			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{^listPrice}}Not Available{{/listPrice}}{{/saleInfo}}</div>
+			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{^retailPrice}}Not Available{{/retailPrice}}{{/saleInfo}}</div>
 			
 			</div>
 			<div style="clear:both"></div>
@@ -71,8 +71,8 @@
 			<div><a href="{{#accessInfo}}{{#pdf}}{{acsTokenLink}}{{/pdf}}{{/accessInfo}}">PDF Link</a></div>
 			<div><a href="{{#accessInfo}}{{webReaderLink}}{{/accessInfo}}">Web Reader Link</a></div>
 			
-			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{/saleInfo}}</div>
-			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{/saleInfo}}</div>
+			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{^listPrice}}Not Available{{/listPrice}}{{/saleInfo}}</div>
+			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{^retailPrice}}Not Available{{/retailPrice}}{{/saleInfo}}</div>
 			
 			</div>
 			<div style="clear:both"></div>
