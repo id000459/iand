@@ -91,13 +91,13 @@
 	<script id="booklisttemplate2" type="text/template">
 		{{#items}}
 		<div class='booklistitem' id="{{id}}">
-			<div class="booklistitemheader" data-bookid="{{id}}">
+			<div class="booklistitemheader2" data-bookid="{{id}}">
 			{{#volumeInfo}}
 			<img style="padding:5px;" src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}{{^imageLinks}}../photos/NOIMG.png{{/imageLinks}}'  width=70 height=80 /> <h4 style="width:90%;float:right;">{{title}}</h4>
 			
 			{{/volumeInfo}}
 			</div>
-			<div class='bookdetails' style='display:none'></div>
+			<div class='bookdetails2' style='display:none'></div>
 		</div>
 		{{/items}}
 	</script>
@@ -129,14 +129,14 @@
 		{{#items}}
 		
 			{{#volumeInfo}}
-			<div id='{{id}}' data-bookid="{{id}}" class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> <div style="width:70%; float:right; margin:2px;"><strong>{{title}}</strong><br/>{{authors}}</div></div>
+			<div id='{{id}}' data-bookid="{{id}}" class='boxitem2'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> <div style="width:70%; float:right; margin:2px;"><strong>{{title}}</strong><br/>{{authors}}</div></div>
 			
 			
 			{{/volumeInfo}}
 				
 		{{/items}}
 		</div>
-		<div id = "bookDetail" ></div>
+		<div id = "bookDetail2" ></div>
 	</script>
 	<script id="bookgriddetailstemplate2" type="text/template">
 		<div class='book2'>
@@ -342,6 +342,18 @@
 						getGridBookDetails($(this).attr("data-bookid"), div);
 					 });
 					 
+					 $(".booklistitemheader2").on('click', function () 
+					 { 
+						div=$(this).next(); // get the book details div
+						getBookDetails2($(this).attr("data-bookid"), div);
+					 });	
+					 
+					 $(".boxitem2").on('click', function () 
+					 { 
+						div=$(this).next(); // get the book details div
+						getGridBookDetails2($(this).attr("data-bookid"), div);
+					 });
+					 
 				 });	
 				 
 				 
@@ -370,6 +382,32 @@
 					var template = $('#bookgriddetailstemplate').html();
 					var html = Mustache.render(template, jsonData);
 					$("#bookDetail").html(html);
+				 });
+			 }
+			 
+			 function getBookDetails2(bookid, div)
+			 {
+				 $("#bookdetails2").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
+
+				 $.getJSON("https://www.googleapis.com/books/v1/volumes/" + bookid, function (jsonData)
+				 {
+					var template = $('#booklistdetailstemplate2').html();
+					var html = Mustache.render(template, jsonData);
+					$(div).html(html);
+					$(div).slideToggle();
+				 });
+			 }
+			 
+			 function getGridBookDetails2(bookid)
+			 {
+				 $("#bookDetail2").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
+				 //we can use AJAX here because this service provider allows cross origin request
+				 $.getJSON("https://www.googleapis.com/books/v1/volumes/" + bookid, function (jsonData)
+				 {
+					$("#bookDetail2").html("");
+					var template = $('#bookgriddetailstemplate2').html();
+					var html = Mustache.render(template, jsonData);
+					$("#bookDetail2").html(html);
 				 });
 			 }
 			 
