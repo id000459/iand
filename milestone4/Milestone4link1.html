@@ -81,95 +81,6 @@
 		
 		</div>
 	</script>
-	
-	
-	
-	
-	
-	
-	
-	<script id="booklisttemplate2" type="text/template">
-		{{#items}}
-		<div class='booklistitem' id="{{id}}">
-			<div class="booklistitemheader2" data-bookid="{{id}}">
-			{{#volumeInfo}}
-			<img style="padding:5px;" src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}{{^imageLinks}}../photos/NOIMG.png{{/imageLinks}}'  width=70 height=80 /> <h4 style="width:90%;float:right;">{{title}}</h4>
-			
-			{{/volumeInfo}}
-			</div>
-			<div class='bookdetails2' style='display:none'></div>
-		</div>
-		{{/items}}
-	</script>
-	<script id="booklistdetailstemplate2" type="text/template">
-		<div class='book'>
-			{{#volumeInfo}}
-			<h2>{{title}}</h2>
-			<h4>By {{authors}} - {{publishedDate}} - {{publisher}}</h4>
-			<img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}' style="float: left"/>
-			<div style="margin-left: 220px"> <br> 
-			<div>{{{description}}}</div>
-			<br/>
-			
-			<div><a href="{{#accessInfo}}{{#epub}}{{acsTokenLink}}{{/epub}}{{/accessInfo}}">ePub Link</a></div>
-			<div><a href="{{#accessInfo}}{{#pdf}}{{acsTokenLink}}{{/pdf}}{{/accessInfo}}">PDF Link</a></div>
-			<div><a href="{{#accessInfo}}{{webReaderLink}}{{/accessInfo}}">Web Reader Link</a></div>
-
-			
-			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{^listPrice}}Not Available{{/listPrice}}{{/saleInfo}}</div>
-			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{^retailPrice}}Not Available{{/retailPrice}}{{/saleInfo}}</div>
-			
-			</div>
-			<div style="clear:both"></div>
-			{{/volumeInfo}}
-		</div>
-	</script>
-	<script id="bookgridtemplate2" type="text/template">
-		<div id="box">
-		{{#items}}
-		
-			{{#volumeInfo}}
-			<div id='{{id}}' data-bookid="{{id}}" class='boxitem2'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> <div style="width:70%; float:right; margin:2px;"><strong>{{title}}</strong><br/>{{authors}}</div></div>
-			
-			
-			{{/volumeInfo}}
-				
-		{{/items}}
-		</div>
-		<div id = "bookDetail2" ></div>
-	</script>
-	<script id="bookgriddetailstemplate2" type="text/template">
-		<div class='book2'>
-		
-		{{#volumeInfo}}
-			<h2>{{title}}</h2>
-			<h4>By {{authors}} - {{publishedDate}} - {{publisher}}</h4>
-			<img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}' style="margin-right:6px; float: left"/>
-			
-			<div>{{{description}}}</div>
-			<div><a href="{{#accessInfo}}{{#epub}}{{acsTokenLink}}{{/epub}}{{/accessInfo}}">ePub Link</a></div>
-			<div><a href="{{#accessInfo}}{{#pdf}}{{acsTokenLink}}{{/pdf}}{{/accessInfo}}">PDF Link</a></div>
-			<div><a href="{{#accessInfo}}{{webReaderLink}}{{/accessInfo}}">Web Reader Link</a></div>
-			
-			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{^listPrice}}Not Available{{/listPrice}}{{/saleInfo}}</div>
-			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{^retailPrice}}Not Available{{/retailPrice}}{{/saleInfo}}</div>
-			
-			</div>
-			<div style="clear:both"></div>
-		{{/volumeInfo}}
-				
-		
-		</div>
-	</script>
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<script src="../js/handlebars-v4.0.10.js" type="text/javascript"></script>    
@@ -245,19 +156,6 @@
 			min-height:100px;
 			font-size:small;
 		}
-		.boxitem2
-		{
-			flex-grow:1;
-			
-			border: thin solid gray;
-			background-color: #D3D3D3;
-			width: 40%;
-			margin: 5px;
-			padding: 2px;
-			height:auto;
-			min-height:100px;
-			font-size:small;
-		}
 		
 	</style>
 </head>
@@ -315,14 +213,14 @@
 				$("#btnList2").click(function ()
 				 { 
 					var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
-					searchBooks(url, "booklisttemplate2","booklist2");
+					searchBooks(url, "booklisttemplate","booklist2");
 					templatetype = "list";
 				 });
 
 				$("#btnGrid2").click(function ()
 				 { 
 					var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
-					searchBooks(url, "bookgridtemplate2","booklist2");
+					searchBooks(url, "bookgridtemplate","booklist2");
 					templatetype = "grid";
 				 });					 
 				 
@@ -353,18 +251,6 @@
 					 { 
 						div=$(this).next(); // get the book details div
 						getGridBookDetails($(this).attr("data-bookid"), div);
-					 });
-					 
-					 $(".booklistitemheader2").on('click', function () 
-					 { 
-						div=$(this).next(); // get the book details div
-						getBookDetails2($(this).attr("data-bookid"), div);
-					 });	
-					 
-					 $(".boxitem2").on('click', function () 
-					 { 
-						div=$(this).next(); // get the book details div
-						getGridBookDetails2($(this).attr("data-bookid"), div);
 					 });
 					 
 				 });	
@@ -398,32 +284,6 @@
 				 });
 			 }
 			 
-			 function getBookDetails2(bookid, div)
-			 {
-				 $("#bookdetails2").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
-
-				 $.getJSON("https://www.googleapis.com/books/v1/volumes/" + bookid, function (jsonData)
-				 {
-					var template = $('#booklistdetailstemplate2').html();
-					var html = Mustache.render(template, jsonData);
-					$(div).html(html);
-					$(div).slideToggle();
-				 });
-			 }
-			 
-			 function getGridBookDetails2(bookid)
-			 {
-				 $("#bookDetail2").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
-				 //we can use AJAX here because this service provider allows cross origin request
-				 $.getJSON("https://www.googleapis.com/books/v1/volumes/" + bookid, function (jsonData)
-				 {
-					$("#bookDetail2").html("");
-					var template = $('#bookgriddetailstemplate2').html();
-					var html = Mustache.render(template, jsonData);
-					$("#bookDetail2").html(html);
-				 });
-			 }
-			 
 			 function openTab(evt, tabName) 
 			 {
 				var i, tabcontent, tablinks;
@@ -444,7 +304,7 @@
 				
 				if (tabName == "bookshelfTab") {
 					var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
-					searchBooks(url, "booklisttemplate2","booklist2");
+					searchBooks(url, "booklisttemplate","booklist2");
 				}
 				
 			 };
