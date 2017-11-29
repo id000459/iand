@@ -4,20 +4,20 @@ $(document).ready(function ()
 {
 	$("#btnSearch").click(function ()
 	{
-		var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
+		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
 		searchBooks(url, "booklisttemplate","booklist");
 	});
 	 
 	$("#btnList").click(function ()
 	{ 
-		var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
+		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
 		searchBooks(url, "booklisttemplate","booklist");
 		templatetype = "list";
 	});
 
 	$("#btnGrid").click(function ()
 	{ 
-		var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val();
+		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
 		searchBooks(url, "bookgridtemplate","booklist");
 		templatetype = "grid";
 	});	
@@ -125,7 +125,7 @@ function pageClick(buttonNumber)
 {
 	searchIndex = buttonNumber * 10;
 	
-	var url="https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#searchTerm").val() + '&maxResults=10&startIndex=' + searchIndex;
+	var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val() + '&maxResults=10&startIndex=' + searchIndex;
 	if (templatetype == "grid") {
 		searchBooks(url, "bookgridtemplate","booklist");
 	} else {
