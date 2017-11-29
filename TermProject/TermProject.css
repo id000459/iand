@@ -45,8 +45,8 @@ div.tab button.active {
     /* border: 1px solid #ccc; */
     border-top: none;
 	height:auto;
-	-webkit-animation: linear 1s;
-    animation: linear 1s; 
+	-webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; 
 } 
 
 .logo {
@@ -231,3 +231,75 @@ header, footer {
   position:relative;
 
 }
+
+td {
+	width:20%;
+
+}
+
+#smallimage2 {
+	width:100%;
+
+}
+
+#header
+{
+	background-color: #97E300;
+	position:fixed; top: 0; left: 0px;
+	width: 100%;
+	padding: 5px;
+}
+#maincontent
+{
+	margin-top:120px;
+}
+.booklistitem
+{
+	border: thin solid gray;
+	background-color: #D3D3D3;
+	margin:1px;
+}
+.booklistitemheader
+{
+	cursor: pointer;
+}
+.booklistitemheader:hover
+{		background-color: #D3D3D3;	}
+.book
+{	
+	padding: 10px;
+	margin:10px;
+	background-color: white;
+	
+}
+.book2
+{	
+	padding: 10px;
+	margin:5px;
+	border: thin solid gray;
+	background-color: #D3D3D3;
+	float:right;
+	width:49%;
+}
+#box
+{
+	display: flex; 
+	flex-wrap: wrap;
+	width: 48%;
+	flex-grow:1;
+	float:left;
+}
+.boxitem
+{
+	flex-grow:1;
+	
+	border: thin solid gray;
+	background-color: #D3D3D3;
+	width: 40%;
+	margin: 5px;
+	padding: 2px;
+	height:auto;
+	min-height:100px;
+	font-size:small;
+}
+		
