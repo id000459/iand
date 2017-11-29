@@ -43,8 +43,8 @@ function searchBooks(servicePoint, templatetype, elementname)
 {
 	$("#" + elementname).html("Searching ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 
-	pageNumberContainer.classList.remove("pageNumberHide");
-	pageNumberContainer.classList.add("pageNumberShow");
+	/* pageNumberContainer.classList.remove("pageNumberHide");
+	pageNumberContainer.classList.add("pageNumberShow"); */
 
 	$.getJSON(servicePoint, function (jsonData)
 	{
@@ -53,7 +53,7 @@ function searchBooks(servicePoint, templatetype, elementname)
 		var html = Mustache.render(template, jsonData);
 		$("#" + elementname).html(html);
 
-		$(".booklistitemheader").on('click', function () 
+		/* $(".booklistitemheader").on('click', function () 
 		{ 
 			div=$(this).next(); // get the book details div
 			getBookDetails($(this).attr("data-bookid"), div);
@@ -63,7 +63,7 @@ function searchBooks(servicePoint, templatetype, elementname)
 		{ 
 			div=$(this).next(); // get the book details div
 			getGridBookDetails($(this).attr("data-bookid"), div);
-		});
+		}); */
 	 
 	});	
  
