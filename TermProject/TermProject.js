@@ -4,7 +4,7 @@ $(document).ready(function ()
 {
 	$("#btnSearch").click(function ()
 	{
-		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
+		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=car" + $("#searchTerm").val();
 		searchBooks(url, "booklisttemplate","booklist");
 	});
 	 
