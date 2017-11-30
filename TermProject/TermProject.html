@@ -10,17 +10,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script id="movielisttemplate" type="text/template">
-		{{#items}}
+		{{#results}}
 		<div class='movielistitem' id="{{id}}">
 			<div class="movielistitemheader" data-movieid="{{id}}">
-			{{#volumeInfo}}
-			<img style="padding:5px;" src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}{{^imageLinks}}../photos/NOIMG.png{{/imageLinks}}'  width=70 height=80 /> <h4 style="width:90%;float:right;">{{title}}</h4>
 			
-			{{/volumeInfo}}
+			<img style="padding:5px;" src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}'  width=70 height=80 /> <h4 style="width:90%;float:right;">{{title}}</h4>
+			
+			
 			</div>
 			<div class='moviedetails' style='display:none'></div>
 		</div>
-		{{/items}}
+		{{/results}}
 	</script>
 	<script id="movielistdetailstemplate" type="text/template">
 		<div class='movie'>
