@@ -81,13 +81,13 @@ function getmovieDetails(movieid, div)
 		$(div).html(html);
 		$(div).slideToggle();
 	 });
-	}
+}
 
-	function getGridmovieDetails(movieid)
-	{
+function getGridmovieDetails(movieid)
+{
 	 $("#movieDetail").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 	 //we can use AJAX here because this service provider allows cross origin request
-	 $.getJSON("https://www.googleapis.com/movies/v1/volumes/" + movieid, function (jsonData)
+	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
 		$("#movieDetail").html("");
 		var template = $('#moviegriddetailstemplate').html();
