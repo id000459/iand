@@ -122,7 +122,6 @@ function openTab(evt, tabName)
  
 function pageClick(buttonNumber)
 {
-	searchIndex = buttonNumber * 10;
 	
 	var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val() + '&page=' + searchIndex;
 	if (templatetype == "grid") {
