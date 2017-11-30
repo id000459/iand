@@ -52,17 +52,20 @@
 		</div>
 	</script>
 	<script id="moviegridtemplate" type="text/template">
-		<div id="box">
-		{{#items}}
+		{{#results}}
 		
-			{{#volumeInfo}}
-			<div id='{{id}}' data-movieid="{{id}}" class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> <div style="width:70%; float:right; margin:2px;"><strong>{{title}}</strong><br/>{{authors}}</div></div>
+		<div class="col-sm-4">
+		  <div class="panel panel-primary">
+		   
+			<div class="panel-heading">{{title}}</div>
+			<div class="panel-body" style="height:300px" ><img src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}' class="img-responsive"  alt="../photos/NOIMG.png"></div>
+			<div class="panel-footer"><button class="infobtn" data-movieid="{{id}}" >More Info</button></div>
 			
-			
-			{{/volumeInfo}}
-				
-		{{/items}}
+		  </div>
 		</div>
+		
+		
+		{{/results}}
 		<div id = "movieDetail" ></div>
 	</script>
 	<script id="moviegriddetailstemplate" type="text/template">
