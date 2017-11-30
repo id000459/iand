@@ -22,7 +22,7 @@ $(document).ready(function ()
 		templatetype = "grid";
 	});	
 
-	$("#btnList2").click(function ()
+	/* $("#btnList2").click(function ()
 	{ 
 		var url="https://www.googleapis.com/movies/v1/users/111815788291054011027/movieshelves/5/volumes";
 		searchmovies(url, "movielisttemplate","movielist2");
@@ -35,7 +35,7 @@ $(document).ready(function ()
 		searchmovies(url, "moviegridtemplate","movielist2");
 		templatetype = "grid";
 	});					 
- 
+  */
  
 });
 
@@ -124,7 +124,7 @@ function pageClick(buttonNumber)
 {
 	searchIndex = buttonNumber * 10;
 	
-	var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val() + '&maxResults=10&startIndex=' + searchIndex;
+	var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val() + '&page=' + searchIndex;
 	if (templatetype == "grid") {
 		searchmovies(url, "moviegridtemplate","movielist");
 	} else {
