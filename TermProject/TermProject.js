@@ -87,7 +87,7 @@ function getGridmovieDetails(movieid)
 {
 	 $("#movieDetail").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 	 //we can use AJAX here because this service provider allows cross origin request
-	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
+	 $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
 	 {
 		$("#movieDetail").html("");
 		var template = $('#moviegriddetailstemplate').html();
