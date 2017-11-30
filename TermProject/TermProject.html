@@ -10,20 +10,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script id="movielisttemplate" type="text/template">
-		{{#results}}
-		
-		<div class="col-sm-4">
-		  <div class="panel panel-primary">
-		   
-			<div class="panel-heading">{{title}}</div>
-			<div class="panel-body" style="height:300px" ><img src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}' class="img-responsive"  alt="../photos/NOIMG.png"></div>
-			<div class="panel-footer"><button class="infobtn" data-movieid="{{id}}" >More Info</button></div>
+		{{#items}}
+		<div class='movielistitem' id="{{id}}">
+			<div class="movielistitemheader" data-movieid="{{id}}">
+			{{#volumeInfo}}
+			<img style="padding:5px;" src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}{{^imageLinks}}../photos/NOIMG.png{{/imageLinks}}'  width=70 height=80 /> <h4 style="width:90%;float:right;">{{title}}</h4>
 			
-		  </div>
+			{{/volumeInfo}}
+			</div>
+			<div class='moviedetails' style='display:none'></div>
 		</div>
-		
-		
-		{{/results}}
+		{{/items}}
 	</script>
 	<script id="movielistdetailstemplate" type="text/template">
 		<div class='movie'>
@@ -49,43 +46,19 @@
 		</div>
 	</script>
 	<script id="moviegridtemplate" type="text/template">
-		{{#results}}
+		<div id="box">
+		{{#items}}
 		
-		<div class="col-sm-4">
-		  <div class="panel panel-primary">
-		   
-			<div class="panel-heading">{{title}}</div>
-			<div class="panel-body" style="height:300px" ><img src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}' class="img-responsive"  alt="../photos/NOIMG.png"></div>
-			<div class="panel-footer"><button class="infobtn" data-movieid="{{id}}" >More Info</button></div>
+			{{#volumeInfo}}
+			<div id='{{id}}' data-movieid="{{id}}" class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> <div style="width:70%; float:right; margin:2px;"><strong>{{title}}</strong><br/>{{authors}}</div></div>
 			
-		  </div>
+			
+			{{/volumeInfo}}
+				
+		{{/items}}
 		</div>
-		
-		
-		{{/results}}
-		<!-- <div id = "movieDetail" ></div> -->
-	</script>
-	<script id="moviegriddetailstemplate" type="text/template">
-		<div class='movie2'>
-		
-		
-			<h2>{{original_title}}</h2>
-			<h4>By {{authors}} - {{publishedDate}} - {{publisher}}</h4>
-			<img src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}' style="margin-right:6px; float: left"/>
-			
-			<div>{{{overview}}}</div>
-			<!-- <div><a href="{{#accessInfo}}{{#epub}}{{acsTokenLink}}{{/epub}}{{/accessInfo}}">ePub Link</a></div>
-			<div><a href="{{#accessInfo}}{{#pdf}}{{acsTokenLink}}{{/pdf}}{{/accessInfo}}">PDF Link</a></div>
-			<div><a href="{{#accessInfo}}{{webReaderLink}}{{/accessInfo}}">Web Reader Link</a></div>
-			
-			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{^listPrice}}Not Available{{/listPrice}}{{/saleInfo}}</div>
-			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{^retailPrice}}Not Available{{/retailPrice}}{{/saleInfo}}</div> -->
-			
-			</div>
-			<div style="clear:both"></div>
-		
-		</div>
-	</script>  
+		<div id = "movieDetail" ></div>
+	</script> 
 
 </head>
 
