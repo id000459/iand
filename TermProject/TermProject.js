@@ -43,8 +43,8 @@ function searchmovies(servicePoint, templatetype, elementname)
 {
 	$("#" + elementname).html("Searching ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 
-	/* pageNumberContainer.classList.remove("pageNumberHide");
-	pageNumberContainer.classList.add("pageNumberShow"); */
+	pageNumberContainer.classList.remove("pageNumberHide");
+	pageNumberContainer.classList.add("pageNumberShow");
 
 	$.getJSON(servicePoint, function (jsonData)
 	{
@@ -53,11 +53,11 @@ function searchmovies(servicePoint, templatetype, elementname)
 		var html = Mustache.render(template, jsonData);
 		$("#" + elementname).html(html);
 
-		/* $(".movielistitemheader").on('click', function () 
+		$(".movielistitemheader").on('click', function () 
 		{ 
 			div=$(this).next(); // get the movie details div
 			getmovieDetails($(this).attr("data-movieid"), div);
-		});	 */
+		});	
 
 		$(".infobtn").on('click', function () 
 		{ 
@@ -86,7 +86,6 @@ function getmovieDetails(movieid, div)
 function getGridmovieDetails(movieid)
 {
 	 $("#movieDetail").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
-	 //we can use AJAX here because this service provider allows cross origin request
 	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
 		$("#movieDetail").html("");
