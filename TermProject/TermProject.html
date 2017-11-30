@@ -24,17 +24,17 @@
 	</script>
 	<script id="movielistdetailstemplate" type="text/template">
 		<div class='movie'>
-			{{#volumeInfo}}
+			
 			<h2>{{title}}</h2>
 			<h4>By {{authors}} - {{publishedDate}} - {{publisher}}</h4>
-			<img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}' style="float: left"/>
+			<img src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}' style="float: left"/>
 			<div style="margin-left: 220px"> <br> 
 			<div>{{{description}}}</div>
 			<br/>
 			
-			<div><a href="{{#accessInfo}}{{#epub}}{{acsTokenLink}}{{/epub}}{{/accessInfo}}">ePub Link</a></div>
-			<div><a href="{{#accessInfo}}{{#pdf}}{{acsTokenLink}}{{/pdf}}{{/accessInfo}}">PDF Link</a></div>
-			<div><a href="{{#accessInfo}}{{webReaderLink}}{{/accessInfo}}">Web Reader Link</a></div>
+			<div>Genres: {{#genres}}<div>{{name}}</div><br/>{{/genres}}</div>
+			<div>{{#production_companies}}<div>{{name}}</div><br/>{{/production_companies}}</div>
+			<div>{{overview}}</div>
 
 			
 			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{^listPrice}}Not Available{{/listPrice}}{{/saleInfo}}</div>
@@ -42,7 +42,7 @@
 			
 			</div>
 			<div style="clear:both"></div>
-			{{/volumeInfo}}
+			
 		</div>
 	</script>
 	<script id="moviegridtemplate" type="text/template">
@@ -76,9 +76,7 @@
         </div>
 		
 		<nav id="topnav" class="navbar navbar-toggleable-md navbar-light bg-faded" style="overflow: auto;">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active nav-font" href="../index.html">Home <span class="sr-only">(current)</span></a>
