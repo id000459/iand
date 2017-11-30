@@ -113,17 +113,17 @@ function openTab(evt, tabName)
 	document.getElementById(tabName).style.display = "block";
 	evt.currentTarget.className += " active";
 
-	if (tabName == "movieshelfTab") {
+	/* if (tabName == "movieshelfTab") {
 		var url="https://www.googleapis.com/movies/v1/users/111815788291054011027/movieshelves/5/volumes";
 		searchmovies(url, "movielisttemplate","movielist2");
-	}
+	} */
 
 };
  
 function pageClick(buttonNumber)
 {
 	
-	var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val() + '&page=' + searchIndex;
+	var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val() + '&page=' + buttonNumber;
 	if (templatetype == "grid") {
 		searchmovies(url, "moviegridtemplate","movielist");
 	} else {
