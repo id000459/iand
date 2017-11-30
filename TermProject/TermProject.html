@@ -12,15 +12,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="../js/handlebars-v4.0.10.js" type="text/javascript"></script>  
-	<script id="booklisttemplate" type="text/template">
+	<script id="movielisttemplate" type="text/template">
 		{{#results}}
 		
 		<div class="col-sm-4">
 		  <div class="panel panel-primary">
 		   
 			<div class="panel-heading">{{title}}</div>
-			<div class="panel-body" style="height:300px" ><img src='{{#backdrop_path}}https://image.tmdb.org/t/p/w185/{{backdrop_path}}{{/backdrop_path}}{{^backdrop_path}}../photos/NOIMG.png{{/backdrop_path}}' class="img-responsive"  alt="../photos/NOIMG.png"></div>
-			<div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+			<div class="panel-body" style="height:300px" ><img src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}' class="img-responsive"  alt="../photos/NOIMG.png"></div>
+			<div class="panel-footer"><button class="infobtn" data-movieid="{{id}}" >More Info</button></div>
 			
 		  </div>
 		</div>
@@ -28,8 +28,8 @@
 		
 		{{/results}}
 	</script>
-	<script id="booklistdetailstemplate" type="text/template">
-		<div class='book'>
+	<script id="movielistdetailstemplate" type="text/template">
+		<div class='movie'>
 			{{#volumeInfo}}
 			<h2>{{title}}</h2>
 			<h4>By {{authors}} - {{publishedDate}} - {{publisher}}</h4>
@@ -51,22 +51,22 @@
 			{{/volumeInfo}}
 		</div>
 	</script>
-	<script id="bookgridtemplate" type="text/template">
+	<script id="moviegridtemplate" type="text/template">
 		<div id="box">
 		{{#items}}
 		
 			{{#volumeInfo}}
-			<div id='{{id}}' data-bookid="{{id}}" class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> <div style="width:70%; float:right; margin:2px;"><strong>{{title}}</strong><br/>{{authors}}</div></div>
+			<div id='{{id}}' data-movieid="{{id}}" class='boxitem'><img src='{{#imageLinks}}{{thumbnail}}{{/imageLinks}}'  width=50 /> <div style="width:70%; float:right; margin:2px;"><strong>{{title}}</strong><br/>{{authors}}</div></div>
 			
 			
 			{{/volumeInfo}}
 				
 		{{/items}}
 		</div>
-		<div id = "bookDetail" ></div>
+		<div id = "movieDetail" ></div>
 	</script>
-	<script id="bookgriddetailstemplate" type="text/template">
-		<div class='book2'>
+	<script id="moviegriddetailstemplate" type="text/template">
+		<div class='movie2'>
 		
 		{{#volumeInfo}}
 			<h2>{{title}}</h2>
@@ -128,7 +128,7 @@
   </div>
 </nav>
 
-<div id="booklist" style="float:left;" class="container">    
+<div id="movielist" style="float:left;" class="container">    
   <div class="row">
     
   </div>

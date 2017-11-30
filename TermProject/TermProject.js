@@ -5,41 +5,41 @@ $(document).ready(function ()
 	$("#btnSearch").click(function ()
 	{
 		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
-		searchBooks(url, "booklisttemplate","booklist");
+		searchmovies(url, "movielisttemplate","movielist");
 	});
 	 
 	$("#btnList").click(function ()
 	{ 
 		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
-		searchBooks(url, "booklisttemplate","booklist");
+		searchmovies(url, "movielisttemplate","movielist");
 		templatetype = "list";
 	});
 
 	$("#btnGrid").click(function ()
 	{ 
 		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
-		searchBooks(url, "bookgridtemplate","booklist");
+		searchmovies(url, "moviegridtemplate","movielist");
 		templatetype = "grid";
 	});	
 
 	$("#btnList2").click(function ()
 	{ 
-		var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
-		searchBooks(url, "booklisttemplate","booklist2");
+		var url="https://www.googleapis.com/movies/v1/users/111815788291054011027/movieshelves/5/volumes";
+		searchmovies(url, "movielisttemplate","movielist2");
 		templatetype = "list";
 	});
 
 	$("#btnGrid2").click(function ()
 	{ 
-		var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
-		searchBooks(url, "bookgridtemplate","booklist2");
+		var url="https://www.googleapis.com/movies/v1/users/111815788291054011027/movieshelves/5/volumes";
+		searchmovies(url, "moviegridtemplate","movielist2");
 		templatetype = "grid";
 	});					 
  
  
 });
 
-function searchBooks(servicePoint, templatetype, elementname)
+function searchmovies(servicePoint, templatetype, elementname)
 {
 	$("#" + elementname).html("Searching ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 
@@ -53,46 +53,46 @@ function searchBooks(servicePoint, templatetype, elementname)
 		var html = Mustache.render(template, jsonData);
 		$("#" + elementname).html(html);
 
-		/* $(".booklistitemheader").on('click', function () 
+		/* $(".movielistitemheader").on('click', function () 
 		{ 
-			div=$(this).next(); // get the book details div
-			getBookDetails($(this).attr("data-bookid"), div);
-		});	
+			div=$(this).next(); // get the movie details div
+			getmovieDetails($(this).attr("data-movieid"), div);
+		});	 */
 
-		$(".boxitem").on('click', function () 
+		$(".infobtn").on('click', function () 
 		{ 
-			div=$(this).next(); // get the book details div
-			getGridBookDetails($(this).attr("data-bookid"), div);
-		}); */
+			div=$(this).next(); // get the movie details div
+			getGridmovieDetails($(this).attr("data-movieid"), div);
+		});
 	 
 	});	
  
  
 }				 
 
-function getBookDetails(bookid, div)
+function getmovieDetails(movieid, div)
 {
-	 $("#bookdetails").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
+	 $("#moviedetails").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 
-	 $.getJSON("https://www.googleapis.com/books/v1/volumes/" + bookid, function (jsonData)
+	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
-		var template = $('#booklistdetailstemplate').html();
+		var template = $('#movielistdetailstemplate').html();
 		var html = Mustache.render(template, jsonData);
 		$(div).html(html);
 		$(div).slideToggle();
 	 });
 	}
 
-	function getGridBookDetails(bookid)
+	function getGridmovieDetails(movieid)
 	{
-	 $("#bookDetail").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
+	 $("#movieDetail").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 	 //we can use AJAX here because this service provider allows cross origin request
-	 $.getJSON("https://www.googleapis.com/books/v1/volumes/" + bookid, function (jsonData)
+	 $.getJSON("https://www.googleapis.com/movies/v1/volumes/" + movieid, function (jsonData)
 	 {
-		$("#bookDetail").html("");
-		var template = $('#bookgriddetailstemplate').html();
+		$("#movieDetail").html("");
+		var template = $('#moviegriddetailstemplate').html();
 		var html = Mustache.render(template, jsonData);
-		$("#bookDetail").html(html);
+		$("#movieDetail").html(html);
 	 });
 }
 
@@ -114,9 +114,9 @@ function openTab(evt, tabName)
 	document.getElementById(tabName).style.display = "block";
 	evt.currentTarget.className += " active";
 
-	if (tabName == "bookshelfTab") {
-		var url="https://www.googleapis.com/books/v1/users/111815788291054011027/bookshelves/5/volumes";
-		searchBooks(url, "booklisttemplate","booklist2");
+	if (tabName == "movieshelfTab") {
+		var url="https://www.googleapis.com/movies/v1/users/111815788291054011027/movieshelves/5/volumes";
+		searchmovies(url, "movielisttemplate","movielist2");
 	}
 
 };
@@ -127,9 +127,9 @@ function pageClick(buttonNumber)
 	
 	var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val() + '&maxResults=10&startIndex=' + searchIndex;
 	if (templatetype == "grid") {
-		searchBooks(url, "bookgridtemplate","booklist");
+		searchmovies(url, "moviegridtemplate","movielist");
 	} else {
-		searchBooks(url, "booklisttemplate","booklist");
+		searchmovies(url, "movielisttemplate","movielist");
 
 	}
 }
