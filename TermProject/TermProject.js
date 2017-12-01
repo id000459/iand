@@ -187,7 +187,6 @@ function getpop(movieid)
 
 function getpopmovieDetails(movieid, div)
 {
-	 $("#moviedetails").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 
 	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
