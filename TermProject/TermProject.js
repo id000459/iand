@@ -67,8 +67,22 @@ function searchmovies(servicePoint, templatetype, elementname)
 		});
 	 
 	});	
-	
-	var moveLeft = 0;
+ 
+}				 
+
+function getmovieDetails(movieid, div)
+{
+	 $("#moviedetails").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
+
+	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
+	 {
+		var template = $('#movielistdetailstemplate').html();
+		var html = Mustache.render(template, jsonData);
+		$(div).html(html);
+		$(div).slideToggle();
+	 });
+	 
+	 var moveLeft = 0;
 	var moveDown = 0;
 	$('a.popper').hover(function (e) {
 
@@ -117,20 +131,6 @@ function searchmovies(servicePoint, templatetype, elementname)
 		$(this).toggleClass("show");
 	});
  
- 
-}				 
-
-function getmovieDetails(movieid, div)
-{
-	 $("#moviedetails").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
-
-	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
-	 {
-		var template = $('#movielistdetailstemplate').html();
-		var html = Mustache.render(template, jsonData);
-		$(div).html(html);
-		$(div).slideToggle();
-	 });
 }
 
 function getGridmovieDetails(movieid)
