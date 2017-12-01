@@ -33,7 +33,7 @@
 			<br/>
 			
 			
-			<div>Genres: {{#genres}}<a href="#" data-movieid="{{id}}" onmouseover="getpop()" class="popper" data-popbox="pop1">{{name}}</a><br/>{{/genres}}</div>
+			<div>Genres: {{#genres}}<a href="#" onmouseover="getpop({{id}})" class="popper" data-popbox="pop1">{{name}}</a><br/>{{/genres}}</div>
 			<div>{{#production_companies}}<div>{{name}}</div><br/>{{/production_companies}}</div>
 			<div>{{overview}}</div>
 
