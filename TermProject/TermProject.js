@@ -132,9 +132,9 @@ function pageClick(buttonNumber)
 	}
 }
 
-function getpop(movieid)
+function getpop()
 {
-	
+	var movieid = $(this).attr("data-movieid");
 	var moveLeft = 0;
 	var moveDown = 0;
 	$('a.popper').hover(function (e) {
