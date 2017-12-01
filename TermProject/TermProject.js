@@ -40,10 +40,34 @@ $(document).ready(function ()
  
 });
 
-function loadpop()
+function searchmovies(servicePoint, templatetype, elementname)
 {
+	$("#" + elementname).html("Searching ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
+
+	pageNumberContainer.classList.remove("pageNumberHide");
+	pageNumberContainer.classList.add("pageNumberShow");
+
+	$.getJSON(servicePoint, function (jsonData)
+	{
+		$("#" + elementname).html("");					
+		var template = $('#' + templatetype ).html();
+		var html = Mustache.render(template, jsonData);
+		$("#" + elementname).html(html);
+
+		$(".movielistitemheader").on('click', function () 
+		{ 
+			div=$(this).next(); // get the movie details div
+			getmovieDetails($(this).attr("data-movieid"), div);
+		});	
+
+		$(".infobtn").on('click', function () 
+		{ 
+			div=$(this).next(); // get the movie details div
+			getGridmovieDetails($(this).attr("data-movieid"), div);
+		});
+	 
+	});	
 	
-  
 	var moveLeft = 0;
 	var moveDown = 0;
 	$('a.popper').hover(function (e) {
@@ -92,36 +116,6 @@ function loadpop()
 		}
 		$(this).toggleClass("show");
 	});
- 
-}
-
-function searchmovies(servicePoint, templatetype, elementname)
-{
-	$("#" + elementname).html("Searching ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
-
-	pageNumberContainer.classList.remove("pageNumberHide");
-	pageNumberContainer.classList.add("pageNumberShow");
-
-	$.getJSON(servicePoint, function (jsonData)
-	{
-		$("#" + elementname).html("");					
-		var template = $('#' + templatetype ).html();
-		var html = Mustache.render(template, jsonData);
-		$("#" + elementname).html(html);
-
-		$(".movielistitemheader").on('click', function () 
-		{ 
-			div=$(this).next(); // get the movie details div
-			getmovieDetails($(this).attr("data-movieid"), div);
-		});	
-
-		$(".infobtn").on('click', function () 
-		{ 
-			div=$(this).next(); // get the movie details div
-			getGridmovieDetails($(this).attr("data-movieid"), div);
-		});
-	 
-	});	
  
  
 }				 
