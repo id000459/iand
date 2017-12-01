@@ -135,7 +135,7 @@ function pageClick(buttonNumber)
 	}
 }
 
-function getpop()
+function getpop(movieid)
 {
 	
 	var moveLeft = 0;
@@ -144,6 +144,7 @@ function getpop()
 
 		var target = '#' + ($(this).attr('data-popbox'));
 		$(target).show();
+		getGridmovieDetails(movieid, target);
 		moveLeft = $(this).outerWidth();
 		moveDown = ($(target).outerHeight() / 2);
 	}, function () {

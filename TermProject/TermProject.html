@@ -33,7 +33,7 @@
 			<br/>
 			
 			
-			<div>Genres: {{#genres}}<a href="#" onmouseover="getpop()" class="popper" data-popbox="pop1">{{name}}</a><br/>{{/genres}}</div>
+			<div>Genres: {{#genres}}<a href="#" onmouseover="getpop({{id}})" class="popper" data-popbox="pop1">{{name}}</a><br/>{{/genres}}</div>
 			<div>{{#production_companies}}<div>{{name}}</div><br/>{{/production_companies}}</div>
 			<div>{{overview}}</div>
 
@@ -47,6 +47,19 @@
 			
 			
 		</div>
+	</script>
+	<script id="pop1" class="popbox" type="text/template">
+		{{#results}}
+		<div class='movielistitem' id="{{id}}">
+			<div class="movielistitemheader" data-movieid="{{id}}">
+			
+			<img style="padding:5px;" src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}'  width=70 height=80 /> <h4 style="width:90%;float:right;">{{title}}</h4>
+			
+			
+			</div>
+			<div class='moviedetails' style='display:none'></div>
+		</div>
+		{{/results}}
 	</script>
 	
 	
@@ -97,13 +110,13 @@
 	
 		<br/>
 		
-		<div id="pop1" class="popbox">
+		<!-- <div id="pop1" class="popbox">
 			 <h2>Job Info Search</h2>
 
 			 <h2>WRKNo : <input type="text"  /></h2>
 
 
-			</div>
+			</div> -->
 		<div class="tab">
 		  <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'searchTab')">Search</button>
 		  <button class="tablinks" onclick="openTab(event, 'movieshelfTab')">My movieshelf</button>
