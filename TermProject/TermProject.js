@@ -132,14 +132,14 @@ function pageClick(buttonNumber)
 	}
 }
 
-$('a.genrediv').hover(function (e) {    
+$('#genrediv').hover(function (e) {    
     var target = '#' + ($(this).attr('data-popbox'));
     $(target).show();
     moveLeft = $(this).outerWidth();
     moveDown = ($(target).outerHeight() / 2);
 }, function () {
     var target = '#' + ($(this).attr('data-popbox'));
-    if (!($("a.genrediv").hasClass("show"))) {
+    if (!($("#genrediv").hasClass("show"))) {
         $(target).hide(); //dont hide popup if it is clicked
     }
 });
