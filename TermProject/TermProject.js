@@ -81,9 +81,6 @@ function getmovieDetails(movieid, div)
 		$(div).html(html);
 		$(div).slideToggle();
 	 });
-	 
-	 
- 
 }
 
 function getGridmovieDetails(movieid)
@@ -144,7 +141,7 @@ function getpop(movieid)
 
 		var target = '#' + ($(this).attr('data-popbox'));
 		$(target).show();
-		getGridmovieDetails(movieid, target);
+		getmovieDetails(movieid, target);
 		moveLeft = $(this).outerWidth();
 		moveDown = ($(target).outerHeight() / 2);
 	}, function () {
