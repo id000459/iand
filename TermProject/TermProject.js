@@ -40,7 +40,7 @@ $(document).ready(function ()
  
 });
 
-$(#movielistdetailstemplate).ready(function ()
+function loadpop()
 {
 	
   
@@ -93,7 +93,7 @@ $(#movielistdetailstemplate).ready(function ()
 		$(this).toggleClass("show");
 	});
  
-});
+}
 
 function searchmovies(servicePoint, templatetype, elementname)
 {
