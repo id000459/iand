@@ -32,7 +32,7 @@
 			<div>{{{description}}}</div>
 			<br/>
 			
-			<div>Genres: {{#genres}}<div>{{name}}</div><br/>{{/genres}}</div>
+			<a href="#" class="popper" data-popbox="pop1">Genres: {{#genres}}<div>{{name}}</div><br/>{{/genres}}</a>
 			<div>{{#production_companies}}<div>{{name}}</div><br/>{{/production_companies}}</div>
 			<div>{{overview}}</div>
 
@@ -93,7 +93,18 @@
 
 	
 		<br/>
-	
+		<div id="pop1" class="popbox">
+     <h2>Job Info Search</h2>
+
+     <h2>WRKNo : <input type="text"  /></h2>
+
+     <h2>Result</h2>
+
+    <p>Customer Name :
+        <input type="text" />
+    </p>
+    
+</div>
 		
 		<div class="tab">
 		  <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'searchTab')">Search</button>
