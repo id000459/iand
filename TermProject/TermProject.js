@@ -188,7 +188,7 @@ function getpop(movieid)
 function getpopmovieDetails(movieid, div)
 {
 
-	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
+	 $.getJSON("https://api.themoviedb.org/3/movie/55?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
 		var template = $('#pop1').html();
 		var html = Mustache.render(template, jsonData);
