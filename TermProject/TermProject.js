@@ -125,7 +125,6 @@ function getTVDetails(movieid, div)
 		$(div).slideToggle();
 	 });
 	 
-	 getpop('2');
 }
 
 function getGridmovieDetails(movieid)
