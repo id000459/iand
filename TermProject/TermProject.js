@@ -170,6 +170,18 @@ function pageClick(buttonNumber)
 	}
 }
 
+function tvpageClick(buttonNumber)
+{
+	
+	var url="https://api.themoviedb.org/3/search/tv?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTermtv").val() + '&page=' + buttonNumber;
+	if (templatetype == "grid") {
+		searchmovies(url, "moviegridtemplate","movielist");
+	} else {
+		searchmovies(url, "movielisttemplate","movielist");
+
+	}
+}
+
 function getpop(movieid)
 {
 	
