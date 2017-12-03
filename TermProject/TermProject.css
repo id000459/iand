@@ -324,11 +324,8 @@ td {
     width: 100%;
     margin: -10px 0px 8px -10px;
     padding: 5px 10px;
-}	
-
-
-	
-#browsebtn {
+}		
+.dropbtn {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
@@ -337,7 +334,7 @@ td {
     cursor: pointer;
 }
 
-#browsebtn {
+.dropdown {
     position: relative;
     display: inline-block;
 }
@@ -360,10 +357,10 @@ td {
 
 .dropdown-content a:hover {background-color: #f1f1f1}
 
-#browsebtn:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-#browsebtn:hover .dropbtn {
+.dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
