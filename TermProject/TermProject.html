@@ -93,9 +93,21 @@
 		<div class="tab">
 		  <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'moviesearchtab')">Movie Search</button>
 		  <button class="tablinks" onclick="openTab(event, 'tvsearchtab')">TV Search</button>
+		  <button class="tablinks" id="browsebtn">Browse Genres</button>
+		  <div class="dropdown-content">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+			</div>
 		</div>
 		<div id="moviesearchtab" class="tabcontent">
 		How would you like to search for a Movie?
+			<select id="movieselect">
+			  <option value="volvo">Movie Name</option>
+			  <option value="saab">Saab</option>
+			  <option value="mercedes">Mercedes</option>
+			  <option value="audi">Audi</option>
+			</select>
 		  <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'searchTab')">Search</button>
 		  <button class="tablinks" onclick="openTab(event, 'movieshelfTab')">My movieshelf</button>
 		</div>
@@ -106,6 +118,7 @@
 		</div>
 
 		<div id="searchTab" class="tabcontent">
+			
 			<input type="text" id="searchTerm" />
 			<input type="button" id="btnSearch" value="Search" />
 			<input type="button" id="btnList" value="List View"  />
