@@ -140,7 +140,7 @@ function getpop(movieid)
 	$('a.popper').hover(function (e) {
 		var target = '#' + ($(this).attr('data-popbox'));
 		getpopmovieDetails(movieid, target);
-		
+		$(target).slideToggle();
 		$(target).show();
 		
 		moveLeft = $(this).outerWidth();
@@ -209,7 +209,7 @@ function getpopmovieDetails(movieid, div)
 			
 			});
 			
-		$(div).slideToggle();
+		
 }
 
 		
