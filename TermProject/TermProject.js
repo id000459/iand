@@ -93,7 +93,11 @@ function searchmovies(servicePoint, templatetype, elementname)
 	 
 	});	
  
-}				 
+}	
+
+function init() {	
+	getpop($(this).attr("mouseoverid"));
+}			 
 
 function getmovieDetails(movieid, div)
 {
@@ -107,9 +111,6 @@ function getmovieDetails(movieid, div)
 		$(div).slideToggle();
 	 });
 	 
-	$(function() { // initialize our .hover actions when jQuery loads
-		$('a').hover( function() { getpop($(this).attr("mouseoverid")); }); 
-	});
 }
 
 function getTVDetails(movieid, div)
