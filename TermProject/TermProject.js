@@ -142,7 +142,7 @@ function getpop(movieid)
 		var popuptype = $(this).attr('poptype');
 		
 		if (popuptype == 'company') {
-			getpopmovieDetails(movieid, target);
+			getcompanymovieDetails(movieid, target);
 		}
 		
 		$(target).show();
