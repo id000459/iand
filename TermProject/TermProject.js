@@ -194,9 +194,24 @@ function getpopmovieDetails(movieid, div)
 				var bookHTML='<table>';
 						
 						bookHTML+='<h2>' + book.name + ' </h2>';
-						bookHTML+='<img src="https://image.tmdb.org/t/p/w45/' + book.logo_path + '" style="float: right"/>';
-						bookHTML+='<tr><strong>Headquarters:</strong> ' + book.headquarters + ' </tr><br/>';
-						bookHTML+='<tr><strong>Homepage:</strong> ' + book.homepage + ' </tr>';
+						try {
+							bookHTML+='<img src="https://image.tmdb.org/t/p/w45/' + book.logo_path + '" style="float: right"/>';
+						}
+						catch(err)
+						{
+							bookHTML+='<img src="photos/NOIMG.png" style="float: right"/>';
+						}
+						if (book.headquarters = null){
+							bookHTML+='<tr><strong>Headquarters:</strong> N/A </tr><br/>';
+						} else {
+							bookHTML+='<tr><strong>Headquarters:</strong> ' + book.headquarters + ' </tr><br/>';
+						}
+						
+						if (book.homepage = null){
+							bookHTML+='<tr><strong>Homepage:</strong> N/A </tr>';
+						} else {
+							bookHTML+='<tr><strong>Homepage:</strong> ' + book.homepage + ' </tr>';
+						}
 	
 					bookHTML+="</table>"
 				$(div).html(bookHTML);
