@@ -193,7 +193,10 @@ function getpopmovieDetails(movieid, div)
 	 $.getJSON('https://api.themoviedb.org/3/company/' + movieid + '?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
 				var bookHTML='<table style="width:90%;">';
 						
-						bookHTML+='<h2>Headquarters: ' + book.headquarters + ' </h2>';
+						bookHTML+='<h2>' + book.name + ' </h2>';
+						bookHTML+='<img src="https://image.tmdb.org/t/p/w45/' + book.logo_path + '" style="float: right"/>';
+						bookHTML+='<tr>Headquarters: ' + book.headquarters + ' </tr>';
+						bookHTML+='<tr>Homepage: ' + book.homepage + ' </tr>';
 	
 					bookHTML+="</table>"
 				$(div).html(bookHTML);
