@@ -139,8 +139,9 @@ function getpop(movieid)
 	var moveDown = 0;
 	$('a.popper').hover(function (e) {
 		var target = '#' + ($(this).attr('data-popbox'));
+		var popuptype = $(this).attr('poptype');
 		
-		if ($(this).attr('poptype') == 'company') {
+		if (popuptype == 'company') {
 			getpopmovieDetails(movieid, target);
 		}
 		
