@@ -91,10 +91,16 @@
 		
 		
 		<div class="tab">
-		  <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'detailsearchtab')">Search</button>
+		  <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'moviesearchtab')">Movie Search</button>
+		  <button class="tablinks" onclick="openTab(event, 'tvsearchtab')">TV Search</button>
+		</div>
+		<div id="moviesearchtab" class="tabcontent">
+		How would you like to search for a Movie?
+		  <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'searchTab')">Search</button>
 		  <button class="tablinks" onclick="openTab(event, 'movieshelfTab')">My movieshelf</button>
 		</div>
-		<div id="detailsearchtab" class="tabcontent">
+		<div id="tvsearchtab" class="tabcontent">
+		How would you like to search for a TV show?
 		  <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'searchTab')">Search</button>
 		  <button class="tablinks" onclick="openTab(event, 'movieshelfTab')">My movieshelf</button>
 		</div>
