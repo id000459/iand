@@ -3,18 +3,8 @@ var templatetype;
 $(document).ready(function ()
 {
 	
+	populateddlist();
 
-	 $.getJSON("https://api.themoviedb.org/3/genre/movie/list?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US" , function (jsonData)
-	 {
-		$('#ddlist').html("");					
-		var template = $('#dropdowntemplate' ).html();
-		var html = Mustache.render(template, jsonData);
-		$('#ddlist').html(html);
-	 });
-	 
-	 
-	 
-	 
 	$("#btnSearch").click(function ()
 	{
 		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
@@ -50,12 +40,7 @@ $(document).ready(function ()
 	});					 
   */
   
-	$(".ddlistitem").on('click', function () 
-		{ 
-			id=$(this).attr("genreid");
-			var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
-			searchmovies(url, "moviegridtemplate","movielist");
-		});	
+	
  
  
 });
@@ -275,4 +260,20 @@ function getcompanymovieDetails(movieid, div)
 					
 }
 
-		
+function populateddlist()
+{
+	$.getJSON("https://api.themoviedb.org/3/genre/movie/list?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US" , function (jsonData)
+	 {
+		$('#ddlist').html("");					
+		var template = $('#dropdowntemplate' ).html();
+		var html = Mustache.render(template, jsonData);
+		$('#ddlist').html(html);
+	 });
+	 
+	 $(".ddlistitem").on('click', function () 
+	{ 
+		id=$(this).attr("genreid");
+		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
+		searchmovies(url, "moviegridtemplate","movielist");
+	});	
+}	
