@@ -108,7 +108,7 @@ function getmovieDetails(movieid, div)
 	 });
 	 
 	$(function() { // initialize our .hover actions when jQuery loads
-		$('.popper').hover( function() { getpop($(this).attr("mouseoverid")); }); 
+		$('a').hover( function() { getpop($(this).attr("mouseoverid")); }); 
 	});
 }
 
