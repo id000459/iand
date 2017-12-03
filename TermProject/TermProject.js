@@ -95,8 +95,8 @@ function searchmovies(servicePoint, templatetype, elementname)
  
 }	
 
-function init() {	
-	getpop($(this).attr("mouseoverid"));
+function init(id) {	
+	getpop(id);
 }			 
 
 function getmovieDetails(movieid, div)
