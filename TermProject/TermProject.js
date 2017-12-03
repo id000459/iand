@@ -223,4 +223,36 @@ function getcompanymovieDetails(movieid, div)
 					
 }
 
+function getcompanymovieDetails(movieid, div)
+{
+
+	 $.getJSON('https://api.themoviedb.org/3/company/' + movieid + '?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
+				var bookHTML='<table>';
+						
+					bookHTML+='<h2>' + book.name + ' </h2>';
+					if (book.logo_path == null){	
+						bookHTML+='<img src="../photos/NOIMG.png" style="float: right;margin-right:1em;"/>';
+					} else {
+						bookHTML+='<img src="https://image.tmdb.org/t/p/w92/' + book.logo_path + '" style="float: right"/>';
+					} 
+					
+					if (book.headquarters == null){
+						bookHTML+='<tr><strong>Headquarters:</strong> N/A </tr><br/>';
+					} else {
+						bookHTML+='<tr><strong>Headquarters:</strong> ' + book.headquarters + ' </tr><br/>';
+					}
+					
+					if (book.homepage == null){
+						bookHTML+='<tr><strong>Homepage:</strong> N/A </tr>';
+					} else {
+						bookHTML+='<tr><strong>Homepage:</strong> ' + book.homepage + ' </tr>';
+					}
+	
+					bookHTML+="</table>"
+				$(div).html(bookHTML);
+			
+			});
+					
+}
+
 		
