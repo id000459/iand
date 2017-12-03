@@ -175,9 +175,9 @@ function tvpageClick(buttonNumber)
 	
 	var url="https://api.themoviedb.org/3/search/tv?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTermtv").val() + '&page=' + buttonNumber;
 	if (templatetype == "grid") {
-		searchmovies(url, "moviegridtemplate","movielist");
+		searchmovies(url, "tvlisttemplate","tvlist");
 	} else {
-		searchmovies(url, "movielisttemplate","movielist");
+		searchmovies(url, "tvlisttemplate","tvlist");
 
 	}
 }
