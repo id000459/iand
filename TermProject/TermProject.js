@@ -190,14 +190,14 @@ function getpop(movieid)
 function getpopmovieDetails(movieid, div)
 {
 
-	 $.getJSON('https://api.themoviedb.org/3/company/2?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
+	 $.getJSON('https://api.themoviedb.org/3/company/' + movieid + '?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
 				var bookHTML='<table style="width:90%;">';
 				for (i in book.items)
 					{
 						
 						
 						
-						bookHTML+='<td>' + book.items[i].volumeInfo.title + ' </td>';
+						bookHTML+='<h2>Headquarters: ' + book.items[i].headquarters + ' </h2>';
 						
 
 						
