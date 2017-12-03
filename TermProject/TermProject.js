@@ -190,7 +190,7 @@ function getpop(movieid)
 function getpopmovieDetails(movieid, div)
 {
 
-	 $.getJSON('https://www.googleapis.com/books/v1/volumes?q=intitle:car&maxResults=10', function(book) {
+	 $.getJSON('https://api.themoviedb.org/3/company/2?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
 				var bookHTML='<table style="width:90%;">';
 				for (i in book.items)
 					{
