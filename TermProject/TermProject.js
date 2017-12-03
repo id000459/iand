@@ -1,5 +1,7 @@
 
 var templatetype;
+var searchtype;
+
 $(document).ready(function ()
 {
 	
@@ -57,6 +59,7 @@ $(document).ready(function ()
 function searchmovies(servicePoint, templatetype, elementname)
 {
 	$("#" + elementname).html("Searching ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
+	searchtype = $('.selectlist').value();
 
 	pageNumberContainer.classList.remove("pageNumberHide");
 	pageNumberContainer.classList.add("pageNumberShow");
@@ -224,7 +227,6 @@ function getpop(movieid)
 
 function getcompanymovieDetails(movieid, div)
 {
-
 	 $.getJSON('https://api.themoviedb.org/3/company/' + movieid + '?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
 				var bookHTML='<table>';
 						
@@ -254,7 +256,6 @@ function getcompanymovieDetails(movieid, div)
 					
 }
 
-
 function populateddlist()
 {
 	$.getJSON("https://api.themoviedb.org/3/genre/movie/list?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US" , function (jsonData)
@@ -265,7 +266,6 @@ function populateddlist()
 		$('#ddlist').html(html);
 	 });
 	 
-	
 }
 
 function listselect(id)
