@@ -16,7 +16,7 @@ $(document).ready(function ()
 	$("#btnSearchtv").click(function ()
 	{
 		var url="https://api.themoviedb.org/3/search/tv?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTermtv").val();
-		searchmovies(url, "movielisttemplate","tvlist");
+		searchmovies(url, "tvlisttemplate","tvlist");
 	});
 	 
 	 
@@ -73,7 +73,11 @@ function searchmovies(servicePoint, templatetype, elementname)
 			div=$(this).next(); // get the movie details div
 			getmovieDetails($(this).attr("data-movieid"), div);
 		});	
-
+		$(".tvlistitemheader").on('click', function () 
+		{ 
+			div=$(this).next(); // get the tv details div
+			getTVDetails($(this).attr("data-tvid"), div);
+		});	
 		$(".infobtn").on('click', function () 
 		{ 
 			div=$(this).next(); // get the movie details div
@@ -89,6 +93,19 @@ function getmovieDetails(movieid, div)
 	 $("#moviedetails").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 
 	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
+	 {
+		var template = $('#movielistdetailstemplate').html();
+		var html = Mustache.render(template, jsonData);
+		$(div).html(html);
+		$(div).slideToggle();
+	 });
+}
+
+function getTVDetails(movieid, div)
+{
+	 $("#TVdetails").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
+
+	 $.getJSON("https://api.themoviedb.org/3/tv/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
 		var template = $('#movielistdetailstemplate').html();
 		var html = Mustache.render(template, jsonData);

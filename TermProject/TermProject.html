@@ -22,6 +22,19 @@
 		</div>
 		{{/results}}
 	</script>
+	<script id="tvlisttemplate" type="text/template">
+		{{#results}}
+		<div class='movielistitem' id="{{id}}">
+			<div class="tvlistitemheader" data-tvid="{{id}}">
+			
+			<img style="padding:5px;" src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}'  width=70 height=80 /> <h4 style="width:90%;float:right;">{{title}}</h4>
+			
+			
+			</div>
+			<div class='TVdetails' style='display:none'></div>
+		</div>
+		{{/results}}
+	</script>
 	<script id="movielistdetailstemplate" type="text/template">
 		<div class='movie'>
 			
