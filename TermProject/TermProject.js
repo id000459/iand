@@ -60,10 +60,14 @@ function searchmovies(servicePoint, templatetype, elementname)
 {
 	$("#" + elementname).html("Searching ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 	searchtype = $('.selectlist').val();
-
-	pageNumberContainer.classList.remove("pageNumberHide");
-	pageNumberContainer.classList.add("pageNumberShow");
-
+	
+	if (templatetype == "tvlisttemplate") {
+		pageNumberContainertv.classList.remove("pageNumberHide");
+		pageNumberContainertv.classList.add("pageNumberShow");
+	} else {
+		pageNumberContainer.classList.remove("pageNumberHide");
+		pageNumberContainer.classList.add("pageNumberShow");
+	}
 	$.getJSON(servicePoint, function (jsonData)
 	{
 		$("#" + elementname).html("");					
