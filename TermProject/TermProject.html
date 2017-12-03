@@ -33,7 +33,7 @@
 			<br/>
 			
 			
-			<div>Genres: {{#genres}}<a href="#" onmouseover="getpop({{id}})" class="popper" data-popbox="pop1">{{name}}</a><br/>{{/genres}}</div>
+			<div>Genres: {{#genres}}<a href="#" onmouseover="getpop({{id}})" class="popper" >{{name}}</a><br/>{{/genres}}</div>
 			<div>{{#production_companies}}<div>{{name}}</div><br/>{{/production_companies}}</div>
 			<div>{{overview}}</div>
 
@@ -48,7 +48,7 @@
 			
 		</div>
 	</script>
-	<script id="pop1" class="popbox" type="text/template">
+	<script id="moviepoptemplate" class="popbox" type="text/template">
 		<div>
 			 <h2>{{title}}</h2>
 

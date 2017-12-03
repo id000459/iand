@@ -138,9 +138,10 @@ function getpop(movieid)
 	var moveLeft = 0;
 	var moveDown = 0;
 	$('a.popper').hover(function (e) {
-		var target = '#' + ($(this).attr('data-popbox'));
-		$(target).show();
+		var target = '#moviepoptemplate'
 		getpopmovieDetails(movieid, target);
+		$(target).show();
+		
 		moveLeft = $(this).outerWidth();
 		moveDown = ($(target).outerHeight() / 2);
 	}, function () {
