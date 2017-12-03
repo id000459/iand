@@ -194,13 +194,12 @@ function getpopmovieDetails(movieid, div)
 				var bookHTML='<table>';
 						
 						bookHTML+='<h2>' + book.name + ' </h2>';
-						try {
-							bookHTML+='<img src="https://image.tmdb.org/t/p/w45/' + book.logo_path + '" style="float: right"/>';
-						}
-						catch(err)
-						{
+						if (book.headquarters == null){	
 							bookHTML+='<img src="photos/NOIMG.png" style="float: right"/>';
-						}
+						} else {
+							bookHTML+='<img src="https://image.tmdb.org/t/p/w45/' + book.logo_path + '" style="float: right"/>';
+						} 
+						
 						if (book.headquarters == null){
 							bookHTML+='<tr><strong>Headquarters:</strong> N/A </tr><br/>';
 						} else {
