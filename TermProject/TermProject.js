@@ -277,11 +277,11 @@ function populateddlist()
 
 function listselect(id)
 {
-	$.getJSON("https://api.themoviedb.org/3/genre/movie/list?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US" , function (jsonData)
+	$.getJSON("https://api.themoviedb.org/3/genre/" + id + "/movies?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US" , function (jsonData)
 	 {
-		id=$(this).attr("genreid");
 		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
-		searchmovies(url, "moviegridtemplate","movielist");
+		searchmovies(url, "movielisttemplate","movielist");
+		templatetype = "list";
 	 });
 	 
 	
