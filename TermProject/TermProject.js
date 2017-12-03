@@ -199,7 +199,7 @@ function getpopmovieDetails(movieid, div)
 					
 					
 					bookHTML+="</table>"
-				$(target).html(bookHTML);
+				$(div).html(bookHTML);
 	 });
 }
 
