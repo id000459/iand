@@ -139,7 +139,17 @@ function getpop(movieid)
 	var moveDown = 0;
 	$('a.popper').hover(function (e) {
 		var target = '#' + ($(this).attr('data-popbox'));
-		getpopmovieDetails(movieid, target);
+		/* getpopmovieDetails(movieid, target); */
+		
+		$.getJSON("https://api.themoviedb.org/3/movie/55?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
+		 {
+			var template = $('#moviepoptemplate').html();
+			var html = Mustache.render(template, jsonData);
+			$(div).html(html);
+			$(div).slideToggle();
+		 });
+		
+		
 		$(target).show();
 		
 		moveLeft = $(this).outerWidth();
