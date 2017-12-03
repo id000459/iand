@@ -111,6 +111,8 @@ function getmovieDetails(movieid, div)
 		$(div).slideToggle();
 	 });
 	 
+	 document.getElementsByClassName("popper").onload = function() {init('2')};
+	 
 }
 
 function getTVDetails(movieid, div)
