@@ -111,7 +111,7 @@ function getmovieDetails(movieid, div)
 		$(div).slideToggle();
 	 });
 	 
-	 document.getElementsByClassName("popper").onload = function() {getpop('2')};
+	 getpop('2');
 	 
 }
 
