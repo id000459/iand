@@ -4,7 +4,14 @@ $(document).ready(function ()
 {
 	
 	populateddlist();
-
+	
+	 $(".ddlistitem").on('click', function () 
+	{ 
+		id=$(this).attr("genreid");
+		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
+		searchmovies(url, "moviegridtemplate","movielist");
+	});	
+	
 	$("#btnSearch").click(function ()
 	{
 		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
@@ -270,10 +277,5 @@ function populateddlist()
 		$('#ddlist').html(html);
 	 });
 	 
-	 $(".ddlistitem").on('click', function () 
-	{ 
-		id=$(this).attr("genreid");
-		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTerm").val();
-		searchmovies(url, "moviegridtemplate","movielist");
-	});	
+	
 }	
