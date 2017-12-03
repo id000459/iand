@@ -194,7 +194,7 @@ function getpopmovieDetails(movieid, div)
 				var bookHTML='<table>';
 						
 						bookHTML+='<h2>' + book.name + ' </h2>';
-						if (book.headquarters == null){	
+						if (book.logo_path == null){	
 							bookHTML+='<img src="photos/NOIMG.png" style="float: right"/>';
 						} else {
 							bookHTML+='<img src="https://image.tmdb.org/t/p/w45/' + book.logo_path + '" style="float: right"/>';
