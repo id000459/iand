@@ -208,6 +208,8 @@ function getpopmovieDetails(movieid, div)
 				$(div).html(bookHTML);
 			
 			});
+			
+		$(div).slideToggle();
 }
 
 		
