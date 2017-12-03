@@ -8,6 +8,7 @@ $(document).ready(function ()
 	 {
 		var template = $('#dropdowntemplate').html();
 		var html = Mustache.render(template, jsonData);
+		$('#droplist').html(html);
 	 });
 	 
 	 
