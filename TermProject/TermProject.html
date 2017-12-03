@@ -48,6 +48,13 @@
 			
 		</div>
 	</script>
+	<script id="dropdowntemplate" type="text/template">
+			
+				{{#results}}
+			  <a href="#">{{title}}</a>
+			{{#results}}
+			
+	</script>
 	
 	
 <!-- 	<script id="moviegridtemplate" type="text/template">
@@ -92,13 +99,9 @@
 		  <button class="tablinks" onclick="openTab(event, 'tvsearchtab')">TV Search</button>
 		  <li class="dropdown">
 			<a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-			<script id="dropdowntemplate" type="text/template">
-			<div id="droplist" class="dropdown-content">
-				{{#results}}
-			  <a href="#">{{name}}</a>
-			{{/results}}
+			<div id="ddlist" class="dropdown-content">
+			
 			</div>
-			</script>
 		</li>
 		  
 		<div id="moviesearchtab" class="tabcontent">

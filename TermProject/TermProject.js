@@ -6,9 +6,10 @@ $(document).ready(function ()
 
 	 $.getJSON("https://api.themoviedb.org/3/genre/movie/list?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US" , function (jsonData)
 	 {
-		var template = $('#dropdowntemplate').html();
+		$('#ddlist').html("");					
+		var template = $('#dropdowntemplate' ).html();
 		var html = Mustache.render(template, jsonData);
-		$('#droplist').html(html);
+		$('#ddlist').html(html);
 	 });
 	 
 	 
