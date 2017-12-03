@@ -220,8 +220,7 @@ function getcompanymovieDetails(movieid, div)
 				$(div).html(bookHTML);
 			
 			});
-			
-		
+					
 }
 
 		
