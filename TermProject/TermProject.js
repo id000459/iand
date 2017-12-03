@@ -141,7 +141,6 @@ function getpop(movieid)
 		var target = '#' + ($(this).attr('data-popbox'));
 		getpopmovieDetails(movieid, target);
 		$(target).slideToggle();
-		$(target).show();
 		
 		moveLeft = $(this).outerWidth();
 		moveDown = ($(target).outerHeight() / 2);
