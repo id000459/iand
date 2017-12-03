@@ -138,7 +138,7 @@ function getpop(movieid)
 	var moveLeft = 0;
 	var moveDown = 0;
 	$('a.popper').hover(function (e) {
-		var target = '#moviepoptemplate'
+		var target = '#' + ($(this).attr('data-popbox'));
 		getpopmovieDetails(movieid, target);
 		$(target).show();
 		
@@ -191,7 +191,7 @@ function getpopmovieDetails(movieid, div)
 
 	 $.getJSON("https://api.themoviedb.org/3/movie/55?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
-		var template = $('#pop1').html();
+		var template = $('#moviepoptemplate').html();
 		var html = Mustache.render(template, jsonData);
 		$(div).html(html);
 		$(div).slideToggle();
