@@ -141,7 +141,7 @@ function getpop(movieid)
 		var target = '#' + ($(this).attr('data-popbox'));
 		$(target).show();
 		/* getpopmovieDetails(movieid, target); */
-		$( "#poptitle" ).vale("dd");
+		$( "#poptitle" ).value("dd");
 		moveLeft = $(this).outerWidth();
 		moveDown = ($(target).outerHeight() / 2);
 	}, function () {
