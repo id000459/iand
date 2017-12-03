@@ -334,7 +334,7 @@ td {
     cursor: pointer;
 }
 
-.dropdown {
+#browsebtn {
     position: relative;
     display: inline-block;
 }
