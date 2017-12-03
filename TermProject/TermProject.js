@@ -141,13 +141,13 @@ function getpop(movieid)
 		var target = '#' + ($(this).attr('data-popbox'));
 		/* getpopmovieDetails(movieid, target); */
 		
-		$.getJSON("https://api.themoviedb.org/3/movie/55?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
+		/* $.getJSON("https://api.themoviedb.org/3/movie/55?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 		 {
 			var template = $(target).html();
 			var html = Mustache.render(template, jsonData);
 			$(div).html(html);
 			$(div).slideToggle();
-		 });
+		 }); */
 		
 		
 		$(target).show();
