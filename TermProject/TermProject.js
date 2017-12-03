@@ -140,7 +140,7 @@ function getpop(movieid)
 	$('a.popper').hover(function (e) {
 		var target = '#' + ($(this).attr('data-popbox'));
 		
-		if ($(this).attr('poptype') == "company") {
+		if ($(this).attr('poptype') == company) {
 			getpopmovieDetails(movieid, target);
 		}
 		
