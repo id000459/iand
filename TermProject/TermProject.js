@@ -16,7 +16,7 @@ $(document).ready(function ()
 	$("#btnSearchtv").click(function ()
 	{
 		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&query=" + $("#searchTermtv").val();
-		searchmovies(url, "movielisttemplate","movielist");
+		searchmovies(url, "movielisttemplate","tvlist");
 	});
 	 
 	 
