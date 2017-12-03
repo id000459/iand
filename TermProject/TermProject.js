@@ -140,8 +140,7 @@ function getpop(movieid)
 	$('a.popper').hover(function (e) {
 		var target = '#' + ($(this).attr('data-popbox'));
 		$(target).show();
-		getpopmovieDetails(movieid, target); 
-		
+		getpopmovieDetails(movieid, target);
 		moveLeft = $(this).outerWidth();
 		moveDown = ($(target).outerHeight() / 2);
 	}, function () {
@@ -189,14 +188,12 @@ function getpop(movieid)
 function getpopmovieDetails(movieid, div)
 {
 
-	 $.getJSON("https://api.themoviedb.org/3/movie/55?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonpopData)
+	 $.getJSON("https://api.themoviedb.org/3/movie/55?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
-		var bookHTML='<div id="pop1" class="popbox">fds';
-
-			
-				bookHTML+="</div>"
-		
-		
+		var template = $('#pop1').html();
+		var html = Mustache.render(template, jsonData);
+		$(div).html(html);
+		$(div).slideToggle();
 	 });
 }
 
