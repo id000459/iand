@@ -107,7 +107,7 @@ function getTVDetails(movieid, div)
 
 	 $.getJSON("https://api.themoviedb.org/3/tv/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
-		var template = $('#movielistdetailstemplate').html();
+		var template = $('#tvlistdetailstemplate').html();
 		var html = Mustache.render(template, jsonData);
 		$(div).html(html);
 		$(div).slideToggle();

@@ -61,6 +61,32 @@
 			
 		</div>
 	</script>
+	<script id="tvlistdetailstemplate" type="text/template">
+		<div class='movie'>
+			
+			<h2>{{title}}</h2>
+			<h4>By {{authors}} - {{publishedDate}} - {{publisher}}</h4>
+			<h5>{{tagline}}</h5>
+			<img src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}' style="float: left"/>
+			<div style="margin-left: 220px"> <br> 
+			<div>{{{description}}}</div>
+			<br/>
+			
+			<h5>Status: {{status}}</h5>
+			<h5>Popularity: {{popularity}}</h5>
+			<h5>Vote Average: {{vote_average}} ({{vote_count}})</h5>
+			<h5>Genres: {{#genres}}<tr>{{name}}</tr><br/>{{/genres}}</h5>
+			<div>Production Companies: {{#production_companies}}<a style="text-decoration:none;pointer-events:none;cursor:default;" href="#" onmouseover="getpop({{id}})" class="popper" poptype="company" data-popbox="moviepoptemplate">{{name}}(Mouse over for more details)</a><br/>{{/production_companies}}</div>
+
+			<div>{{overview}}</div>
+			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{^listPrice}}Not Available{{/listPrice}}{{/saleInfo}}</div>
+			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{^retailPrice}}Not Available{{/retailPrice}}{{/saleInfo}}</div>
+			
+			</div>
+			<div style="clear:both"></div>	
+			
+		</div>
+	</script>
 	<script id="dropdowntemplate" type="text/template">
 		{{#genres}}
 		  <a onclick="listselect('{{id}}')" class='ddlistitem' >{{name}}</a>
