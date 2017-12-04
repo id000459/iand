@@ -95,7 +95,7 @@ function searchmovies(servicePoint, templatetype, elementname)
 	 
 	});	
 	
-	openTab(event, 'filtertab');
+	
  
 }	
 
