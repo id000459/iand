@@ -95,6 +95,12 @@ div.tab button.active {
 	float:right;
 	margin-left:1em;
 }
+
+#pageNumberContainertv{
+	float:right;
+	margin-left:1em;
+}
+
 .pageNumberHide {
 	visibility:hidden;
 }
