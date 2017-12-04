@@ -90,7 +90,11 @@ div.tab button.active {
 .pageButton:hover {
 	border: 1px solid grey;
 }
-
+.checkbtn {
+	font-size:large;
+	color: blue;
+    font-family:'Roboto', sans-serif !important;
+}
 #pageNumberContainer{
 	float:left;
 	margin-left:1em;
