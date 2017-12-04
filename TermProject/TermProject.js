@@ -5,7 +5,7 @@ var searchtype;
 var includeadultmovies = false;
 var includeadultshows = false;
 
-var moviediscover = "search";
+var moviesearchtype = "search";
 				   
 $(document).ready(function ()
 {
@@ -16,20 +16,20 @@ $(document).ready(function ()
 	/* movie buttons*/
 	$("#btnSearch").click(function ()
 	{
-		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
+		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
 		searchmovies(url, "movielisttemplate","movielist");
 	});	 
 	 
 	$("#btnList").click(function ()
 	{ 
-		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
+		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
 		searchmovies(url, "movielisttemplate","movielist");
 		templatetype = "list";
 	});
 
 	$("#btnGrid").click(function ()
 	{ 
-		var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
+		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
 		searchmovies(url, "moviegridtemplate","movielist");
 		templatetype = "grid";
 	});	
@@ -39,6 +39,14 @@ $(document).ready(function ()
 			includeadultmovies = true;
 		} else {
 			includeadultmovies = false;
+		}
+	});
+	
+	$("#moviediscovercheck").change(function() {
+		if(this.checked) {
+			moviesearchtype = "discover";
+		} else {
+			moviesearchtype = "search";
 		}
 	});
 	
@@ -174,7 +182,7 @@ function openTab(evt, tabName)
 function pageClick(buttonNumber)
 {
 	
-	var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val() + '&page=' + buttonNumber;
+	var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
 	if (templatetype == "grid") {
 		searchmovies(url, "moviegridtemplate","movielist");
 	} else {
