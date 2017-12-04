@@ -140,12 +140,6 @@
 			</div>
 		</li>
 		</div>
-		  
-		<div id="tvsearchtab" class="tabcontent">
-		How would you like to search for a TV show?
-		  <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'searchTabTV')">Search</button>
-		</div>
-		
 
 		<div id="searchTab" class="tabcontent">
 			How would you like to search for a Movie?
@@ -178,7 +172,12 @@
 			</div>
 			<div id = "movielist" style="margin-top:1em;" class="container"></div>
 		</div>
-		<div id="searchTabTV" class="tabcontent">			
+		<div id="tvsearchtab" class="tabcontent">	
+			How would you like to search for a TV Show?
+			<select class="selectlist" id="showselect">
+			  <option  value="Show">Show Name</option>
+			  <option value="Release">Release Date</option>
+			</select>
 			<input type="text" id="searchTermtv" />
 			<input type="button" id="btnSearchtv" value="Search" />
 			<input type="button" id="btnListtv" value="List View"  />
