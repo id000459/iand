@@ -92,12 +92,12 @@ div.tab button.active {
 }
 
 #pageNumberContainer{
-	float:right;
+	float:left;
 	margin-left:1em;
 }
 
 #pageNumberContainertv{
-	float:right;
+	float:left;
 	margin-left:1em;
 }
 
