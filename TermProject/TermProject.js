@@ -35,6 +35,16 @@ $(document).ready(function ()
 		searchmovies(url, "moviegridtemplate","movielist");
 		templatetype = "grid";
 	});	
+	
+	$("#movieadultcheck").change(function() {
+		if(this.checked) && ($("#searchTerm").val() != "") {
+			var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=false&query=" + $("#searchTerm").val();
+			searchmovies(url, "movielisttemplate","movielist");
+		} else if if(this.checked) && ($("#searchTerm").val() != "") {
+			var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=false&query=" + $("#searchTerm").val();
+			searchmovies(url, "movielisttemplate","movielist");
+		}
+	});
 
 	/* $("#btnList2").click(function ()
 	{ 
@@ -93,8 +103,7 @@ function searchmovies(servicePoint, templatetype, elementname)
 			getGridmovieDetails($(this).attr("data-movieid"), div);
 		});
 	 
-	});	
-	
+	});		
 	
  
 }	
