@@ -1,7 +1,12 @@
 
+/* genre parameters*/
+var genreid;
+
+/* search parameters*/
 var templatetype;
 var searchtype;
 
+/* filter parameters*/
 var includeadultmovies = false;
 var includeadultshows = false;
 
@@ -214,7 +219,7 @@ function tvpageClick(buttonNumber)
 function genrepageClick(buttonNumber)
 {
 	
-	var url="https://api.themoviedb.org/3/genre/" + id + "/movies?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US" + '&page=' + buttonNumber;
+	var url="https://api.themoviedb.org/3/genre/" + genreid + "/movies?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US" + '&page=' + buttonNumber;
 	if (templatetype == "grid") {
 		searchmovies(url, "genrelisttemplate","genrelist");
 	} else {
@@ -327,6 +332,7 @@ function populateddlist()
 
 function listselect(id)
 {
+	genreid = id
 	var url="https://api.themoviedb.org/3/genre/" + id + "/movies?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US";
 	searchmovies(url, "genrelisttemplate","genrelist");
 	openTab(event, 'genretab');
