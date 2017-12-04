@@ -142,11 +142,7 @@
 		</div>
 
 		<div id="searchTab" class="tabcontent">
-			How would you like to search for a Movie?
-			<input type="button" onclick="openTab(event, 'moviesearch')" value="Search" />
-			<input type="button" onclick="openTab(event, 'moviediscover')" value="Discover" />
-			
-			<div id="moviesearch" class="tabcontent">
+			<div id="searchTab" class="tabcontent">
 				<select class="selectlist" id="movieselect">
 				  <option  value="Movie">Movie Name</option>
 				  <option value="Release">Release Year</option>
@@ -162,21 +158,10 @@
 					  <span class="slider round"></span>
 					</label>
 				</div>
-			</div>
-			<div id="moviediscover" class="tabcontent">
-				Choose filters:
-				<select class="selectlist" id="movieselect">
-				  <option  value="Movie">Movie Name</option>
-				  <option value="Release">Release Year</option>
-				</select>
-				<input type="text" id="searchTerm" />
-				<input type="button" id="btnSearch" value="Search" />
-				<input type="button" id="btnList" value="List View"  />
-				<input type="button" id="btnGrid" value="Grid View" />
 				<div id="filterTab">
-					Remove Adult Results 
+					Discover: 
 					<label class="switch">
-					  <input id="movieadultcheck" type="checkbox" unchecked>
+					  <input id="moviediscovercheck" type="checkbox" unchecked>
 					  <span class="slider round"></span>
 					</label>
 				</div>

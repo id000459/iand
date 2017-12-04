@@ -4,6 +4,8 @@ var searchtype;
 
 var includeadultmovies = false;
 var includeadultshows = false;
+
+var moviediscover = "search";
 				   
 $(document).ready(function ()
 {
