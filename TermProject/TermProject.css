@@ -361,11 +361,11 @@ li a, .dropbtn {
     color: black;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+	font-family:'Roboto', sans-serif !important;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: #ddd;
 }
 
 li.dropdown {
