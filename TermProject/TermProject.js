@@ -57,21 +57,6 @@ $(document).ready(function ()
 		}
 	});
 	
-	/* $("#btnList2").click(function ()
-	{ 
-		var url="https://www.googleapis.com/movies/v1/users/111815788291054011027/movieshelves/5/volumes";
-		searchmovies(url, "movielisttemplate","movielist2");
-		templatetype = "list";
-	});
-
-	$("#btnGrid2").click(function ()
-	{ 
-		var url="https://www.googleapis.com/movies/v1/users/111815788291054011027/movieshelves/5/volumes";
-		searchmovies(url, "moviegridtemplate","movielist2");
-		templatetype = "grid";
-	});					 
-  */
-  
 	
  
  
@@ -181,11 +166,6 @@ function openTab(evt, tabName)
 
 	document.getElementById(tabName).style.display = "block";
 	evt.currentTarget.className += " active";
-
-	/* if (tabName == "movieshelfTab") {
-		var url="https://www.googleapis.com/movies/v1/users/111815788291054011027/movieshelves/5/volumes";
-		searchmovies(url, "movielisttemplate","movielist2");
-	} */
 
 };
  
