@@ -151,7 +151,13 @@
 			<input type="button" id="btnSearch" value="Search" />
 			<input type="button" id="btnList" value="List View"  />
 			<input type="button" id="btnGrid" value="Grid View" />
-			
+			<div id="filterTab">
+				Remove Adult Results 
+				<label class="switch">
+				  <input id="movieadultcheck" type="checkbox" unchecked>
+				  <span class="slider round"></span>
+				</label>
+			</div>
 			<div id="pageNumberContainer" class="pageNumberHide">
 				<input id="button1" onClick="pageClick(this.value)" class="pageButton" type="button" value="1" /> 
 				<input id="button2" onClick="pageClick(this.value)" class="pageButton" type="button" value="2" /> 
