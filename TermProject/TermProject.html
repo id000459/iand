@@ -23,11 +23,7 @@
 		{{/results}}
 	</script>
 	<script id="tvlisttemplate" type="text/template">
-		Adult/Nonadult:
-		<label class="switch">
-		  <input type="checkbox" checked>
-		  <span class="slider round"></span>
-		</label>
+		
 		{{#results}}
 		<div class='movielistitem' id="{{id}}">
 			<div class="tvlistitemheader" data-tvid="{{id}}">
@@ -161,6 +157,13 @@
 			<input type="button" id="btnSearch" value="Search" />
 			<input type="button" id="btnList" value="List View"  />
 			<input type="button" id="btnGrid" value="Grid View" />
+			<div id="filterTab">
+				Adult/Nonadult:
+				<label class="switch">
+				  <input type="checkbox" checked>
+				  <span class="slider round"></span>
+				</label>
+			</div>
 			<div id="pageNumberContainer" class="pageNumberHide">
 				<input id="button1" onClick="pageClick(this.value)" class="pageButton" type="button" value="1" /> 
 				<input id="button2" onClick="pageClick(this.value)" class="pageButton" type="button" value="2" /> 
@@ -180,6 +183,13 @@
 			<input type="button" id="btnSearchtv" value="Search" />
 			<input type="button" id="btnListtv" value="List View"  />
 			<input type="button" id="btnGridtv" value="Grid View" />
+			<div id="filterTab">
+				Adult/Nonadult:
+				<label class="switch">
+				  <input type="checkbox" checked>
+				  <span class="slider round"></span>
+				</label>
+			</div>
 			<div id="pageNumberContainertv" class="pageNumberHide">
 				<input id="tvbutton1" onClick="tvpageClick(this.value)" class="pageButton" type="button" value="1" /> 
 				<input id="tvbutton2" onClick="tvpageClick(this.value)" class="pageButton" type="button" value="2" /> 

@@ -101,6 +101,11 @@ div.tab button.active {
 	margin-left:1em;
 }
 
+#filterTab{
+	float:right;
+	margin-right:1em;
+}
+
 .pageNumberHide {
 	visibility:hidden;
 }
