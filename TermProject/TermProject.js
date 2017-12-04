@@ -41,9 +41,9 @@ $(document).ready(function ()
 	
 	$("#movieadultcheck").change(function() {
 		if(this.checked) {
-			includeadultmovies = true;
-		} else {
 			includeadultmovies = false;
+		} else {
+			includeadultmovies = true;
 		}
 	});
 	
@@ -64,7 +64,7 @@ $(document).ready(function ()
 		searchmovies(url, "tvlisttemplate","tvlist");
 	});
 	
-	$("#showadultcheck").change(function() {
+	$("#tvadultcheck").change(function() {
 		if(this.checked) {
 			includeadultshows = false;
 		} else {

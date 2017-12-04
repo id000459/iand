@@ -9,6 +9,11 @@
 	<script type="text/javascript" src="TermProject.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script id="dropdowntemplate" type="text/template">
+		{{#genres}}
+		  <a onclick="listselect('{{id}}')" class='ddlistitem' >{{name}}</a>
+		{{/genres}}	
+	</script>
 	<script id="movielisttemplate" type="text/template">
 		{{#results}}
 		<div class='movielistitem' id="{{id}}">
@@ -101,10 +106,23 @@
 			
 		</div>
 	</script>
-	<script id="dropdowntemplate" type="text/template">
-		{{#genres}}
-		  <a onclick="listselect('{{id}}')" class='ddlistitem' >{{name}}</a>
-		{{/genres}}	
+	
+	
+	<script id="moviegridtemplate" type="text/template">
+		
+		<div id="box">
+		{{#results}}
+		
+			
+			<img style="padding:5px;" src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}'  width=70 height=80 /> <h4 style="width:90%;float:right;">{{title}}</h4>
+			
+			
+			
+				
+		{{/results}}
+		</div>
+		<div id = "bookDetail" ></div>
+		
 	</script>
 	
 	
@@ -208,7 +226,7 @@
 			<div id="filterTab">
 				Remove Adult Results 
 				<label class="switch">
-				  <input id="showadultcheck" type="checkbox" unchecked>
+				  <input id="tvadultcheck" type="checkbox" unchecked>
 				  <span class="slider round"></span>
 				</label>
 			</div>
@@ -231,13 +249,7 @@
 			
 			<input type="button" id="btnListtv" value="List View"  />
 			<input type="button" id="btnGridtv" value="Grid View" />
-			<div id="filterTab">
-				Remove Adult Results 
-				<label class="switch">
-				  <input id="showadultcheck" type="checkbox" unchecked>
-				  <span class="slider round"></span>
-				</label>
-			</div>
+			
 			<div id="pageNumberContainergenre" class="pageNumberHide">
 				<input id="genrebutton1" onClick="genrepageClick(this.value)" class="pageButton" type="button" value="1" /> 
 				<input id="genrebutton2" onClick="genrepageClick(this.value)" class="pageButton" type="button" value="2" /> 
