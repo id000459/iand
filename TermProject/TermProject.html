@@ -112,7 +112,7 @@
 		
 		<div id="box">
 		{{#results}}
-			<div id='{{id}}' data-movieid="{{id}}" class='boxitem'><img style="padding:5px;" src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}'  width=100 height=120 /> <div style="width:70%; float:right; margin:2px;"><strong>{{title}}</strong><br/>{{tagline}}</div></div>		
+			<div id='{{id}}' data-movieid="{{id}}" class='boxitem'><img style="padding:5px;" src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}'  width=100 height=120 /> <div style="width:70%; margin:2px;"><strong>{{title}}</strong></div></div>		
 		{{/results}}
 		</div>
 		<div id = "movieGridDetail" ></div>
