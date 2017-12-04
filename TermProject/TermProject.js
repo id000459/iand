@@ -308,6 +308,6 @@ function populateddlist()
 function listselect(id)
 {
 	var url="https://api.themoviedb.org/3/genre/" + id + "/movies?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US";
-	searchmovies(url, "movielisttemplate","movielist");
-	openTab(event, 'searchTab');
+	searchmovies(url, "movielisttemplate","genrelist");
+	openTab(event, 'genretab');
 }	
