@@ -61,9 +61,9 @@ $(document).ready(function ()
 	
 	$("#showadultcheck").change(function() {
 		if(this.checked) {
-			includeadultshows = true;
-		} else {
 			includeadultshows = false;
+		} else {
+			includeadultshows = true;
 		}
 	});
 	
