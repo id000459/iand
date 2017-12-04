@@ -111,7 +111,6 @@ function getmovieDetails(movieid, div)
 		$(div).slideToggle();
 	 });
 	 
-	 getpop('2');
 	 
 }
 
