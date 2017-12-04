@@ -36,6 +36,19 @@
 		</div>
 		{{/results}}
 	</script>
+	<script id="genrelisttemplate" type="text/template">
+		{{#results}}
+		<div class='movielistitem' id="{{id}}">
+			<div class="genrelistitemheader" data-movieid="{{id}}">
+			
+			<img style="padding:5px;" src='{{#poster_path}}https://image.tmdb.org/t/p/w185/{{poster_path}}{{/poster_path}}{{^poster_path}}../photos/NOIMG.png{{/poster_path}}'  width=70 height=80 /> <h4 style="width:90%;float:right;">{{title}}</h4>
+			
+			
+			</div>
+			<div class='genredetails' style='display:none'></div>
+		</div>
+		{{/results}}
+	</script>
 	<script id="movielistdetailstemplate" type="text/template">
 		<div class='movie' >
 			
@@ -225,7 +238,7 @@
 				  <span class="slider round"></span>
 				</label>
 			</div>
-			<div id="pageNumberContainertv" class="pageNumberHide">
+			<div id="pageNumberContainergenre" class="pageNumberHide">
 				<input id="genrebutton1" onClick="genrepageClick(this.value)" class="pageButton" type="button" value="1" /> 
 				<input id="genrebutton2" onClick="genrepageClick(this.value)" class="pageButton" type="button" value="2" /> 
 				<input id="genrebutton3" onClick="genrepageClick(this.value)" class="pageButton" type="button" value="3" /> 

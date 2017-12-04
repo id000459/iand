@@ -82,6 +82,9 @@ function searchmovies(servicePoint, templatetype, elementname)
 	if (templatetype == "tvlisttemplate") {
 		pageNumberContainertv.classList.remove("pageNumberHide");
 		pageNumberContainertv.classList.add("pageNumberShow");
+	} else if (templatetype == "genrelisttemplate") {
+		pageNumberContainergenre.classList.remove("pageNumberHide");
+		pageNumberContainergenre.classList.add("pageNumberShow");
 	} else {
 		pageNumberContainer.classList.remove("pageNumberHide");
 		pageNumberContainer.classList.add("pageNumberShow");
@@ -102,6 +105,11 @@ function searchmovies(servicePoint, templatetype, elementname)
 		{ 
 			div=$(this).next(); // get the tv details div
 			getTVDetails($(this).attr("data-tvid"), div);
+		});	
+		$(".genrelistitemheader").on('click', function () 
+		{ 
+			div=$(this).next(); // get the tv details div
+			getgenreDetails($(this).attr("data-genreid"), div);
 		});	
 		$(".infobtn").on('click', function () 
 		{ 
@@ -308,6 +316,6 @@ function populateddlist()
 function listselect(id)
 {
 	var url="https://api.themoviedb.org/3/genre/" + id + "/movies?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US";
-	searchmovies(url, "movielisttemplate","genrelist");
+	searchmovies(url, "genrelisttemplate","genrelist");
 	openTab(event, 'genretab');
 }	
