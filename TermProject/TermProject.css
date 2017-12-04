@@ -362,6 +362,7 @@ li a, .dropbtn {
     text-align: center;
     padding: 14px 16px;
 	font-family:'Roboto', sans-serif !important;
+	text-decoration: none;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
