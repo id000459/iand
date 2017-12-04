@@ -58,8 +58,8 @@ $(document).ready(function ()
 
 function searchmovies(servicePoint, templatetype, elementname)
 {
-	openTab(event, 'filtertab');
-	
+/* 	openTab(event, 'filtertab');
+ */	
 	$("#" + elementname).html("Searching ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
 	searchtype = $('.selectlist').val();
 	
