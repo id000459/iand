@@ -45,7 +45,7 @@ $(document).ready(function ()
 					}
 	
 					bookHTML+="</table>"
-				$(div).html(bookHTML);
+				$(target).html(bookHTML);
 			
 			});
 		}
