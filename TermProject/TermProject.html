@@ -70,7 +70,7 @@
 			<h5>Popularity: {{popularity}}</h5>
 			<h5>Vote Average: {{vote_average}} ({{vote_count}})</h5>
 			<h5>Genres: {{#genres}}<tr>{{name}}</tr><br/>{{/genres}}</h5>
-			<div>Production Companies: {{#production_companies}}<a style="text-decoration:none;pointer-events:none;cursor:default;" href="#" id="{{id}}" poptype="company" data-popbox="moviepoptemplate">{{name}}(Mouse over for more details)</a><br/>{{/production_companies}}</div>
+			<div>Production Companies: {{#production_companies}}<a style="text-decoration:none;pointer-events:none;cursor:default;" href="#" id="{{id}}" poptype="company" class="popper" data-popbox="moviepoptemplate">{{name}}(Mouse over for more details)</a><br/>{{/production_companies}}</div>
 
 			<div>{{overview}}</div>
 			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{^listPrice}}Not Available{{/listPrice}}{{/saleInfo}}</div>
