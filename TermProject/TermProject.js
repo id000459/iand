@@ -17,6 +17,9 @@ $(document).ready(function ()
 	
 	populateddlist();
 	
+	document.getElementByClassName("popper").onmouseenter = function() {getpop($(this).attr('id'))};
+
+	
 		
 	/* movie buttons*/
 	$("#btnSearch").click(function ()
