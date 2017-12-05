@@ -18,7 +18,23 @@ $(document).ready(function ()
 	populateddlist();
 	
 	$(document).on("mouseenter", "a", function() {
-		getpop($(this).attr('id'))
+		var target = '#' + ($(this).attr('data-popbox'));
+		var popuptype = $(this).attr('poptype');
+		
+		if (popuptype == 'company') {
+			getcompanymovieDetails(movieid, target);
+		}
+		if (popuptype == 'cast') {
+			getcastDetails(movieid, target);
+		}
+		$(target).show();
+	});
+	
+	$(document).on("mouseleave", "a", function() {
+		var target = '#' + ($(this).attr('data-popbox'));
+		var popuptype = $(this).attr('poptype');
+		
+		$(target).hide();
 	});
 	
 		
@@ -276,7 +292,7 @@ function genrepageClick(buttonNumber)
 function getpop(movieid)
 {
 	
-	var moveLeft = 0;
+	/* var moveLeft = 0;
 	var moveDown = 0;
 	$('a.popper').hover(function (e) {
 		var target = '#' + ($(this).attr('data-popbox'));
@@ -298,9 +314,9 @@ function getpop(movieid)
 		if (!($("a.popper").hasClass("show"))) {
 			$(target).hide();
 		}
-	});
+	}); */
 
-	$('a.popper').mousemove(function (e) {
+	/* $('a.popper').mousemove(function (e) {
 		var target = '#' + ($(this).attr('data-popbox'));
 
 		leftD = e.pageX + parseInt(moveLeft);
@@ -325,14 +341,14 @@ function getpop(movieid)
 		}
 
 		$(target).css('top', topD).css('left', leftD);
-	});
-	$('a.popper').click(function (e) {
+	}); */
+	/* $('a.popper').click(function (e) {
 		var target = '#' + ($(this).attr('data-popbox'));
 		if (!($(this).hasClass("show"))) {
 			$(target).show();
 		}
 		$(this).toggleClass("show");
-	});
+	}); */
 }
 
 function getcompanymovieDetails(movieid, div)
