@@ -81,7 +81,73 @@ $(document).ready(function ()
 			});
 		}
 		if (popuptype == 'cast') {
-			getcastDetails($(this).attr('id'), target);
+			var moveLeft = 0;
+			var moveDown = 0;
+			$.getJSON('https://api.themoviedb.org/3/person/' + movieid + '?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
+				var bookHTML='<table>';
+						
+					bookHTML+='<h2>' + book.name + ' </h2>';
+					bookHTML+='<tr><strong>Born:</strong> ' + book.birthday + '  </tr><br/>';
+
+					if (book.deathday == null){
+					} else {
+						bookHTML+='<tr><strong>Died:</strong> ' + book.deathday + ' </tr><br/>';
+					}
+					if (book.gender == "1"){
+						bookHTML+='<tr><strong>Gender:</strong> female </tr><br/>';
+					} else {
+						bookHTML+='<tr><strong>Gender:</strong> male </tr><br/>';	
+					}
+					
+					if (book.also_known_as == null){
+					} else {
+						bookHTML+='<tr><strong>AKA:</strong> ' + book.also_known_as + ' </tr><br/>';
+					}
+					
+					if (book.bio == null){
+						bookHTML+='<tr><strong>Bio:</strong> N/A </tr><br/>';
+					} else {
+						bookHTML+='<tr><strong>Bio:</strong> ' + book.also_known_as + ' </tr><br/>';
+					}
+					
+					bookHTML+='<tr><strong>Popularity:</strong> ' + book.popularity + '  </tr><br/>';
+
+					
+	
+					bookHTML+="</table>"
+				$(div).html(bookHTML);
+				$(target).html(bookHTML);
+				$(target).show();
+				moveLeft = $(target).outerWidth();
+				moveDown = ($(target).outerHeight() / 2);
+			
+			});
+			$('a.popper').mousemove(function (e) {
+				var target = '#' + ($(this).attr('data-popbox'));
+
+				leftD = e.pageX + parseInt(moveLeft);
+				maxRight = leftD + $(target).outerWidth();
+				windowLeft = $(window).width() - 40;
+				windowRight = 0;
+				maxLeft = e.pageX - (parseInt(moveLeft) + $(target).outerWidth() + 20);
+
+				if (maxRight > windowLeft && maxLeft > windowRight) {
+					leftD = maxLeft;
+				}
+
+				topD = e.pageY - parseInt(moveDown);
+				maxBottom = parseInt(e.pageY + parseInt(moveDown) + 20);
+				windowBottom = parseInt(parseInt($(document).scrollTop()) + parseInt($(window).height()));
+				maxTop = topD;
+				windowTop = parseInt($(document).scrollTop());
+				if (maxBottom > windowBottom) {
+					topD = windowBottom - $(target).outerHeight() - 20;
+				} else if (maxTop < windowTop) {
+					topD = windowTop + 20;
+				}
+
+				$(target).css('top', topD).css('left', leftD);
+			});
 		}
 		
 	});
