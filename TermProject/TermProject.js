@@ -146,7 +146,7 @@ function searchmovies(servicePoint, templatetype, elementname)
 		$(".genrelistitemheader").on('click', function () 
 		{ 
 			div=$(this).next(); // get the tv details div
-			getmovieDetails($(this).attr("data-genreid"), div);
+			getmovieDetails($(this).attr("data-movieid"), div);
 		});	
 		$(".boxitem").on('click', function () 
 		{ 
