@@ -127,7 +127,7 @@ function searchmovies(servicePoint, templatetype, elementname)
 		$(".boxitem").on('click', function () 
 		{ 
 			div=$(this).next(); // get the movie details div
-			getGridDetails($(this).attr("data-movieid"), div);
+			getGridDetails($(this).attr("id"), div);
 		});
 	 
 	});		
