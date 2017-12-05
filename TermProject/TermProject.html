@@ -75,7 +75,7 @@
 			<div>{{overview}}</div>
 			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{^listPrice}}Not Available{{/listPrice}}{{/saleInfo}}</div>
 			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{^retailPrice}}Not Available{{/retailPrice}}{{/saleInfo}}</div>
-			<div id='actorslist'></div>
+			<div style="float:right;" id='actorslist'></div>
 			</div>
 			<div style="clear:both"></div>	
 			
@@ -150,7 +150,7 @@
 		
 		<div>
 		{{#cast}}
-			<a style="text-decoration:none;pointer-events:none;cursor:default;" href="#" onmouseover="getpop({{id}})" mouseoverid="{{id}}" class="popper" poptype="cast" data-popbox="castpoptemplate">{{name}}</a><br/>
+			<a style="text-decoration:none;pointer-events:none;cursor:default;margin:.5em;" href="#" onmouseover="getpop({{id}})" mouseoverid="{{id}}" class="popper" poptype="cast" data-popbox="castpoptemplate">{{name}}</a><br/>
 		{{/cast}}
 		</div>
 		
