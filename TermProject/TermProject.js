@@ -46,13 +46,13 @@ $(document).ready(function ()
 	
 					bookHTML+="</table>"
 				$(target).html(bookHTML);
-			
+				$(target).show();
 			});
 		}
 		if (popuptype == 'cast') {
 			getcastDetails($(this).attr('id'), target);
 		}
-		$(target).show();
+		
 	});
 	
 	$(document).on("mouseleave", "a", function() {
