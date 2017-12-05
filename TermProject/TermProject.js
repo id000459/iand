@@ -116,7 +116,6 @@ $(document).ready(function ()
 	
 					bookHTML+="</table>"
 				$(target).html(bookHTML);
-				$(target).html(bookHTML);
 				$(target).show();
 				moveLeft = $(target).outerWidth();
 				moveDown = ($(target).outerHeight() / 2);
