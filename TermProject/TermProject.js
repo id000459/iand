@@ -83,7 +83,7 @@ $(document).ready(function ()
 		if (popuptype == 'cast') {
 			var moveLeft = 0;
 			var moveDown = 0;
-			$.getJSON('https://api.themoviedb.org/3/person/' + movieid + '?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
+			$.getJSON('https://api.themoviedb.org/3/person/' + $(this).attr('id') + '?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
 				var bookHTML='<table>';
 						
 					bookHTML+='<h2>' + book.name + ' </h2>';
@@ -115,7 +115,7 @@ $(document).ready(function ()
 					
 	
 					bookHTML+="</table>"
-				$(div).html(bookHTML);
+				$(target).html(bookHTML);
 				$(target).html(bookHTML);
 				$(target).show();
 				moveLeft = $(target).outerWidth();
