@@ -365,7 +365,7 @@ function getcompanymovieDetails(movieid, div)
 
 function getcastDetails(movieid, div)
 {
-	 $.getJSON('https://api.themoviedb.org/3/company/' + movieid + '?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
+	 $.getJSON('https://api.themoviedb.org/3/person/' + movieid + '?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
 				var bookHTML='<table>';
 						
 					bookHTML+='<h2>' + book.name + ' </h2>';
@@ -375,10 +375,10 @@ function getcastDetails(movieid, div)
 					} else {
 						bookHTML+='<tr><strong>Died:</strong> ' + book.deathday + ' </tr><br/>';
 					}
-					if (book.gender == 1){
-						bookHTML+='<tr><strong>Gender:</strong> female </tr>';
+					if (book.gender == "1"){
+						bookHTML+='<tr><strong>Gender:</strong> female </tr><br/>';
 					} else {
-						bookHTML+='<tr><strong>Gender:</strong> male </tr>';	
+						bookHTML+='<tr><strong>Gender:</strong> male </tr><br/>';	
 					}
 					
 					if (book.also_known_as == null){
