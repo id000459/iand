@@ -369,23 +369,32 @@ function getcastDetails(movieid, div)
 				var bookHTML='<table>';
 						
 					bookHTML+='<h2>' + book.name + ' </h2>';
-					if (book.logo_path == null){	
-						bookHTML+='<img src="../photos/NOIMG.png" style="float: right;margin-right:1em;"/>';
+					bookHTML+='<tr><strong>Born:</strong> ' + book.birthday + '  </tr><br/>';
+
+					if (book.deathday == null){
 					} else {
-						bookHTML+='<img src="https://image.tmdb.org/t/p/w92/' + book.logo_path + '" style="float: right"/>';
-					} 
-					
-					if (book.headquarters == null){
-						bookHTML+='<tr><strong>Headquarters:</strong> N/A </tr><br/>';
+						bookHTML+='<tr><strong>Died:</strong> ' + book.deathday + ' </tr><br/>';
+					}
+					if (book.gender == 1){
+						bookHTML+='<tr><strong>Gender:</strong> female </tr>';
 					} else {
-						bookHTML+='<tr><strong>Headquarters:</strong> ' + book.headquarters + ' </tr><br/>';
+						bookHTML+='<tr><strong>Gender:</strong> male </tr>';	
 					}
 					
-					if (book.homepage == null){
-						bookHTML+='<tr><strong>Homepage:</strong> N/A </tr>';
+					if (book.also_known_as == null){
 					} else {
-						bookHTML+='<tr><strong>Homepage:</strong> ' + book.homepage + ' </tr>';
+						bookHTML+='<tr><strong>AKA:</strong> ' + book.also_known_as + ' </tr><br/>';
 					}
+					
+					if (book.bio == null){
+						bookHTML+='<tr><strong>Bio:</strong> N/A </tr><br/>';
+					} else {
+						bookHTML+='<tr><strong>Bio:</strong> ' + book.also_known_as + ' </tr><br/>';
+					}
+					
+					bookHTML+='<tr><strong>Popularity:</strong> ' + book.popularity + '  </tr><br/>';
+
+					
 	
 					bookHTML+="</table>"
 				$(div).html(bookHTML);
