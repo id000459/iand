@@ -64,7 +64,8 @@
 			<div style="margin-left: 220px"> <br> 
 			<div>{{{description}}}</div>
 			<br/>
-			
+			<div id='actorslist'></div>
+
 			<h5>Status: {{status}}</h5>
 			<h5>Popularity: {{popularity}}</h5>
 			<h5>Vote Average: {{vote_average}} ({{vote_count}})</h5>
@@ -143,6 +144,16 @@
 			<div style="clear:both"></div>	
 			
 		</div>
+	</script>
+	
+	<script id="actortemplate" type="text/template">
+		
+		<div id="box" style="padding-right:2em;" >
+		{{#cast}}
+			<div id='{{id}}'> </div>{{name}}	<br/>	
+		{{/cast}}
+		</div>
+		
 	</script>
 	
 </head>

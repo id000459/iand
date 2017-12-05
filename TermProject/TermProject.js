@@ -159,10 +159,6 @@ function searchmovies(servicePoint, templatetype, elementname)
  
 }	
 
-function init(id) {	
-	getpop(id);
-}			 
-
 function getmovieDetails(movieid, div)
 {
 	 $("#moviedetails").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
@@ -174,6 +170,8 @@ function getmovieDetails(movieid, div)
 		$(div).html(html);
 		$(div).slideToggle();
 	 });
+	 
+	 getActors(movieid, "#actorslist");
 	 
 	 
 }
@@ -202,6 +200,19 @@ function getGridDetails(movieid)
 		var html = Mustache.render(template, jsonData);
 		$("#movieGridDetail").html(html);
 	 });
+}
+
+function getActors(movieid, div)
+{
+	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "/credits?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
+	 {
+		var template = $('#actortemplate').html();
+		var html = Mustache.render(template, jsonData);
+		$(div).html(html);
+		$(div).slideToggle();
+	 });
+	 
+	 
 }
 
 function openTab(evt, tabName) 
