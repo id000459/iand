@@ -49,7 +49,7 @@ $(document).ready(function ()
 					bookHTML+="</table>"
 				$(target).html(bookHTML);
 				$(target).show();
-				moveLeft = $(this).outerWidth();
+				moveLeft = $(target).outerWidth();
 				moveDown = ($(target).outerHeight() / 2);
 			});
 		}
