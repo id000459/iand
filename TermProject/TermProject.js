@@ -17,7 +17,7 @@ $(document).ready(function ()
 	
 	populateddlist();
 	
-	document.getElementsByClassName("popper").onmouseenter = function() {getpop($(this).attr('id'))};
+	document.getElementById("popper").onmouseenter = function() {getpop($(this).attr('movie-id'))};
 
 	
 		
