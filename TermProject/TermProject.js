@@ -22,10 +22,10 @@ $(document).ready(function ()
 		var popuptype = $(this).attr('poptype');
 		
 		if (popuptype == 'company') {
-			getcompanymovieDetails(movieid, target);
+			getcompanymovieDetails($(this).attr('id'), target);
 		}
 		if (popuptype == 'cast') {
-			getcastDetails(movieid, target);
+			getcastDetails($(this).attr('id'), target);
 		}
 		$(target).show();
 	});
