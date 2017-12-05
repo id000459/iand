@@ -217,7 +217,7 @@ function tvpageClick(buttonNumber)
 	
 	var url="https://api.themoviedb.org/3/search/tv?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultshows + "&query=" + $("#searchTermtv").val() + '&page=' + buttonNumber;
 	if (templatetype == "grid") {
-		searchmovies(url, "tvlisttemplate","tvlist");
+		searchmovies(url, "moviegridtemplate","tvlist");
 	} else {
 		searchmovies(url, "tvlisttemplate","tvlist");
 
