@@ -94,14 +94,14 @@ $(document).ready(function ()
 	$("#btnGridgenre").click(function ()
 	{ 
 		searchtype="tv";
-		var url="https://api.themoviedb.org/3/genre/" + id + "/movies?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US";
+		var url="https://api.themoviedb.org/3/genre/" + genreid + "/movies?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US";
 		searchmovies(url, "moviegridtemplate","genrelist");
 		templatetype = "grid";
 	});
 	
 	$("#btnListgenre").click(function ()
 	{ 
-		var url="https://api.themoviedb.org/3/genre/" + id + "/movies?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US";
+		var url="https://api.themoviedb.org/3/genre/" + genreid + "/movies?api_key=2034377edd6aba446d2cd930085ab35f&language=en-US";
 		searchmovies(url, "genrelisttemplate","genrelist");
 		templatetype = "list";
 	});
