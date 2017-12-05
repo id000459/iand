@@ -173,7 +173,7 @@ function getmovieDetails(movieid, div)
 	 
 	 getActors(movieid, "#actorslist");
 	 
-	 document.getElementsByClassName("popper").onmouseenter = function() {getpop($(this).attr('id'))};
+	 document.getElementsByClassName("poppermovie").onmouseenter = function() {getpop($(this).attr('id'))};
 
 }
 
