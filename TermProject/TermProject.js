@@ -4,7 +4,7 @@ var genreid;
 
 /* search parameters*/
 var templatetype;
-var searchtype;
+var searchtype ="movie";
 
 /* filter parameters*/
 var includeadultmovies = false;
@@ -34,7 +34,8 @@ $(document).ready(function ()
 
 	$("#btnGrid").click(function ()
 	{ 
-		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
+		searchtype ="movie";
+		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/" + searchtype + "?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
 		searchmovies(url, "moviegridtemplate","movielist");
 		templatetype = "grid";
 	});	
@@ -64,6 +65,14 @@ $(document).ready(function ()
 		searchmovies(url, "tvlisttemplate","tvlist");
 	});
 	
+	$("#btnGridtv").click(function ()
+	{ 
+		searchtype="tv";
+		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/" + searchtype + "?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
+		searchmovies(url, "moviegridtemplate","tvlist");
+		templatetype = "grid";
+	});
+	
 	$("#tvadultcheck").change(function() {
 		if(this.checked) {
 			includeadultshows = false;
@@ -82,7 +91,6 @@ function searchmovies(servicePoint, templatetype, elementname)
 	
 	
 	$("#" + elementname).html("Searching ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
-	searchtype = $('.selectlist').val();
 	
 	if (templatetype == "tvlisttemplate") {
 		pageNumberContainertv.classList.remove("pageNumberHide");
@@ -160,10 +168,10 @@ function getTVDetails(movieid, div)
 	 
 }
 
-function getGridmovieDetails(movieid)
+function getGridDetails(movieid, searchtype)
 {
 	 $("#movieDetail").html("Working ..."+"<img src='http://spiralforums.biz/uploads/monthly_09_2010/post-2-1283575897.gif'>");
-	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
+	 $.getJSON("https://api.themoviedb.org/3/" + searchtype + "/" + movieid + "?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
 		$(movieGridDetail).html("");
 		var template = $('#moviegriddetailstemplate').html();
