@@ -17,9 +17,6 @@ $(document).ready(function ()
 	
 	populateddlist();
 	
-	document.getElementById("popper").onmouseenter = function() {getpop($(this).attr('movie-id'))};
-
-	
 		
 	/* movie buttons*/
 	$("#btnSearch").click(function ()
@@ -176,7 +173,8 @@ function getmovieDetails(movieid, div)
 	 
 	 getActors(movieid, "#actorslist");
 	 
-	 
+	 document.getElementById("movieid").onmouseenter = function() {getpop($(this).attr('id'))};
+
 }
 
 function getTVDetails(movieid, div)
