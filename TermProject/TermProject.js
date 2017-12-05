@@ -22,6 +22,8 @@ $(document).ready(function ()
 		var popuptype = $(this).attr('poptype');
 		
 		if (popuptype == 'company') {
+			var moveLeft = 0;
+			var moveDown = 0;
 			$.getJSON('https://api.themoviedb.org/3/company/' + $(this).attr('id') + '?api_key=2034377edd6aba446d2cd930085ab35f', function(book) {
 				var bookHTML='<table>';
 						
@@ -47,6 +49,8 @@ $(document).ready(function ()
 					bookHTML+="</table>"
 				$(target).html(bookHTML);
 				$(target).show();
+				moveLeft = $(this).outerWidth();
+				moveDown = ($(target).outerHeight() / 2);
 			});
 		}
 		if (popuptype == 'cast') {
