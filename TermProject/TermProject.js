@@ -14,7 +14,7 @@ var moviesearchtype = "search";
 				   
 $(document).ready(function ()
 {
-	
+	document.getElementById("movieselect").style.visibility = "hidden";
 	populateddlist();
 	
 	$(document).on("mouseenter", "a", function() {
