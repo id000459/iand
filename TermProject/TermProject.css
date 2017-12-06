@@ -81,6 +81,9 @@ div.tab button.active {
 	border: 1px solid white;
 }
 
+.popper:hover {
+	border: background-color:#ddd;
+}
 
 .pageButton {
 	background:none;
