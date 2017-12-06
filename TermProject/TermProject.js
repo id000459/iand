@@ -14,7 +14,7 @@ var moviesearchtype = "search";
 				   
 $(document).ready(function ()
 {
-	document.getElementById("movieselect").style.visibility = "hidden";
+	$( "#movieselect" ).fadeOut( "fast");
 	populateddlist();
 	
 	$(document).on("mouseenter", "a", function() {
@@ -184,19 +184,20 @@ $(document).ready(function ()
 	$("#movieadultcheck").change(function() {
 		if(this.checked) {
 			includeadultmovies = false;
-			$( "#movieselect" ).fadeIn( "fast");
+			
 		} else {
 			includeadultmovies = true;
-			$( "#movieselect" ).fadeOut( "fast");
+			
 		}
 	});
 	
 	$("#moviediscovercheck").change(function() {
 		if(this.checked) {
 			moviesearchtype = "discover";
-			
+			$( "#movieselect" ).fadeIn( "fast");
 		} else {
 			moviesearchtype = "search";
+			$( "#movieselect" ).fadeOut( "fast");
 		}
 	});
 	
