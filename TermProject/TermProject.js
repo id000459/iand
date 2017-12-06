@@ -167,7 +167,7 @@ $(document).ready(function ()
 			searchmovies(url, "movielisttemplate","movielist");
 		} else {
 			if ($( "#movieselect" ).val() == "In Theaters") {
-				var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + (Date().getMonth() - 1 ) + '-' + (Date().getDate()) + '-' + (Date().getFullYear()) + '&primary_release_date.lte=' + Date() ;
+				var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + Date() + '&primary_release_date.lte=' + Date() ;
 				searchmovies(url, "movielisttemplate","movielist");
 
 				
