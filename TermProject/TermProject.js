@@ -51,6 +51,7 @@ $(document).ready(function ()
 				$(target).show();
 				moveLeft = $(target).outerWidth();
 				moveDown = ($(target).outerHeight() / 2);
+				setTimeout($(target).hide();, 5000);
 			});
 			
 			$('a.popper').mousemove(function (e) {
