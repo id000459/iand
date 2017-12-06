@@ -184,14 +184,17 @@ $(document).ready(function ()
 	$("#movieadultcheck").change(function() {
 		if(this.checked) {
 			includeadultmovies = false;
+			$( "#movieselect" ).fadeIn( "fast");
 		} else {
 			includeadultmovies = true;
+			$( "#movieselect" ).fadeOut( "fast");
 		}
 	});
 	
 	$("#moviediscovercheck").change(function() {
 		if(this.checked) {
 			moviesearchtype = "discover";
+			
 		} else {
 			moviesearchtype = "search";
 		}
