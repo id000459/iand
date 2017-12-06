@@ -166,7 +166,7 @@ $(document).ready(function ()
 			var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
 			searchmovies(url, "movielisttemplate","movielist");
 		} else {
-			if ($( "#myselect" ).val() == "Movies In Theaters Now") {
+			if ($( "#movieselect" ).val() == "Movies In Theaters Now") {
 				$.getJSON('https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + (date.getMonth() - 1 ) + '-' + (date.getDate()) + '-' + (date.getFullYear()) + '&primary_release_date.lte=' + Date() , function(book) {
 				});
 			}
