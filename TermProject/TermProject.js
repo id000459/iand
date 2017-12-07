@@ -419,7 +419,7 @@ function getActors(movieid, div)
 	 {
 		var template = $('#actortemplate').html();
 		var html = Mustache.render(template, jsonData);
-		$(div).children('div.actorslist').html(html);
+		div.children('div.actorslist').html(html);
 	 });
 	 
 	 
