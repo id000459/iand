@@ -227,6 +227,7 @@ $(document).ready(function ()
 				
 				if (searchTerm.value == "") {
 					searchTerm.value = "Please enter search term here."
+					return;
 				} else {
 					var releasedate = searchTerm.value;
 					var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_year=' + releasedate ;
