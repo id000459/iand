@@ -165,6 +165,7 @@ $(document).ready(function ()
 	/* movie buttons*/
 	$("#btnSearch").click(function ()
 	{
+		searchtype ="movie";
 		if (moviesearchtype == "search") {
 			var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
 		} else {
@@ -191,7 +192,7 @@ $(document).ready(function ()
 	 
 	$("#btnList").click(function ()
 	{ 
-				
+		searchtype ="movie";		
 		if (moviesearchtype == "search") {
 			var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
 		} else {
@@ -266,6 +267,7 @@ $(document).ready(function ()
 	/* tv buttons*/
 	$("#btnSearchtv").click(function ()
 	{
+		searchtype ="tv";
 		var url="https://api.themoviedb.org/3/search/tv?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultshows + "&query=" + $("#searchTermtv").val();
 		searchmovies(url, "tvlisttemplate","tvlist");
 	});
@@ -280,6 +282,7 @@ $(document).ready(function ()
 	
 	$("#btnListtv").click(function ()
 	{ 
+		searchtype ="tv";
 		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/" + searchtype + "?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
 		searchmovies(url, "tvlisttemplate","tvlist");
 		templatetype = "list";
