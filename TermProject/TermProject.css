@@ -33,7 +33,7 @@ div.tab button {
 
 }
 
-div.tab a {
+div.tablinka a {
     background-color: inherit;
     float: left;
     border: none;
@@ -45,11 +45,11 @@ div.tab a {
 
 }
 
-div.tab a:hover {
+div.tablinka a:hover {
     background-color: #ddd;
 }
 
-div.tab a.active {
+div.tablinka a.active {
     background-color: #ccc;
 }
 
