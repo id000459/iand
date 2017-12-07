@@ -395,7 +395,7 @@ function getTVDetails(movieid, div)
 		$(div).slideToggle();
 	 });
 	 
-	 getActorsTV(movieid, "#actorslist");
+	 getActorsTV(movieid, "#actorslisttv");
 	 
 }
 
@@ -410,7 +410,7 @@ function getGridDetails(movieid)
 		$("#movieGridDetail").html(html);
 	 });
 	 
-	 getActors(movieid, "#actorslist");
+	 getActors(movieid, "#actorslistgrid");
 }
 
 function getActors(movieid, div)
