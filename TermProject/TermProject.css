@@ -344,6 +344,7 @@ td {
 	display: flex; 
 	flex-wrap: wrap;
 	width: 75%;
+	height:300px;
 	flex-grow:1;
 	float:left;
 }
