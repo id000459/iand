@@ -15,6 +15,14 @@
     to {opacity: 1;}
 }
 
+div.tabnav {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #292b2c;
+	font-family:'Roboto', sans-serif !important;
+	text-decoration:none;
+}
+
 div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
