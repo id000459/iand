@@ -165,18 +165,25 @@ $(document).ready(function ()
 	{
 		if (moviesearchtype == "search") {
 			var url="https://api.themoviedb.org/3/search/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
-			searchmovies(url, "movielisttemplate","movielist");
 		} else {
 			if ($( "#movieselect" ).val() == "In Theaters") {
 				var d = new Date();
 				var thismonth = d.getMonth() + 1
-				var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() ;
-				searchmovies(url, "movielisttemplate","movielist");
-
+				var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() ;	
+			} else {
 				
+				if (searchTerm.value == "") {
+					searchTerm.value = "Please enter search term here."
+				} else {
+					var releasedate = searchTerm.value;
+					var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_year=' + releasedate ;
+				}
 			}
 			
-		}
+		} 
+		
+		searchmovies(url, "movielisttemplate","movielist");
+
 	});	 
 	 
 	$("#btnList").click(function ()
@@ -189,6 +196,14 @@ $(document).ready(function ()
 				var d = new Date();
 				var thismonth = d.getMonth() + 1
 				var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() ;
+			} else {
+				
+				if (searchTerm.value == "") {
+					searchTerm.value = "Please enter search term here."
+				} else {
+					var releasedate = searchTerm.value;
+					var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_year=' + releasedate ;
+				}
 			}
 			
 		}
@@ -208,6 +223,14 @@ $(document).ready(function ()
 				var d = new Date();
 				var thismonth = d.getMonth() + 1
 				var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() ;
+			} else {
+				
+				if (searchTerm.value == "") {
+					searchTerm.value = "Please enter search term here."
+				} else {
+					var releasedate = searchTerm.value;
+					var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_year=' + releasedate ;
+				}
 			}
 			
 		}
@@ -424,6 +447,14 @@ function pageClick(buttonNumber)
 			var d = new Date();
 			var thismonth = d.getMonth() + 1
 			var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() + '&page=' + buttonNumber; ;
+		} else {
+				
+			if (searchTerm.value == "") {
+				searchTerm.value = "Please enter search term here."
+			} else {
+				var releasedate = searchTerm.value;
+				var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_year=' + releasedate ;
+			}
 		}
 		
 	}
