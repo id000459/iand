@@ -173,9 +173,9 @@ $(document).ready(function ()
 				var thismonth = d.getMonth() + 1
 				var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() ;	
 			} else {
-				
-				if (([0-9]{4}).test(searchTerm.value) == false) {
-					searchTerm.value = "Please enter four digit year."
+				patt = new RegExp('([0-9]{4})');
+				if (patt.test(searchTerm.value) == false) {
+					searchTerm.value = "Please enter four digit year.";
 					return;
 				} else {
 					var releasedate = searchTerm.value;
