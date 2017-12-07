@@ -447,10 +447,10 @@ function pageClick(buttonNumber)
 		if ($( "#movieselect" ).val() == "In Theaters") {
 			var d = new Date();
 			var thismonth = d.getMonth() + 1
-			var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() + '&page=' + buttonNumber; ;
+			var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() + '&page=' + buttonNumber ;
 		} else {
 				
-			var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_year=' + releasedate ;
+			var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_year=' + releasedate + '&page=' + buttonNumber; ;
 		}
 		
 	}
