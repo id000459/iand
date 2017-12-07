@@ -339,7 +339,7 @@ td {
 	float:left;
 }
 
-#actortemplate
+#actorslist
 {
 	display: flex; 
 	flex-wrap: wrap;
