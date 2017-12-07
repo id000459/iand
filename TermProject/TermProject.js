@@ -181,7 +181,18 @@ $(document).ready(function ()
 	 
 	$("#btnList").click(function ()
 	{ 
-		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
+				
+		if (moviesearchtype == "search") {
+			var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
+		} else {
+			if ($( "#movieselect" ).val() == "In Theaters") {
+				var d = new Date();
+				var thismonth = d.getMonth() + 1
+				var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() ;
+			}
+			
+		}
+		
 		searchmovies(url, "movielisttemplate","movielist");
 		templatetype = "list";
 	});
@@ -189,7 +200,17 @@ $(document).ready(function ()
 	$("#btnGrid").click(function ()
 	{ 
 		searchtype ="movie";
-		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/" + searchtype + "?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
+
+		if (moviesearchtype == "search") {
+			var url="https://api.themoviedb.org/3/" + moviesearchtype + "/" + searchtype + "?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
+		} else {
+			if ($( "#movieselect" ).val() == "In Theaters") {
+				var d = new Date();
+				var thismonth = d.getMonth() + 1
+				var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() ;
+			}
+			
+		}
 		searchmovies(url, "moviegridtemplate","movielist");
 		templatetype = "grid";
 	});	
@@ -396,7 +417,16 @@ function openTab(evt, tabName)
 function pageClick(buttonNumber)
 {
 	
-	var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val() + '&page=' + buttonNumber;
+	if (moviesearchtype == "search") {
+		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val() + '&page=' + buttonNumber;
+	} else {
+		if ($( "#movieselect" ).val() == "In Theaters") {
+			var d = new Date();
+			var thismonth = d.getMonth() + 1
+			var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_date.gte=' + d.getFullYear() + "-" + d.getMonth()  + "-" + d.getDate() + '&primary_release_date.lte=' + d.getFullYear() + "-" + thismonth  + "-" + d.getDate() + '&page=' + buttonNumber; ;
+		}
+		
+	}
 	if (templatetype == "grid") {
 		searchmovies(url, "moviegridtemplate","movielist");
 	} else {
