@@ -178,7 +178,7 @@ $(document).ready(function ()
 					searchTerm.value = "Please enter four digit year.";
 					return;
 				} else {
-					var releasedate = searchTerm.value;
+					releasedate = searchTerm.value;
 					var url='https://api.themoviedb.org/3/discover/' + searchtype + '?api_key=2034377edd6aba446d2cd930085ab35f&primary_release_year=' + releasedate ;
 				}
 			}
