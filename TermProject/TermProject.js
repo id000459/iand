@@ -260,6 +260,14 @@ $(document).ready(function ()
 		}
 	});
 	
+	$("#movieselect").change(function() {
+		if ($( "#movieselect" ).val() == "In Theaters") {			
+			$( "#searchTerm" ).fadeOut( "fast");
+		} else {
+			$( "#searchTerm" ).fadeIn( "fast");
+		}
+	});
+	
 
 	
 	/* tv buttons*/
