@@ -395,6 +395,8 @@ function getTVDetails(movieid, div)
 		$(div).slideToggle();
 	 });
 	 
+	 getActorsTV(movieid, "#actorslist");
+	 
 }
 
 function getGridDetails(movieid)
@@ -407,11 +409,25 @@ function getGridDetails(movieid)
 		var html = Mustache.render(template, jsonData);
 		$("#movieGridDetail").html(html);
 	 });
+	 
+	 getActors(movieid, "#actorslist");
 }
 
 function getActors(movieid, div)
 {
 	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "/credits?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
+	 {
+		var template = $('#actortemplate').html();
+		var html = Mustache.render(template, jsonData);
+		$(div).html(html);
+	 });
+	 
+	 
+}
+
+function getActorsTV(movieid, div)
+{
+	 $.getJSON("https://api.themoviedb.org/3/TV/" + movieid + "/credits?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
 	 {
 		var template = $('#actortemplate').html();
 		var html = Mustache.render(template, jsonData);
