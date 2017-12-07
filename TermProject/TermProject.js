@@ -379,7 +379,7 @@ function getmovieDetails(movieid, div)
 		$(div).slideToggle();
 	 });
 	 
-	 getActors(movieid, "#actorslist");
+	 getActors(movieid,div);
 	 
 }
 
