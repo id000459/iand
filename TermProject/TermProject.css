@@ -45,6 +45,14 @@ div.tab a {
 
 }
 
+div.tab a:hover {
+    background-color: #ddd;
+}
+
+div.tab a.active {
+    background-color: #ccc;
+}
+
 div.tab button:hover {
     background-color: #ddd;
 }
