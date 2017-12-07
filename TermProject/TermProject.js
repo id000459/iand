@@ -280,7 +280,7 @@ $(document).ready(function ()
 	
 	$("#btnListtv").click(function ()
 	{ 
-		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/movie?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
+		var url="https://api.themoviedb.org/3/" + moviesearchtype + "/" + searchtype + "?api_key=2034377edd6aba446d2cd930085ab35f&include_adult=" + includeadultmovies + "&query=" + $("#searchTerm").val();
 		searchmovies(url, "tvlisttemplate","tvlist");
 		templatetype = "list";
 	});
