@@ -410,7 +410,7 @@ function getGridDetails(movieid, div)
 		$("#movieGridDetail").html(html);
 	 });
 	 
-	 getActors(movieid,div);
+	 getGridActors(movieid);
 }
 
 function getActors(movieid, div)
@@ -432,6 +432,18 @@ function getActorsTV(movieid, div)
 		var template = $('#actortemplate').html();
 		var html = Mustache.render(template, jsonData);
 		div.find('div.actorslist').html(html);
+	 });
+	 
+	 
+}
+
+function getGridActors(movieid)
+{
+	 $.getJSON("https://api.themoviedb.org/3/movie/" + movieid + "/credits?api_key=2034377edd6aba446d2cd930085ab35f" , function (jsonData)
+	 {
+		var template = $('#actortemplate').html();
+		var html = Mustache.render(template, jsonData);
+		$("#actorslist").html(html);
 	 });
 	 
 	 
