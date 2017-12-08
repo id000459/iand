@@ -339,6 +339,15 @@ td {
 	float:left;
 }
 
+.actorslist
+{
+	display: flex; 
+	flex-wrap: wrap;
+	width: 48%;
+	flex-grow:1;
+	float:left;
+}
+
 .boxitem
 {
 	flex-grow:1;
