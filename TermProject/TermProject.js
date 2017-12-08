@@ -395,7 +395,7 @@ function getTVDetails(movieid, div)
 		$(div).slideToggle();
 	 });
 	 
-	 getActorsTV(movieid, "#actorslisttv");
+	 getActorsTV(movieid,div);
 	 
 }
 
@@ -410,7 +410,7 @@ function getGridDetails(movieid)
 		$("#movieGridDetail").html(html);
 	 });
 	 
-	 getActors(movieid, "#actorslistgrid");
+	 getActors(movieid,div);
 }
 
 function getActors(movieid, div)
@@ -431,7 +431,7 @@ function getActorsTV(movieid, div)
 	 {
 		var template = $('#actortemplate').html();
 		var html = Mustache.render(template, jsonData);
-		$(div).html(html);
+		div.find('div.actorslist').html(html);
 	 });
 	 
 	 
