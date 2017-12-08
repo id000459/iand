@@ -136,7 +136,7 @@
 			<div>{{overview}}</div>
 			<div>List Price: {{#saleInfo}}{{#listPrice}}{{amount}} {{currencyCode}}{{/listPrice}}{{^listPrice}}Not Available{{/listPrice}}{{/saleInfo}}</div>
 			<div>Retail Price: {{#saleInfo}}{{#retailPrice}}{{amount}} {{currencyCode}}{{/retailPrice}}{{^retailPrice}}Not Available{{/retailPrice}}{{/saleInfo}}</div>
-			<div style="float:left;" class="actorslist" id='actorslist'></div>
+			<div style="float:left;" class="actorslist" id='actorslistgrid'></div>
 			</div>
 			<div style="clear:both"></div>	
 			
@@ -202,7 +202,7 @@
 			  <option  value="In Theaters">Movies In Theaters Now</option>
 			  <option value="Release">Release Year</option>
 			</select>
-			<input type="text" id="searchTerm" />
+			<input type="text" style="width: 30%;" id="searchTerm" />
 			<input type="button" id="btnSearch" value="Search" />
 			<input type="button" id="btnList" value="List View"  />
 			<input type="button" id="btnGrid" value="Grid View" />
@@ -243,7 +243,7 @@
 			  <option  value="Show">Show Name</option>
 			  <option value="Release">Release Date</option>
 			</select>
-			<input type="text" id="searchTermtv" />
+			<input type="text" id="searchTermtv" style="width: 30%;" />
 			<input type="button" id="btnSearchtv" value="Search" />
 			<input type="button" id="btnListtv" value="List View"  />
 			<input type="button" id="btnGridtv" value="Grid View" />

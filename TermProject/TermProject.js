@@ -443,7 +443,7 @@ function getGridActors(movieid)
 	 {
 		var template = $('#actortemplate').html();
 		var html = Mustache.render(template, jsonData);
-		$("#actorslist").html(html);
+		$("#actorslistgrid").html(html);
 	 });
 	 
 	 
